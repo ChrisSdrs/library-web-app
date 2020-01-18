@@ -29,13 +29,13 @@ public class BookSearchController {
     @Autowired
     private BookFormToBookMapper mapper;
 
-    @GetMapping(value = "/admin/properties/search")
+    @GetMapping(value = "/admin/books/search")
     public String searchProperties(Model model) {
         model.addAttribute(BOOK_SEARCH_FORM, new BookSearchForm());
-        return "pages/properties_search";
+        return "pages/books_search";
     }
 
-    @PostMapping(value = "/admin/properties/search")
+    @PostMapping(value = "/admin/books/search")
     public String searchUsers(Model model,
                               @Valid @ModelAttribute(BOOK_SEARCH_FORM)
                                       BookSearchForm bookSearchForm,
@@ -44,7 +44,7 @@ public class BookSearchController {
         if (bindingResult.hasErrors()) {
             //have some error handling here, perhaps add extra error messages to the model
             model.addAttribute(ERROR_MESSAGE, "an error occurred");
-            return "pages/properties_search";
+            return "pages/books_search";
         }
         String pin = bookSearchForm.getPin();
         String category = bookSearchForm.getCategory();
@@ -53,7 +53,7 @@ public class BookSearchController {
         List<BookModel> books = getBooksFromSearch(pin, category);
         model.addAttribute(BOOKS, books);
         model.addAttribute(BOOK_SEARCH_FORM, bookSearchForm);
-        return "pages/properties_search_results";
+        return "pages/books_search_results";
     }
 
     private List<BookModel> getBooksFromSearch(String pin, String category){

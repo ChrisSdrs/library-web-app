@@ -16,7 +16,7 @@
 <h3 class="mb-3">Edit Repair ${id}</h3>
 <div class="table-responsive">
 
-    <#include "../forms/repairEditForm.ftlh" />
+    <#include "../forms/borrowEditForm.ftlh" />
 </div>
 
 <#include "../partials/main_content_bottom.ftlh">

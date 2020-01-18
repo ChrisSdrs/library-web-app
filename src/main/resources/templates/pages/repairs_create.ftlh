@@ -16,7 +16,7 @@
             <h3 class="mb-3">Create Repair</h3>
             <div class="table-responsive">
 
-                <#include "../forms/repairCreateForm.ftlh" />
+                <#include "../forms/borrowCreateForm.ftlh" />
             </div>
 
 <#include "../partials/main_content_bottom.ftlh">

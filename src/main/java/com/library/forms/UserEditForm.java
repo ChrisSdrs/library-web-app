@@ -1,7 +1,7 @@
 package com.library.forms;
 
 
-public class MemberCreateForm {
+public class UserEditForm {
 
     private String membNumber;
 
@@ -14,8 +14,6 @@ public class MemberCreateForm {
     private String email;
 
     private String username;
-
-    private String password;
 
     private String role;
 
@@ -68,19 +66,24 @@ public class MemberCreateForm {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getRole() {
         return role;
     }
 
     public void setRole(String role) {
+        this.role = role;
+    }
+
+    public UserEditForm() {
+    }
+
+    public UserEditForm(String membNumber, String firstName, String lastName, String phone, String email, String username, String role) {
+        this.membNumber = membNumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.email = email;
+        this.username = username;
         this.role = role;
     }
 }

@@ -1,7 +1,7 @@
-package com.library.controller.member;
+package com.library.controller.user;
 
-import com.library.model.MemberModel;
-import com.library.service.MemberService;
+import com.library.model.UserModel;
+import com.library.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,35 +16,35 @@ import static com.library.utils.GlobalAttributes.ALERT_MESSAGE;
 import static com.library.utils.GlobalAttributes.ALERT_TYPE;
 
 @Controller
-public class MemberController {
-    private static final String MEMBER_LIST = "members";
+public class UserController {
+    private static final String USER_LIST = "users";
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private MemberService memberService;
+    private UserService userService;
 
     @GetMapping(value="/admin/users")
     public String users(Model model, @ModelAttribute(ALERT_TYPE) String alertType, @ModelAttribute(ALERT_MESSAGE) String alertMessage) {
-        List<MemberModel> members = memberService.findByRole("Owner");
-        model.addAttribute(MEMBER_LIST, members);
+        List<UserModel> users = userService.findByRole("Member");
+        model.addAttribute(USER_LIST, users);
         model.addAttribute(ALERT_TYPE, alertType);
         model.addAttribute(ALERT_MESSAGE, alertMessage);
         return "pages/users_show";
     }
 
     public void FindAll(){
-        memberService.findAll().forEach(members -> logger.info(members.toString()));
+        userService.findAll().forEach(users -> logger.info(users.toString()));
     }
 
     public void FindByMembNumber(String membNumber){
-        memberService.findByMembNumber(membNumber).forEach(members -> logger.info(members.toString()));
+        userService.findByMembNumber(membNumber).forEach(users -> logger.info(users.toString()));
     }
 
     public void FindByEmail(String email){
-        memberService.findByEmail(email).forEach(members -> logger.info(members.toString()));
+        userService.findByEmail(email).forEach(users -> logger.info(users.toString()));
     }
 
     public void FindByMembNumberAndEmail(String membNumber, String email){
-        memberService.findByMembNumberAndEmail(membNumber, email).forEach(members -> logger.info(members.toString()));
+        userService.findByMembNumberAndEmail(membNumber, email).forEach(users -> logger.info(users.toString()));
     }
 }

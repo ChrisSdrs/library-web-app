@@ -17,7 +17,7 @@
             <div class="table-responsive">
                 <#include "../forms/bookSearchForm.ftlh" />
                 <div class="Dynamic-Load">
-                    <#include "../partials/properties_table.ftlh" />
+                    <#include "../partials/books_table.ftlh" />
                 </div>
             </div>
 

@@ -31,14 +31,14 @@ public class BorrowCreateController {
     @Autowired
     private BorrowFormToBorrowMapper mapper;
 
-    @GetMapping(value = "/admin/repairs/create")
+    @GetMapping(value = "/admin/borrows/create")
     public String createRepairs(Model model) {
 
         model.addAttribute(BORROWS_FORM, new BorrowForm());
-        return "pages/repairs_create";
+        return "pages/borrows_create";
     }
 
-    @PostMapping(value = "/admin/repairs/create")
+    @PostMapping(value = "/admin/borrows/create")
     public String createRepairs(Model model,
                                 @Valid @ModelAttribute(BORROWS_FORM)
                                         BorrowForm borrowForm,
@@ -47,19 +47,19 @@ public class BorrowCreateController {
         if (bindingResult.hasErrors()) {
             //have some error handling here, perhaps add extra error messages to the model
             model.addAttribute(ERROR_MESSAGE, "an error occurred");
-            return "pages/repairs_create";
+            return "pages/borrows_create";
         }
         Borrow borrow = mapper.mapToRepairModel(borrowForm);
         if (isValidRepairEmptyFields(borrow)){
             borrowService.createBorrow(borrow);
             redirectAttrs.addFlashAttribute(ALERT_TYPE, "success");
             redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Borrow Created Successfully!");
-            return "redirect:/admin/repairs";
+            return "redirect:/admin/borrows";
         }
         else {
             model.addAttribute(BORROWS_FORM, borrowForm);
             model.addAttribute(BORROW_CREATE_ERROR, "Please fill all fields!");
-            return "pages/repairs_create";
+            return "pages/borrows_create";
         }
     }
 

@@ -16,7 +16,7 @@
             <h3 class="mb-3">Search Repairs</h3>
             <div class="table-responsive">
                 <#include "../forms/borrowSearchForm.ftlh" />
-                <#include "../partials/repairs_table.ftlh" />
+                <#include "../partials/borrows_table.ftlh" />
             </div>
 
 <#include "../partials/main_content_bottom.ftlh">

@@ -23,27 +23,27 @@ public class BorrowEditController {
     private BorrowService borrowService;
 
 
-    @PostMapping(value = "/admin/repairs/{id}/delete")
-    public String deleteRepair(@PathVariable Long id, RedirectAttributes redirectAttrs) {
+    @PostMapping(value = "/admin/borrows/{id}/delete")
+    public String deleteBorrow(@PathVariable Long id, RedirectAttributes redirectAttrs) {
         borrowService.deleteById(id);
         redirectAttrs.addFlashAttribute(ALERT_TYPE, "info");
         redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Borrow Deleted Successfully!");
-        return "redirect:/admin/repairs";
+        return "redirect:/admin/borrows";
     }
 
-    @PostMapping(value = "/admin/repairs/{id}/edit")
-    public String editRepair(@PathVariable Long id, Model model) {
+    @PostMapping(value = "/admin/borrows/{id}/edit")
+    public String editBorrow(@PathVariable Long id, Model model) {
         BorrowModel borrowModel = borrowService.findById(id).get();
         model.addAttribute(BORROW_FORM, new BorrowForm());
         model.addAttribute(BORROW, borrowModel);
-        return "pages/repair_edit";
+        return "pages/borrow_edit";
     }
 
-    @PostMapping(value = "/admin/repairs/edit")
-    public String editRepair(BorrowModel borrowModel, RedirectAttributes redirectAttrs) {
+    @PostMapping(value = "/admin/borrows/edit")
+    public String editBorrow(BorrowModel borrowModel, RedirectAttributes redirectAttrs) {
         borrowService.updateBorrow(borrowModel);
         redirectAttrs.addFlashAttribute(ALERT_TYPE, "success");
         redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Borrow Edited successfully!");
-        return "redirect:/admin/repairs";
+        return "redirect:/admin/borrows";
     }
 }

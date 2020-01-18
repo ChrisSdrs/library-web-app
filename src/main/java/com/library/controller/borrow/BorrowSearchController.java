@@ -29,13 +29,13 @@ public class BorrowSearchController {
     @Autowired
     private BorrowFormToBorrowMapper mapper;
 
-    @GetMapping(value = "/admin/repairs/search")
+    @GetMapping(value = "/admin/borrows/search")
     public String searchBorrows(Model model) {
         model.addAttribute(SEARCH_BORROWS_FORM, new BorrowSearchForm());
-        return "pages/repairs_search";
+        return "pages/borrows_search";
     }
 
-    @PostMapping(value = "/admin/repairs/search")
+    @PostMapping(value = "/admin/borrows/search")
     public String searchBorrows(Model model,
                                 @Valid @ModelAttribute(SEARCH_BORROWS_FORM)
                                         BorrowSearchForm borrowSearchForm,
@@ -44,7 +44,7 @@ public class BorrowSearchController {
         if (bindingResult.hasErrors()) {
             //have some error handling here, perhaps add extra error messages to the model
             model.addAttribute(ERROR_MESSAGE, "an error occurred");
-            return "pages/repairs_search";
+            return "pages/borrows_search";
         }
         String customerSsn = borrowSearchForm.getMember();
         LocalDate dateFrom = borrowSearchForm.getDateFrom();
@@ -53,7 +53,7 @@ public class BorrowSearchController {
         List<BorrowModel> borrows = getBorrowsFromSearch(customerSsn,dateFrom,dateTo);
         model.addAttribute(BORROW_LIST, borrows);
         model.addAttribute(SEARCH_BORROWS_FORM, borrowSearchForm);
-        return "pages/repairs_search_results";
+        return "pages/borrows_search_results";
     }
 
     private List<BorrowModel> getBorrowsFromSearch(String member, LocalDate dateFrom, LocalDate dateTo){

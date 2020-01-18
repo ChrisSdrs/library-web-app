@@ -31,14 +31,14 @@ public class BookCreateController {
     @Autowired
     private BookFormToBookMapper mapper;
 
-    @GetMapping(value = "/admin/properties/create")
+    @GetMapping(value = "/admin/books/create")
     public String createProperty(Model model) {
 
         model.addAttribute(BOOK_FORM, new BookForm());
-        return "pages/property_create";
+        return "pages/book_create";
     }
 
-    @PostMapping(value = "/admin/properties/create")
+    @PostMapping(value = "/admin/books/create")
     public String createProperty(Model model,
                                  @Valid @ModelAttribute(BOOK_FORM)
                                          BookForm bookForm,
@@ -47,7 +47,7 @@ public class BookCreateController {
         if (bindingResult.hasErrors()) {
             //have some error handling here, perhaps add extra error messages to the model
             model.addAttribute(ERROR_MESSAGE, "an error occurred");
-            return "pages/property_create";
+            return "pages/book_create";
         }
 
         Book book = mapper.toBook(bookForm);
@@ -56,15 +56,15 @@ public class BookCreateController {
                 bookService.createBook(book);
                 redirectAttrs.addFlashAttribute(ALERT_TYPE, "success");
                 redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Book Created Successfully!");
-                return "redirect:/admin/properties";
+                return "redirect:/admin/books";
             }
             else {
                 model.addAttribute(BOOK_CREATE_ERROR, isValidBook(book));
-                return "pages/property_create";
+                return "pages/book_create";
             }
         }else{
             model.addAttribute(BOOK_CREATE_ERROR, "Please fill all fields!");
-            return "pages/property_create";
+            return "pages/book_create";
         }
 
     }

@@ -16,7 +16,7 @@
 <h3 class="mb-3">Edit Property</h3>
 <div class="table-responsive">
 
-    <#include "../forms/propertyEditForm.ftlh" />
+    <#include "../forms/bookEditForm.ftlh" />
 </div>
 
 <#include "../partials/main_content_bottom.ftlh">

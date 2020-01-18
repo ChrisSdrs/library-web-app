@@ -16,7 +16,7 @@
 <h3 class="mb-3">Create Property</h3>
 <div class="table-responsive">
 
-    <#include "../forms/propertyCreateForm.ftlh" />
+    <#include "../forms/bookCreateForm.ftlh" />
 </div>
 
 <#include "../partials/main_content_bottom.ftlh">

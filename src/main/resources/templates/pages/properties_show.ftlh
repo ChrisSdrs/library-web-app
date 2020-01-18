@@ -16,7 +16,7 @@
 <h3 class="mb-3">Properties</h3>
 <div class="table-responsive">
 
-    <#include "../partials/properties_table.ftlh" />
+    <#include "../partials/books_table.ftlh" />
 </div>
 
 <!-- Modal -->

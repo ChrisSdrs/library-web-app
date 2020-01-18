@@ -1,9 +1,9 @@
-package com.library.controller.member;
+package com.library.controller.user;
 
 
-import com.library.forms.MemberEditForm;
-import com.library.model.MemberModel;
-import com.library.service.MemberService;
+import com.library.forms.UserEditForm;
+import com.library.model.UserModel;
+import com.library.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,35 +15,35 @@ import static com.library.utils.GlobalAttributes.ALERT_MESSAGE;
 import static com.library.utils.GlobalAttributes.ALERT_TYPE;
 
 @Controller
-    public class MemberEditController {
-        private static final String MEMBER_FORM = "memberEditForm";
-        private static final String MEMBER = "member";
+    public class UserEditController {
+        private static final String USER_FORM = "userEditForm";
+        private static final String USER = "user";
 
         @Autowired
-        private MemberService memberService;
+        private UserService userService;
 
 
         @PostMapping(value = "/admin/users/{id}/delete")
         public String deleteUser(@PathVariable Long id, RedirectAttributes redirectAttrs) {
-            memberService.deleteById(id);
+            userService.deleteById(id);
             redirectAttrs.addFlashAttribute(ALERT_TYPE, "info");
-            redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Member Deleted successfully!");
+            redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "User Deleted successfully!");
             return "redirect:/admin/users";
         }
 
         @PostMapping(value = "/admin/users/{id}/edit")
-        public String editMember(@PathVariable Long id, Model model) {
-            MemberModel memberModel = memberService.findById(id).get();
-            model.addAttribute(MEMBER_FORM, new MemberEditForm());
-            model.addAttribute(MEMBER, memberModel);
+        public String editUser(@PathVariable Long id, Model model) {
+            UserModel userModel = userService.findById(id).get();
+            model.addAttribute(USER_FORM, new UserEditForm());
+            model.addAttribute(USER, userModel);
             return "pages/user_edit";
         }
 
         @PostMapping(value = "/admin/users/edit")
-        public String editUser(MemberModel memberModel, RedirectAttributes redirectAttrs) {
-            memberService.updateMember(memberModel);
+        public String editUser(UserModel userModel, RedirectAttributes redirectAttrs) {
+            userService.updateUser(userModel);
             redirectAttrs.addFlashAttribute(ALERT_TYPE, "success");
-            redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Member Updated successfully!");
+            redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "User Updated successfully!");
 
             return "redirect:/admin/users";
         }

@@ -1,7 +1,7 @@
 package com.library;
 
 import com.library.authenticationhandler.LoginSuccessHandler;
-import com.library.service.MemberDetailsServiceImpl;
+import com.library.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -20,7 +20,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        return new MemberDetailsServiceImpl();
+        return new UserDetailsServiceImpl();
     }
 
     @Bean
@@ -52,7 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
                 .antMatchers("/login").anonymous()
-                .antMatchers("/member").authenticated()
+                .antMatchers("/user").authenticated()
                 .antMatchers("/home").authenticated()
                 .antMatchers("/admin/**").hasAuthority("Admin")
                 .and()

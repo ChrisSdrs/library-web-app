@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Members")
-public class Member {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -34,11 +34,11 @@ public class Member {
     @Column(name = "member_role")
     private String role;
 
-    public Member(){
+    public User(){
 
     }
 
-    public Member(Long id, String membNumber, String firstName, String lastName, String phone, String email, String username, String password, String role) {
+    public User(Long id, String membNumber, String firstName, String lastName, String phone, String email, String username, String password, String role) {
         this.id = id;
         this.membNumber = membNumber;
         this.firstName = firstName;
@@ -123,7 +123,7 @@ public class Member {
 
     public String toString(){
 
-        final StringBuilder sb = new StringBuilder("Member{");
+        final StringBuilder sb = new StringBuilder("User{");
         sb.append("id=").append(id);
         sb.append(", membership_number='").append(membNumber);
         sb.append(", name='").append(firstName);
