@@ -9,12 +9,12 @@
     </tr>
     </thead><tbody>
     <#if userProperties?has_content>
-        <#list userProperties as property>
+        <#list userProperties as book>
             <tr>
-                <td> ${property.pin}</td>
-                <td> ${property.address}</td>
-                <td> ${property.year}</td>
-                <td> ${property.type}</td>
+                <td> ${book.pin}</td>
+                <td> ${book.address}</td>
+                <td> ${book.year}</td>
+                <td> ${book.type}</td>
             </tr>
         </#list>
     </#if>

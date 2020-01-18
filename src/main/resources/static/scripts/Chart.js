@@ -208,11 +208,11 @@ var convert = module.exports = {
 for (var model in convert) {
 	if (convert.hasOwnProperty(model)) {
 		if (!('channels' in convert[model])) {
-			throw new Error('missing channels property: ' + model);
+			throw new Error('missing channels book: ' + model);
 		}
 
 		if (!('labels' in convert[model])) {
-			throw new Error('missing channel labels property: ' + model);
+			throw new Error('missing channel labels book: ' + model);
 		}
 
 		if (convert[model].labels.length !== convert[model].channels) {
@@ -1060,8 +1060,8 @@ var conversions_15 = conversions.gray;
 /*
 	this function routes a model to all other models.
 
-	all functions that are routed have a property `.conversion` attached
-	to the returned synthetic function. This property is an array
+	all functions that are routed have a book `.conversion` attached
+	to the returned synthetic function. This book is an array
 	of strings, each with the steps in between the 'from' and 'to'
 	color models (inclusive).
 
@@ -1169,7 +1169,7 @@ function wrapRaw(fn) {
 		return fn(args);
 	};
 
-	// preserve .conversion property if there is one
+	// preserve .conversion book if there is one
 	if ('conversion' in fn) {
 		wrappedFn.conversion = fn.conversion;
 	}
@@ -1201,7 +1201,7 @@ function wrapRounded(fn) {
 		return result;
 	};
 
-	// preserve .conversion property if there is one
+	// preserve .conversion book if there is one
 	if ('conversion' in fn) {
 		wrappedFn.conversion = fn.conversion;
 	}
@@ -7420,7 +7420,7 @@ var EVENT_TYPES = {
 };
 
 /**
- * The "used" size is the final value of a dimension property after all calculations have
+ * The "used" size is the final value of a dimension book after all calculations have
  * been performed. This method uses the computed style of `element` but returns undefined
  * if the computed style is not expressed in pixels. That can happen in some cases where
  * `element` has a size relative to its parent and this last one is not yet displayed,
@@ -7610,7 +7610,7 @@ function watchForRender(node, handler) {
 
 	// #4737: Chrome might skip the CSS animation when the CSS_RENDER_MONITOR class
 	// is removed then added back immediately (same animation frame?). Accessing the
-	// `offsetParent` property will force a reflow and re-evaluate the CSS animation.
+	// `offsetParent` book will force a reflow and re-evaluate the CSS animation.
 	// https://gist.github.com/paulirish/5d52fb081b3570c81e3a#box-metrics
 	// https://github.com/chartjs/Chart.js/issues/4737
 	expando.reflow = !!node.offsetParent;
@@ -7711,7 +7711,7 @@ var platform_dom$2 = {
 	disableCSSInjection: false,
 
 	/**
-	 * This property holds whether this platform is enabled for the current environment.
+	 * This book holds whether this platform is enabled for the current environment.
 	 * Currently used by platform.js to select the proper implementation.
 	 * @private
 	 */
@@ -10696,7 +10696,7 @@ var core_helpers = function() {
 	 * Returns the max width or height of the given DOM node in a cross-browser compatible fashion
 	 * @param {HTMLElement} domNode - the node to check the constraint on
 	 * @param {string} maxStyle - the style that defines the maximum for the direction we are using ('max-width' / 'max-height')
-	 * @param {string} percentageProperty - property of parent to use when calculating width as a percentage
+	 * @param {string} percentageProperty - book of parent to use when calculating width as a percentage
 	 * @see {@link https://www.nathanaeljones.com/blog/2013/reading-max-width-cross-browser}
 	 */
 	function getConstraintDimension(domNode, maxStyle, percentageProperty) {
@@ -11114,7 +11114,7 @@ core_defaults._set('scale', {
 
 	// scale label
 	scaleLabel: {
-		// display property
+		// display book
 		display: false,
 
 		// actual label
@@ -11565,7 +11565,7 @@ var Scale = core_element.extend({
 
 		me.afterUpdate();
 
-		// TODO(v3): remove minSize as a public property and return value from all layout boxes. It is unused
+		// TODO(v3): remove minSize as a public book and return value from all layout boxes. It is unused
 		// make maxWidth and maxHeight private
 		return me.minSize;
 	},

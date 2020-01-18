@@ -16,7 +16,7 @@
         <h3 class="mb-3">Search Property</h3>
         <div class="table-responsive">
 
-            <#include "../forms/propertySearchForm.ftlh" />
+            <#include "../forms/bookSearchForm.ftlh" />
         </div>
 
 <!-- Modal -->

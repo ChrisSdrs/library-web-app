@@ -168,7 +168,7 @@
                     </#if>
                 ">
                     <a class="nav-link" href="/admin/properties/search">
-                        <img src="https://img.icons8.com/ios-filled/50/000000/search-property.png" class="nav-link-icon">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/search-book.png" class="nav-link-icon">
                         <div class="sidebar-link-text">Search Property</div>
                     </a>
                 </li>

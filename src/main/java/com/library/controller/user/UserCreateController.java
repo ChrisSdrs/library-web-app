@@ -102,13 +102,12 @@ import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
 
             String firstName = user.getFirstName();
             String lastName = user.getLastName();
-            String address = user.getAddress();
             String phone = user.getPhone();
             String email = user.getEmail();
             String username = user.getUsername();
             String password = user.getPassword();
             String role = user.getRole();
-            if (ssn.isEmpty() || email.isEmpty() || firstName.isEmpty() || lastName.isEmpty() || address.isEmpty() || phone.isEmpty() || username.isEmpty() || password == null || role.isEmpty()){
+            if (ssn.isEmpty() || email.isEmpty() || firstName.isEmpty() || lastName.isEmpty() || phone.isEmpty() || username.isEmpty() || password == null || role.isEmpty()){
                 isValid = false;
             }
 

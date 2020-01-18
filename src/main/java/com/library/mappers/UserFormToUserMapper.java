@@ -13,7 +13,6 @@ public class UserFormToUserMapper {
         user.setSsn(userCreateForm.getSsn());
         user.setFirstName(userCreateForm.getFirstName());
         user.setLastName(userCreateForm.getLastName());
-        user.setAddress(userCreateForm.getAddress());
         user.setPhone(userCreateForm.getPhone());
         user.setEmail(userCreateForm.getEmail());
         user.setUsername(userCreateForm.getUsername());

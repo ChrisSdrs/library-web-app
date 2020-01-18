@@ -1,8 +1,8 @@
-package com.library.controller.property;
+package com.library.controller.book;
 
-import com.library.forms.PropertyForm;
-import com.library.model.PropertyModel;
-import com.library.service.PropertyService;
+import com.library.forms.BookForm;
+import com.library.model.BookModel;
+import com.library.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,36 +14,36 @@ import static com.library.utils.GlobalAttributes.ALERT_MESSAGE;
 import static com.library.utils.GlobalAttributes.ALERT_TYPE;
 
 @Controller
-public class PropertyEditController {
+public class BookEditController {
 
 
-    private static final String PROPERTY_FORM = "propertyForm";
-    private static final String PROPERTY = "property";
+    private static final String BOOK_FORM = "bookForm";
+    private static final String BOOK = "book";
 
     @Autowired
-    private PropertyService propertyService;
+    private BookService bookService;
 
     @PostMapping(value = "/admin/properties/{id}/edit")
     public String editProperty(@PathVariable Long id, Model model, RedirectAttributes redirectAttrs) {
-        PropertyModel propertyModel = propertyService.findById(id).get();
-        model.addAttribute(PROPERTY_FORM, new PropertyForm());
-        model.addAttribute(PROPERTY, propertyModel);
+        BookModel bookModel = bookService.findById(id).get();
+        model.addAttribute(BOOK_FORM, new BookForm());
+        model.addAttribute(BOOK, bookModel);
         redirectAttrs.addFlashAttribute(ALERT_TYPE, "success");
-        redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Property Edited successfully!");
+        redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Book Edited successfully!");
         return "pages/property_edit";
     }
 
     @PostMapping(value = "/admin/properties/edit")
-    public String editProperty(PropertyModel propertyModel) {
-        propertyService.updateProperty(propertyModel);
+    public String editProperty(BookModel bookModel) {
+        bookService.updateBook(bookModel);
         return "redirect:/admin/properties";
     }
 
     @PostMapping(value = "/admin/properties/{id}/delete")
     public String deleteProperty(@PathVariable Long id, RedirectAttributes redirectAttrs) {
-        propertyService.deleteById(id);
+        bookService.deleteById(id);
         redirectAttrs.addFlashAttribute(ALERT_TYPE, "info");
-        redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Property Deleted successfully!");
+        redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Book Deleted successfully!");
         return "redirect:/admin/properties";
     }
 }

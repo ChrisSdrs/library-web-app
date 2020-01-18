@@ -30,7 +30,6 @@ public class UserServiceImpl implements UserService {
         User originalUser = userRepository.findById(userModel.getId()).get();
         originalUser.setUsername(userModel.getUsername());
         originalUser.setFirstName(userModel.getFirstName());
-        originalUser.setAddress(userModel.getAddress());
         originalUser.setEmail(userModel.getEmail());
         originalUser.setLastName(userModel.getLastName());
         originalUser.setPhone(userModel.getPhone());

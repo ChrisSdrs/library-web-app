@@ -13,17 +13,11 @@ public class User {
     @Column(name = "user_ssn", unique = true,  nullable = false)
     private String ssn;
 
-    @Column(name = "user_grade")
-    private String grade;
-
     @Column(name = "user_first_name")
     private String firstName;
 
     @Column(name = "user_last_name")
     private String lastName;
-
-    @Column(name = "user_address")
-    private String address;
 
     @Column(name = "user_phone")
     private String phone;
@@ -49,7 +43,6 @@ public class User {
         this.ssn = ssn;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.address = address;
         this.phone = phone;
         this.email = email;
         this.username = username;
@@ -87,14 +80,6 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public String getPhone() {
@@ -145,7 +130,6 @@ public class User {
         sb.append(", ssn='").append(ssn);
         sb.append(", name='").append(firstName);
         sb.append(", lastname=").append(lastName);
-        sb.append(", address=").append(address);
         sb.append(", phone=").append(phone);
         sb.append(", email=").append(email);
         sb.append(", username=").append(username);

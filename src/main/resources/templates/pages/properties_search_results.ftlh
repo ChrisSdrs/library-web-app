@@ -15,7 +15,7 @@
 
             <h3 class="mb-3">Search Property</h3>
             <div class="table-responsive">
-                <#include "../forms/propertySearchForm.ftlh" />
+                <#include "../forms/bookSearchForm.ftlh" />
                 <div class="Dynamic-Load">
                     <#include "../partials/properties_table.ftlh" />
                 </div>
