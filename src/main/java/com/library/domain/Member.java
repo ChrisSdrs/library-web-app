@@ -3,44 +3,44 @@ package com.library.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Customer")
-public class Customer {
+@Table(name = "Members")
+public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "user_ssn", unique = true,  nullable = false)
-    private String ssn;
+    @Column(name = "membership_number", unique = true,  nullable = false)
+    private String membNumber;
 
-    @Column(name = "user_first_name")
+    @Column(name = "member_first_name")
     private String firstName;
 
-    @Column(name = "user_last_name")
+    @Column(name = "member_last_name")
     private String lastName;
 
-    @Column(name = "user_phone")
+    @Column(name = "member_phone")
     private String phone;
 
-    @Column(name = "user_email")
+    @Column(name = "member_email")
     private String email;
 
-    @Column(name = "user_username")
+    @Column(name = "member_username")
     private String username;
 
-    @Column(name = "user_password")
+    @Column(name = "member_password")
     private String password;
 
-    @Column(name = "user_role")
+    @Column(name = "member_role")
     private String role;
 
-    public Customer(){
+    public Member(){
 
     }
 
-    public Customer(Long id, String ssn, String firstName, String lastName, String address, String phone, String email, String username, String password, String role) {
+    public Member(Long id, String membNumber, String firstName, String lastName, String phone, String email, String username, String password, String role) {
         this.id = id;
-        this.ssn = ssn;
+        this.membNumber = membNumber;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
@@ -58,17 +58,15 @@ public class Customer {
         this.id = id;
     }
 
-    public String getSsn() {
-        return ssn;
+    public String getMembNumber() {
+        return membNumber;
     }
 
-    public void setSsn(String ssn) {
-        this.ssn = ssn;
+    public void setMembNumber(String membNumber) {
+        this.membNumber = membNumber;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
+    public String getFirstName() { return firstName; }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -125,9 +123,9 @@ public class Customer {
 
     public String toString(){
 
-        final StringBuilder sb = new StringBuilder("Customer{");
+        final StringBuilder sb = new StringBuilder("Member{");
         sb.append("id=").append(id);
-        sb.append(", ssn='").append(ssn);
+        sb.append(", membership_number='").append(membNumber);
         sb.append(", name='").append(firstName);
         sb.append(", lastname=").append(lastName);
         sb.append(", phone=").append(phone);

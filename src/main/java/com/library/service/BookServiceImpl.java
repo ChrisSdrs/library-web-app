@@ -72,6 +72,14 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    public List<BookModel> findByMember(String member) {
+        return bookRepository.findByCategory(member)
+                .stream()
+                .map(book -> mapper.mapToBookModel(book))
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public List<BookModel> findByPinAndCategory(String pin, String category) {
         return bookRepository.findByPinAndCategory(pin, category)
                 .stream()

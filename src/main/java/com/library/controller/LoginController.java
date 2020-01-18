@@ -1,7 +1,7 @@
 package com.library.controller;
 
 import com.library.forms.LoginForm;
-import com.library.service.UserService;
+import com.library.service.MemberService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ public class LoginController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private UserService userService;
+    private MemberService memberService;
 
 
     @GetMapping(value = "/login")
@@ -55,7 +55,7 @@ public class LoginController {
     }
 
     private boolean tryLoginAuthentication(String username, String password){
-        return userService.findByUsernameAndPassword(username,password).isPresent();
+        return memberService.findByUsernameAndPassword(username,password).isPresent();
 
     }
 

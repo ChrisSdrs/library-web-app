@@ -10,7 +10,7 @@ public class BorrowModel {
     LocalDate date;
     String status;
     String bookPin;
-    String customerSsn;
+    String member;
 
     public long getId() {
         return id;
@@ -40,27 +40,27 @@ public class BorrowModel {
         return bookPin;
     }
 
-    public void setBookPin(String bookTitle) {
+    public void setBookPin(String bookPin) {
         this.bookPin = bookPin;
     }
 
-    public String getCustomerSsn() {
-        return customerSsn;
+    public String getMember() {
+        return member;
     }
 
-    public void setCustomerSsn(String customerSsn) {
-        this.customerSsn = customerSsn;
+    public void setMember(String member) {
+        this.member = member;
     }
 
     public BorrowModel() {
     }
 
-    public BorrowModel(long id, LocalDate date, String status, String bookPin, String customerSsn) {
+    public BorrowModel(long id, LocalDate date, String status, String bookPin, String member) {
         this.id = id;
         this.date = date;
         this.status = status;
         this.bookPin = bookPin;
-        this.customerSsn = customerSsn;
+        this.member = member;
     }
 
     public String toString(){
@@ -69,7 +69,7 @@ public class BorrowModel {
         sb.append(", borrowDate=").append(date);
         sb.append(", status=").append(status);
         sb.append(", bookPin=").append(bookPin);
-        sb.append(", customerSsn=").append(customerSsn);
+        sb.append(", membership_number=").append(member);
         sb.append('}');
         return sb.toString();
     }

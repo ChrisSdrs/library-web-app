@@ -23,6 +23,8 @@ public interface BookService {
 
     List<BookModel> findByPin(String pin);
 
+    List<BookModel> findByMember(String member);
+
     List<BookModel> findByCategory(String category);
 
     List<BookModel> findByPinAndCategory(String pin, String category);

@@ -21,14 +21,14 @@ public class BorrowController {
     private BorrowService borrowService;
 
     @GetMapping(value = "/admin/repairs")
-    public String repairs(Model model) {
+    public String borrows(Model model) {
         List<BorrowModel> borrows = borrowService.findAll();
         model.addAttribute(BORROW_LIST, borrows);
         return "pages/repairs_show";
     }
 
     @GetMapping(value = "/admin")
-    public String repairsToday(Model model) {
+    public String borrowsToday(Model model) {
         LocalDate dateToday = LocalDate.now();
         List<BorrowModel> borrows = borrowService.findTop10ByDateOrderByDateAsc(dateToday);
         model.addAttribute(BORROW_LIST, borrows);

@@ -22,8 +22,8 @@ public class Borrow {
     @Column(name = "book_pin")
     private String bookPin;
 
-    @Column(name = "customer_ssn")
-    private String customerSsn;
+    @Column(name = "members_mn")
+    private String member;
 
 
     public Long getId() {
@@ -58,12 +58,12 @@ public class Borrow {
         this.bookPin = bookPin;
     }
 
-    public String getCustomerSsn() {
-        return customerSsn;
+    public String getMember() {
+        return member;
     }
 
-    public void setCustomerSsn(String customerSsn) {
-        this.customerSsn = customerSsn;
+    public void setMember(String member) {
+        this.member = member;
     }
 
     public Borrow(){
@@ -71,11 +71,11 @@ public class Borrow {
     }
 
 
-    public Borrow(LocalDate date, String status, String bookPin, String customerSsn) {
+    public Borrow(LocalDate date, String status, String bookPin, String member) {
         this.date = date;
         this.status = status;
         this.bookPin = bookPin;
-        this.customerSsn = customerSsn;
+        this.member = member;
     }
 
     public String toString(){
@@ -84,7 +84,7 @@ public class Borrow {
         sb.append(", borrow_date='").append(date);
         sb.append(", status='").append(status);
         sb.append(", book_pin=").append(bookPin);
-        sb.append(", customer_ssn=").append(customerSsn);
+        sb.append(", membership_number=").append(member);
         sb.append('}');
         return sb.toString();
     }

@@ -1,15 +1,13 @@
 package com.library.forms;
 
 
-public class UserCreateForm {
+public class MemberEditForm {
 
-    private String ssn;
+    private String membNumber;
 
     private String firstName;
 
     private String lastName;
-
-    private String address;
 
     private String phone;
 
@@ -17,17 +15,15 @@ public class UserCreateForm {
 
     private String username;
 
-    private String password;
-
     private String role;
 
 
-    public String getSsn() {
-        return ssn;
+    public String getMembNumber() {
+        return membNumber;
     }
 
-    public void setSsn(String ssn) {
-        this.ssn = ssn;
+    public void setMembNumber(String membNumber) {
+        this.membNumber = membNumber;
     }
 
     public String getFirstName() {
@@ -44,14 +40,6 @@ public class UserCreateForm {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public String getPhone() {
@@ -78,19 +66,24 @@ public class UserCreateForm {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getRole() {
         return role;
     }
 
     public void setRole(String role) {
+        this.role = role;
+    }
+
+    public MemberEditForm() {
+    }
+
+    public MemberEditForm(String membNumber, String firstName, String lastName, String phone, String email, String username, String role) {
+        this.membNumber = membNumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.email = email;
+        this.username = username;
         this.role = role;
     }
 }

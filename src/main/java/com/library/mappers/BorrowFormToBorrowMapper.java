@@ -12,7 +12,7 @@ public class BorrowFormToBorrowMapper {
         borrow.setId(borrowForm.getId());
         borrow.setDate(borrowForm.getDate());
         borrow.setStatus(borrowForm.getStatus());
-        borrow.setCustomerSsn(borrowForm.getCustomerSsn());
+        borrow.setMember(borrowForm.getMember());
         borrow.setBookPin(borrowForm.getBookPin());
         return borrow;
 

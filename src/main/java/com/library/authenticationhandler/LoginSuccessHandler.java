@@ -20,7 +20,7 @@ import static com.library.utils.GlobalAttributes.TIMESTAMP_COOKIE_NAME;
 @Component
 public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
 
-    private static final String USER_HOME_PAGE_URL = "/user";
+    private static final String USER_HOME_PAGE_URL = "/member";
     private static final String ADMIN_HOME_PAGE_URL = "/admin";
 
     private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();

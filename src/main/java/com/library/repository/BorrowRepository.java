@@ -17,7 +17,7 @@ public interface BorrowRepository extends JpaRepository<Borrow, Long> {
 
     List<Borrow> findAll();
 
-    List<Borrow> findByCustomerSsn(String customerSsn);
+    List<Borrow> findByMember(String member);
 
     List<Borrow> findByBookPin(String bookPin);
 
@@ -25,13 +25,13 @@ public interface BorrowRepository extends JpaRepository<Borrow, Long> {
 
     List<Borrow> findByDateBefore(LocalDate dateBefore);
 
-    List<Borrow> findByCustomerSsnAndDateAfter(String customerSsn, LocalDate dateAfter);
+    List<Borrow> findByMemberAndDateAfter(String member, LocalDate dateAfter);
 
-    List<Borrow> findByCustomerSsnAndDateBefore(String customerSsn, LocalDate dateBefore);
+    List<Borrow> findByMemberAndDateBefore(String member, LocalDate dateBefore);
 
     List<Borrow> findByDateBetween(LocalDate dateBefore, LocalDate dateAfter);
 
-    List<Borrow> findByCustomerSsnAndDateBetween(String customerSsn, LocalDate dateBefore, LocalDate dateAfter);
+    List<Borrow> findByMemberAndDateBetween(String member, LocalDate dateBefore, LocalDate dateAfter);
 
     List<Borrow> findTop10ByDateOrderByDateAsc(LocalDate date);
 

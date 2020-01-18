@@ -12,7 +12,7 @@ public class BorrowToBorrowModelMapper {
         borrowModel.setId(borrow.getId());
         borrow.setDate(borrow.getDate());
         borrow.setStatus(borrow.getStatus());
-        borrow.setCustomerSsn(borrow.getCustomerSsn());
+        borrow.setMember(borrow.getMember());
         borrow.setBookPin(borrow.getBookPin());
         return borrowModel;
     }

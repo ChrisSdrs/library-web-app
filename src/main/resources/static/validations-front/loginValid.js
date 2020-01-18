@@ -1,5 +1,5 @@
 jQuery(function ($){
-    $('#create-user').validate({
+    $('#create-member').validate({
         rules: {
             username: {
                 required: true
