@@ -1,7 +1,7 @@
 package com.library.controller.user;
 
-import com.library.model.UserModel;
-import com.library.service.UserService;
+import com.library.model.MemberModel;
+import com.library.service.MemberService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +21,11 @@ public class UserController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private UserService userService;
+    private MemberService memberService;
 
     @GetMapping(value="/admin/users")
     public String users(Model model, @ModelAttribute(ALERT_TYPE) String alertType, @ModelAttribute(ALERT_MESSAGE) String alertMessage) {
-        List<UserModel> users = userService.findByRole("Owner");
+        List<MemberModel> users = memberService.findByRole("Owner");
         model.addAttribute(USER_LIST, users);
         model.addAttribute(ALERT_TYPE, alertType);
         model.addAttribute(ALERT_MESSAGE, alertMessage);
@@ -33,18 +33,18 @@ public class UserController {
     }
 
     public void FindAll(){
-        userService.findAll().forEach(users -> logger.info(users.toString()));
+        memberService.findAll().forEach(users -> logger.info(users.toString()));
     }
 
     public void FindBySsn(String ssn){
-        userService.findBySsn(ssn).forEach(users -> logger.info(users.toString()));
+        memberService.findBySsn(ssn).forEach(users -> logger.info(users.toString()));
     }
 
     public void FindByEmail(String email){
-        userService.findByEmail(email).forEach(users -> logger.info(users.toString()));
+        memberService.findByEmail(email).forEach(users -> logger.info(users.toString()));
     }
 
     public void FindBySsnAndEmail(String ssn, String email){
-        userService.findBySsnAndEmail(ssn, email).forEach(users -> logger.info(users.toString()));
+        memberService.findBySsnAndEmail(ssn, email).forEach(users -> logger.info(users.toString()));
     }
 }

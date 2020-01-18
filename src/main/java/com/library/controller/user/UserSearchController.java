@@ -1,9 +1,9 @@
 package com.library.controller.user;
 
 import com.library.forms.UserSearchForm;
-import com.library.mappers.UserFormToUserMapper;
-import com.library.model.UserModel;
-import com.library.service.UserService;
+import com.library.mappers.MemberFormToMemberMapper;
+import com.library.model.MemberModel;
+import com.library.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,10 +24,10 @@ public class UserSearchController {
     private static final String USER_LIST = "users";
 
     @Autowired
-    private UserService userService;
+    private MemberService memberService;
 
     @Autowired
-    private UserFormToUserMapper mapper;
+    private MemberFormToMemberMapper mapper;
 
     @GetMapping(value = "/admin/users/search")
     public String searchUsers(Model model) {
@@ -50,26 +50,26 @@ public class UserSearchController {
         String email = userSearchForm.getEmail();
 
 
-        List<UserModel> users = getUsersFromSearch(ssn,email);
+        List<MemberModel> users = getUsersFromSearch(ssn,email);
         model.addAttribute(USER_LIST, users);
         model.addAttribute(USER_SEARCH_FORM, userSearchForm);
         return "pages/users_search_results";
     }
 
-    private List<UserModel> getUsersFromSearch(String ssn, String email){
+    private List<MemberModel> getUsersFromSearch(String ssn, String email){
         if (ssn != "" && email != ""){
 
-            return userService.findBySsnAndEmail(ssn, email);
+            return memberService.findBySsnAndEmail(ssn, email);
 
         }else if (ssn != "" && email == ""){
 
-            return userService.findBySsn(ssn);
+            return memberService.findBySsn(ssn);
 
         }else if (ssn == "" && email != ""){
 
-            return userService.findByEmail(email);
+            return memberService.findByEmail(email);
 
-        } else return userService.findByRole("Owner");
+        } else return memberService.findByRole("Owner");
     }
 
 }

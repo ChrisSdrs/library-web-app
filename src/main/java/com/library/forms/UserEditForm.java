@@ -3,13 +3,11 @@ package com.library.forms;
 
 public class UserEditForm {
 
-    private String ssn;
+    private String membNumber;
 
     private String firstName;
 
     private String lastName;
-
-    private String address;
 
     private String phone;
 
@@ -20,12 +18,12 @@ public class UserEditForm {
     private String role;
 
 
-    public String getSsn() {
-        return ssn;
+    public String getMembNumber() {
+        return membNumber;
     }
 
-    public void setSsn(String ssn) {
-        this.ssn = ssn;
+    public void setMembNumber(String membNumber) {
+        this.membNumber = membNumber;
     }
 
     public String getFirstName() {
@@ -42,14 +40,6 @@ public class UserEditForm {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public String getPhone() {
@@ -87,11 +77,10 @@ public class UserEditForm {
     public UserEditForm() {
     }
 
-    public UserEditForm(String ssn, String firstName, String lastName, String address, String phone, String email, String username, String role) {
-        this.ssn = ssn;
+    public UserEditForm(String membNumber, String firstName, String lastName, String phone, String email, String username, String role) {
+        this.membNumber = membNumber;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.address = address;
         this.phone = phone;
         this.email = email;
         this.username = username;

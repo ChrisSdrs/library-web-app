@@ -1,9 +1,9 @@
 package com.library.model;
 
-public class UserModel {
+public class MemberModel {
 
     private Long id;
-    private String ssn;
+    private String membNumber;
     private String firstName;
     private String lastName;
     private String address;
@@ -20,12 +20,12 @@ public class UserModel {
         this.id = id;
     }
 
-    public String getSsn() {
-        return ssn;
+    public String getMembNumber() {
+        return membNumber;
     }
 
-    public void setSsn(String ssn) {
-        this.ssn = ssn;
+    public void setMembNumber(String membNumber) {
+        this.membNumber = membNumber;
     }
 
     public String getFirstName() {
@@ -84,16 +84,15 @@ public class UserModel {
         this.role = role;
     }
 
-    public UserModel(){
+    public MemberModel(){
 
     }
 
-    public UserModel(Long id, String ssn, String firstName, String lastName, String address, String phone, String email, String username, String role) {
+    public MemberModel(Long id, String membNumber, String firstName, String lastName, String address, String phone, String email, String username, String role) {
         this.id = id;
-        this.ssn = ssn;
+        this.membNumber = membNumber;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.address = address;
         this.phone = phone;
         this.email = email;
         this.username = username;
@@ -102,12 +101,11 @@ public class UserModel {
 
     @Override
     public String toString() {
-        return "UserModel{" +
+        return "MemberModel{" +
                 "id=" + id +
-                ", ssn='" + ssn + '\'' +
+                ", membership_number='" + membNumber + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 ", username='" + username + '\'' +

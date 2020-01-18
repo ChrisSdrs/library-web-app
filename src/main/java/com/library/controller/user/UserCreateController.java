@@ -1,9 +1,9 @@
 package com.library.controller.user;
 
-import com.library.domain.Customer;
+import com.library.domain.Member;
 import com.library.forms.UserCreateForm;
-import com.library.mappers.UserFormToUserMapper;
-import com.library.service.UserService;
+import com.library.mappers.MemberFormToMemberMapper;
+import com.library.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -27,10 +27,10 @@ import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
         private static final String USER_CREATE_ERROR = "userCreateError";
 
         @Autowired
-        private UserService userService;
+        private MemberService memberService;
 
         @Autowired
-        private UserFormToUserMapper mapper;
+        private MemberFormToMemberMapper mapper;
 
         @GetMapping(value = "/admin/users/create")
         public String usersDynamic(Model model) {
@@ -51,20 +51,20 @@ import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
                 return "pages/user_create";
             }
 
-            Customer customer = mapper.toUser(userCreateForm);
-            if (isValidUserEmptyFields(customer)) {
-                if (isValidUser(customer) == "") {
+            Member member = mapper.toUser(userCreateForm);
+            if (isValidUserEmptyFields(member)) {
+                if (isValidUser(member) == "") {
                     BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-                    String password = customer.getPassword();
+                    String password = member.getPassword();
                     String encodedPW = encoder.encode(password);
-                    customer.setPassword(encodedPW);
-                    userService.createUser(customer);
+                    member.setPassword(encodedPW);
+                    memberService.createUser(member);
                     redirectAttrs.addFlashAttribute(ALERT_TYPE, "success");
-                    redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Customer Created Successfully!");
+                    redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Member Created Successfully!");
                     return "redirect:/admin/users";
                 } else {
                     model.addAttribute(USERS_FORM, userCreateForm);
-                    model.addAttribute(USER_CREATE_ERROR, isValidUser(customer));
+                    model.addAttribute(USER_CREATE_ERROR, isValidUser(member));
 
                     return "pages/user_create";
                 }
@@ -75,19 +75,19 @@ import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
             }
         }
 
-        private String isValidUser(Customer customer) {
+        private String isValidUser(Member member) {
             String result = "";
-            String ssn = customer.getSsn();
-            String email = customer.getEmail();
-            String username = customer.getUsername();
-            //Customer provided is not Valid if any of the ssn,email,username already exists
-            if (!userService.findBySsn(ssn).isEmpty()) {
+            String ssn = member.getSsn();
+            String email = member.getEmail();
+            String username = member.getUsername();
+            //Member provided is not Valid if any of the ssn,email,username already exists
+            if (!memberService.findBySsn(ssn).isEmpty()) {
                 result += "Ssn Already Exists. ";
             }
-            if (!userService.findByEmail(email).isEmpty()) {
+            if (!memberService.findByEmail(email).isEmpty()) {
                 result += "Email Already Exists. ";
             }
-            if (!userService.findByUsername(username).isEmpty()) {
+            if (!memberService.findByUsername(username).isEmpty()) {
                 result += "Username Already Exists. ";
             }
 
@@ -96,17 +96,17 @@ import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
 
         }
 
-        private boolean isValidUserEmptyFields(Customer customer){
+        private boolean isValidUserEmptyFields(Member member){
             boolean isValid   = true;
-            String ssn = customer.getSsn();
+            String ssn = member.getSsn();
 
-            String firstName = customer.getFirstName();
-            String lastName = customer.getLastName();
-            String phone = customer.getPhone();
-            String email = customer.getEmail();
-            String username = customer.getUsername();
-            String password = customer.getPassword();
-            String role = customer.getRole();
+            String firstName = member.getFirstName();
+            String lastName = member.getLastName();
+            String phone = member.getPhone();
+            String email = member.getEmail();
+            String username = member.getUsername();
+            String password = member.getPassword();
+            String role = member.getRole();
             if (ssn.isEmpty() || email.isEmpty() || firstName.isEmpty() || lastName.isEmpty() || phone.isEmpty() || username.isEmpty() || password == null || role.isEmpty()){
                 isValid = false;
             }

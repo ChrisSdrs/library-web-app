@@ -3,13 +3,11 @@ package com.library.forms;
 
 public class UserCreateForm {
 
-    private String ssn;
+    private String membNumber;
 
     private String firstName;
 
     private String lastName;
-
-    private String address;
 
     private String phone;
 
@@ -22,12 +20,12 @@ public class UserCreateForm {
     private String role;
 
 
-    public String getSsn() {
-        return ssn;
+    public String getMembNumber() {
+        return membNumber;
     }
 
-    public void setSsn(String ssn) {
-        this.ssn = ssn;
+    public void setMembNumber(String membNumber) {
+        this.membNumber = membNumber;
     }
 
     public String getFirstName() {
@@ -44,14 +42,6 @@ public class UserCreateForm {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public String getPhone() {

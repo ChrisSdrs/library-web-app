@@ -3,10 +3,10 @@
 //import com.library.model.BookModel;
 //import com.library.model.BorrowModel;
 //import com.library.model.ReportModel;
-//import com.library.model.UserModel;
+//import com.library.model.MemberModel;
 //import com.library.service.BookService;
 //import com.library.service.RepairService;
-//import com.library.service.UserService;
+//import com.library.service.MemberService;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.core.context.SecurityContextHolder;
 //import org.springframework.stereotype.Controller;
@@ -24,7 +24,7 @@
 //    private static final String REPORT_MODEL = "reportModel";
 //
 //    @Autowired
-//    private UserService userService;
+//    private MemberService userService;
 //
 //    @Autowired
 //    private BookService bookService;
@@ -36,7 +36,7 @@
 //    public String repairsToday(Model model) {
 //        String username = SecurityContextHolder.getContext().getAuthentication().getName();
 //
-//        UserModel userDetails = userService.findByUsername(username).get();
+//        MemberModel userDetails = userService.findByUsername(username).get();
 //        String ssn = userDetails.getSsn();
 //        List<BookModel> userProperties = bookService.findByOwner(ssn);
 //

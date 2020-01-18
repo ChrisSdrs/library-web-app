@@ -2,15 +2,15 @@ package com.library.forms;
 
 public class UserSearchForm {
 
-    String ssn;
+    String membNumber;
     String email;
 
-    public String getSsn() {
-        return ssn;
+    public String getMembNumber() {
+        return membNumber;
     }
 
-    public void setSsn(String ssn) {
-        this.ssn = ssn;
+    public void setMembNumber(String membNumber) {
+        this.membNumber = membNumber;
     }
 
     public String getEmail() {
@@ -24,8 +24,8 @@ public class UserSearchForm {
     public UserSearchForm() {
     }
 
-    public UserSearchForm(String ssn, String email) {
-        this.ssn = ssn;
+    public UserSearchForm(String membNumber, String email) {
+        this.membNumber = membNumber;
         this.email = email;
     }
 }
