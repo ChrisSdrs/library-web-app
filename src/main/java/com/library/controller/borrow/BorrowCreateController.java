@@ -1,9 +1,9 @@
-package com.library.controller.repair;
+package com.library.controller.borrow;
 
-import com.library.domain.Repair;
-import com.library.forms.RepairForm;
-import com.library.mappers.RepairFormToRepairMapper;
-import com.library.service.RepairService;
+import com.library.domain.Borrow;
+import com.library.forms.BorrowForm;
+import com.library.mappers.BorrowFormToBorrowMapper;
+import com.library.service.BorrowService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,27 +21,27 @@ import static com.library.utils.GlobalAttributes.ALERT_TYPE;
 import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
 
 @Controller
-public class RepairCreateController {
-    private static final String REPAIRS_FORM = "repairForm";
-    private static final String REPAIR_CREATE_ERROR = "repairCreateError";
+public class BorrowCreateController {
+    private static final String BORROWS_FORM = "borrowForm";
+    private static final String BORROW_CREATE_ERROR = "borrowCreateError";
 
     @Autowired
-    private RepairService repairService;
+    private BorrowService borrowService;
 
     @Autowired
-    private RepairFormToRepairMapper mapper;
+    private BorrowFormToBorrowMapper mapper;
 
     @GetMapping(value = "/admin/repairs/create")
     public String createRepairs(Model model) {
 
-        model.addAttribute(REPAIRS_FORM, new RepairForm());
+        model.addAttribute(BORROWS_FORM, new BorrowForm());
         return "pages/repairs_create";
     }
 
     @PostMapping(value = "/admin/repairs/create")
     public String createRepairs(Model model,
-                                @Valid @ModelAttribute(REPAIRS_FORM)
-                  RepairForm repairForm,
+                                @Valid @ModelAttribute(BORROWS_FORM)
+                                        BorrowForm borrowForm,
                                 BindingResult bindingResult, RedirectAttributes redirectAttrs) {
 
         if (bindingResult.hasErrors()) {
@@ -49,29 +49,27 @@ public class RepairCreateController {
             model.addAttribute(ERROR_MESSAGE, "an error occurred");
             return "pages/repairs_create";
         }
-        Repair repair = mapper.mapToRepairModel(repairForm);
-        if (isValidRepairEmptyFields(repair)){
-            repairService.createRepair(repair);
+        Borrow borrow = mapper.mapToRepairModel(borrowForm);
+        if (isValidRepairEmptyFields(borrow)){
+            borrowService.createBorrow(borrow);
             redirectAttrs.addFlashAttribute(ALERT_TYPE, "success");
-            redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Repair Created Successfully!");
+            redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Borrow Created Successfully!");
             return "redirect:/admin/repairs";
         }
         else {
-            model.addAttribute(REPAIRS_FORM, repairForm);
-            model.addAttribute(REPAIR_CREATE_ERROR, "Please fill all fields!");
+            model.addAttribute(BORROWS_FORM, borrowForm);
+            model.addAttribute(BORROW_CREATE_ERROR, "Please fill all fields!");
             return "pages/repairs_create";
         }
     }
 
-    private boolean isValidRepairEmptyFields(Repair repair){
+    private boolean isValidRepairEmptyFields(Borrow borrow){
         boolean isValid   = true;
-        LocalDate date = repair.getDate();
-        String status = repair.getStatus();
-        String type = repair.getType();
-        double cost = repair.getCost();
-        String address = repair.getAddress();
-        String owner = repair.getOwner();
-        if (date == null || status.isEmpty() || type.isEmpty() || cost == 0.0  || address.isEmpty() || owner.isEmpty() ){
+        LocalDate date = borrow.getDate();
+        String status = borrow.getStatus();
+        String customerSsn = borrow.getCustomerSsn();
+        String bookPin = borrow.getBookPin();
+        if (date == null || status.isEmpty() || customerSsn.isEmpty() || bookPin.isEmpty() ){
             isValid = false;
         }
 

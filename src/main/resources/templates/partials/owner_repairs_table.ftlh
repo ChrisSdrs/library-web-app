@@ -12,15 +12,15 @@
     </thead>
     <tbody>
     <#if userRepairs?has_content>
-        <#list userRepairs as repair>
+        <#list userRepairs as borrow>
             <tr>
-                <td> ${repair.date}</td>
-                <td> ${repair.status}</td>
-                <td> ${repair.category}</td>
-                <td> ${repair.type}</td>
-                <td> ${repair.cost}</td>
-                <td> ${repair.address}</td>
-                <td> ${repair.description}</td>
+                <td> ${borrow.date}</td>
+                <td> ${borrow.status}</td>
+                <td> ${borrow.category}</td>
+                <td> ${borrow.type}</td>
+                <td> ${borrow.cost}</td>
+                <td> ${borrow.address}</td>
+                <td> ${borrow.description}</td>
             </tr>
         </#list>
     </#if>

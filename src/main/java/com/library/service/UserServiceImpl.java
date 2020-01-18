@@ -1,6 +1,6 @@
 package com.library.service;
 
-import com.library.domain.User;
+import com.library.domain.Customer;
 import com.library.mappers.UserToUserModelMapper;
 import com.library.model.UserModel;
 import com.library.repository.UserRepository;
@@ -21,21 +21,21 @@ public class UserServiceImpl implements UserService {
     private UserToUserModelMapper mapper;
 
     @Override
-    public User createUser(User user) {
-        return userRepository.save(user);
+    public Customer createUser(Customer customer) {
+        return userRepository.save(customer);
     }
 
     @Override
-    public User updateUser(UserModel userModel) {
-        User originalUser = userRepository.findById(userModel.getId()).get();
-        originalUser.setUsername(userModel.getUsername());
-        originalUser.setFirstName(userModel.getFirstName());
-        originalUser.setEmail(userModel.getEmail());
-        originalUser.setLastName(userModel.getLastName());
-        originalUser.setPhone(userModel.getPhone());
-        originalUser.setSsn(userModel.getSsn());
-        originalUser.setRole(userModel.getRole());
-        return userRepository.save(originalUser);
+    public Customer updateUser(UserModel userModel) {
+        Customer originalCustomer = userRepository.findById(userModel.getId()).get();
+        originalCustomer.setUsername(userModel.getUsername());
+        originalCustomer.setFirstName(userModel.getFirstName());
+        originalCustomer.setEmail(userModel.getEmail());
+        originalCustomer.setLastName(userModel.getLastName());
+        originalCustomer.setPhone(userModel.getPhone());
+        originalCustomer.setSsn(userModel.getSsn());
+        originalCustomer.setRole(userModel.getRole());
+        return userRepository.save(originalCustomer);
     }
 
     @Override

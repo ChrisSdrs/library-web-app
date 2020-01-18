@@ -1,13 +1,13 @@
 package com.library.mappers;
 
-import com.library.domain.User;
+import com.library.domain.Customer;
 import com.library.model.UserModel;
 import org.springframework.stereotype.Component;
 
 @Component
 public class UserToUserModelMapper {
 
-    public UserModel mapToUserModel(User users) {
+    public UserModel mapToUserModel(Customer users) {
         UserModel userModel = new UserModel();
         userModel.setId(users.getId());
         userModel.setSsn(users.getSsn());

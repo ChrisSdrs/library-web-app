@@ -32,7 +32,7 @@
                     </#if>
                 ">
                     <a class="nav-link" href="/admin/users">
-                        <img src="https://img.icons8.com/ios-filled/50/000000/user-group-man-man.png" class="nav-link-icon">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/customer-group-man-man.png" class="nav-link-icon">
 
                         <div class="sidebar-link-text">All Owners</div>
                     </a>
@@ -60,7 +60,7 @@
                     </#if>
                 ">
                     <a class="nav-link" href="/admin/users/search">
-                        <img src="https://img.icons8.com/ios-glyphs/30/000000/find-user-male.png" class="nav-link-icon">
+                        <img src="https://img.icons8.com/ios-glyphs/30/000000/find-customer-male.png" class="nav-link-icon">
                         <div class="sidebar-link-text">Search for Owners</div>
                     </a>
                 </li>
@@ -73,7 +73,7 @@
                     </#if>
                 ">
                     <a class="nav-link" href="/admin/users/create">
-                        <img src="https://img.icons8.com/ios-filled/50/000000/add-user-male.png" class="nav-link-icon">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/add-customer-male.png" class="nav-link-icon">
                         <div class="sidebar-link-text">Create User</div>
                     </a>
                 </li>
