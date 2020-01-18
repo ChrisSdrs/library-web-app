@@ -1,6 +1,6 @@
 package com.library.service;
 
-import com.library.domain.User;
+import com.library.domain.Customer;
 import com.library.model.LoginResponse;
 import com.library.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,14 +20,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        // here we would search into the repo for the user.
+        // here we would search into the repo for the customer.
         // for not we are just going to send always a successful response.
-        User user = userRepository.findByUsername(username).get();
+        Customer customer = userRepository.findByUsername(username).get();
 
 /*        List<SimpleGrantedAuthority> authorization = Collections.singletonList(new SimpleGrantedAuthority("ADMIN"));
         CharSequence password = "password";*/
 
-        return new LoginResponse(user.getUsername(), user.getPassword(), Arrays.asList(new SimpleGrantedAuthority(user.getRole())));
+        return new LoginResponse(customer.getUsername(), customer.getPassword(), Arrays.asList(new SimpleGrantedAuthority(customer.getRole())));
 
 
     }

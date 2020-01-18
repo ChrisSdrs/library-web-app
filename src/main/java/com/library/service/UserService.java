@@ -1,6 +1,6 @@
 package com.library.service;
 
-import com.library.domain.User;
+import com.library.domain.Customer;
 import com.library.model.UserModel;
 
 import java.util.List;
@@ -8,9 +8,9 @@ import java.util.Optional;
 
 public interface UserService {
 
-    User createUser(User user);
+    Customer createUser(Customer customer);
 
-    User updateUser(UserModel userModel);
+    Customer updateUser(UserModel userModel);
 
     List<UserModel> findAll();
 

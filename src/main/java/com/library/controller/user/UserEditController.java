@@ -27,7 +27,7 @@ import static com.library.utils.GlobalAttributes.ALERT_TYPE;
         public String deleteUser(@PathVariable Long id, RedirectAttributes redirectAttrs) {
             userService.deleteById(id);
             redirectAttrs.addFlashAttribute(ALERT_TYPE, "info");
-            redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "User Deleted successfully!");
+            redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Customer Deleted successfully!");
             return "redirect:/admin/users";
         }
 
@@ -43,7 +43,7 @@ import static com.library.utils.GlobalAttributes.ALERT_TYPE;
         public String editUser(UserModel userModel, RedirectAttributes redirectAttrs) {
             userService.updateUser(userModel);
             redirectAttrs.addFlashAttribute(ALERT_TYPE, "success");
-            redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "User Updated successfully!");
+            redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Customer Updated successfully!");
 
             return "redirect:/admin/users";
         }

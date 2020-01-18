@@ -1,6 +1,6 @@
 package com.library.controller.user;
 
-import com.library.domain.User;
+import com.library.domain.Customer;
 import com.library.forms.UserCreateForm;
 import com.library.mappers.UserFormToUserMapper;
 import com.library.service.UserService;
@@ -51,20 +51,20 @@ import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
                 return "pages/user_create";
             }
 
-            User user = mapper.toUser(userCreateForm);
-            if (isValidUserEmptyFields(user)) {
-                if (isValidUser(user) == "") {
+            Customer customer = mapper.toUser(userCreateForm);
+            if (isValidUserEmptyFields(customer)) {
+                if (isValidUser(customer) == "") {
                     BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-                    String password = user.getPassword();
+                    String password = customer.getPassword();
                     String encodedPW = encoder.encode(password);
-                    user.setPassword(encodedPW);
-                    userService.createUser(user);
+                    customer.setPassword(encodedPW);
+                    userService.createUser(customer);
                     redirectAttrs.addFlashAttribute(ALERT_TYPE, "success");
-                    redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "User Created Successfully!");
+                    redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Customer Created Successfully!");
                     return "redirect:/admin/users";
                 } else {
                     model.addAttribute(USERS_FORM, userCreateForm);
-                    model.addAttribute(USER_CREATE_ERROR, isValidUser(user));
+                    model.addAttribute(USER_CREATE_ERROR, isValidUser(customer));
 
                     return "pages/user_create";
                 }
@@ -75,12 +75,12 @@ import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
             }
         }
 
-        private String isValidUser(User user) {
+        private String isValidUser(Customer customer) {
             String result = "";
-            String ssn = user.getSsn();
-            String email = user.getEmail();
-            String username = user.getUsername();
-            //User provided is not Valid if any of the ssn,email,username already exists
+            String ssn = customer.getSsn();
+            String email = customer.getEmail();
+            String username = customer.getUsername();
+            //Customer provided is not Valid if any of the ssn,email,username already exists
             if (!userService.findBySsn(ssn).isEmpty()) {
                 result += "Ssn Already Exists. ";
             }
@@ -96,17 +96,17 @@ import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
 
         }
 
-        private boolean isValidUserEmptyFields(User user){
+        private boolean isValidUserEmptyFields(Customer customer){
             boolean isValid   = true;
-            String ssn = user.getSsn();
+            String ssn = customer.getSsn();
 
-            String firstName = user.getFirstName();
-            String lastName = user.getLastName();
-            String phone = user.getPhone();
-            String email = user.getEmail();
-            String username = user.getUsername();
-            String password = user.getPassword();
-            String role = user.getRole();
+            String firstName = customer.getFirstName();
+            String lastName = customer.getLastName();
+            String phone = customer.getPhone();
+            String email = customer.getEmail();
+            String username = customer.getUsername();
+            String password = customer.getPassword();
+            String role = customer.getRole();
             if (ssn.isEmpty() || email.isEmpty() || firstName.isEmpty() || lastName.isEmpty() || phone.isEmpty() || username.isEmpty() || password == null || role.isEmpty()){
                 isValid = false;
             }

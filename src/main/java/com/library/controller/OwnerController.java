@@ -1,7 +1,7 @@
 //package com.library.controller;
 //
 //import com.library.model.BookModel;
-//import com.library.model.RepairModel;
+//import com.library.model.BorrowModel;
 //import com.library.model.ReportModel;
 //import com.library.model.UserModel;
 //import com.library.service.BookService;
@@ -41,7 +41,7 @@
 //        List<BookModel> userProperties = bookService.findByOwner(ssn);
 //
 //
-//        List<RepairModel> userRepairs = repairService.findByOwner(ssn);
+//        List<BorrowModel> userRepairs = repairService.findByOwner(ssn);
 //
 //        int pendingRepairs = getStatusResult(userRepairs, "Pending");
 //        int inProgressRepairs = getStatusResult(userRepairs, "In Progress");
@@ -69,10 +69,10 @@
 //        return "pages/owner";
 //    }
 //
-//    private int getStatusResult(List<RepairModel> userRepairs, String statusGiven){
+//    private int getStatusResult(List<BorrowModel> userRepairs, String statusGiven){
 //        int result = 0;
 //        String status;
-//        RepairModel currentRepairModel;
+//        BorrowModel currentRepairModel;
 //        for( int i=0; i<userRepairs.size(); i++ ) {
 //            currentRepairModel = (userRepairs.get(i));
 //            status = currentRepairModel.getStatus();

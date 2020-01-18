@@ -27,7 +27,7 @@
             <#if
             loginAuthentication == "fail">
             </#if>
-                <div><p class="error"> No user found with the given credentials. <br>Please try again!</p></div>
+                <div><p class="error"> No customer found with the given credentials. <br>Please try again!</p></div>
             </#if>
         </div>
         <div style="margin-top: 30px;">

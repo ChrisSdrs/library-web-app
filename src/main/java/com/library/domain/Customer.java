@@ -3,8 +3,8 @@ package com.library.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "USER")
-public class User {
+@Table(name = "Customer")
+public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -34,11 +34,11 @@ public class User {
     @Column(name = "user_role")
     private String role;
 
-    public User(){
+    public Customer(){
 
     }
 
-    public User(Long id, String ssn, String firstName, String lastName, String address, String phone, String email, String username, String password, String role) {
+    public Customer(Long id, String ssn, String firstName, String lastName, String address, String phone, String email, String username, String password, String role) {
         this.id = id;
         this.ssn = ssn;
         this.firstName = firstName;
@@ -125,7 +125,7 @@ public class User {
 
     public String toString(){
 
-        final StringBuilder sb = new StringBuilder("User{");
+        final StringBuilder sb = new StringBuilder("Customer{");
         sb.append("id=").append(id);
         sb.append(", ssn='").append(ssn);
         sb.append(", name='").append(firstName);

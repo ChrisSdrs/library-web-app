@@ -1,6 +1,6 @@
 package com.library.mappers;
 
-import com.library.domain.User;
+import com.library.domain.Customer;
 import com.library.forms.UserCreateForm;
 import org.springframework.stereotype.Component;
 
@@ -8,18 +8,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserFormToUserMapper {
 
-    public User toUser(UserCreateForm userCreateForm) {
-        User user = new User();
-        user.setSsn(userCreateForm.getSsn());
-        user.setFirstName(userCreateForm.getFirstName());
-        user.setLastName(userCreateForm.getLastName());
-        user.setPhone(userCreateForm.getPhone());
-        user.setEmail(userCreateForm.getEmail());
-        user.setUsername(userCreateForm.getUsername());
-        user.setPassword(userCreateForm.getPassword());
-        user.setRole(userCreateForm.getRole());
+    public Customer toUser(UserCreateForm userCreateForm) {
+        Customer customer = new Customer();
+        customer.setSsn(userCreateForm.getSsn());
+        customer.setFirstName(userCreateForm.getFirstName());
+        customer.setLastName(userCreateForm.getLastName());
+        customer.setPhone(userCreateForm.getPhone());
+        customer.setEmail(userCreateForm.getEmail());
+        customer.setUsername(userCreateForm.getUsername());
+        customer.setPassword(userCreateForm.getPassword());
+        customer.setRole(userCreateForm.getRole());
 
-        return user;
+        return customer;
     }
 
 }

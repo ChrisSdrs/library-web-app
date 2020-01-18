@@ -1,28 +1,28 @@
-<form action="/admin/repairs/edit" id="repairVal" name="repairForm" method="POST">
+<form action="/admin/repairs/edit" id="repairVal" name="borrowForm" method="POST">
 
 
-    <input type="hidden" name="id" value="${repair.id}">
+    <input type="hidden" name="id" value="${borrow.id}">
 
     <div class="mb-3">
         <label for="date">Date</label>
-        <@spring.bind "repairForm.date"/>
-        <input type="date" class="form-control" name="date" id="date" value="${repair.date}" required>
+        <@spring.bind "borrowForm.date"/>
+        <input type="date" class="form-control" name="date" id="date" value="${borrow.date}" required>
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
         </#list>
     </div>
     <div class="mb-3">
         <label for="status">Status</label>
-        <@spring.bind "repairForm.status"/>
-        <select class="custom-select d-block w-100" name="status" id="status" value="${repair.status}" required>
+        <@spring.bind "borrowForm.status"/>
+        <select class="custom-select d-block w-100" name="status" id="status" value="${borrow.status}" required>
             <option value="" class="first-select-label">Choose Status</option>
-            <option value="Pending"   <#if repair.status == "Pending"> selected </#if>>
+            <option value="Pending"   <#if borrow.status == "Pending"> selected </#if>>
                 Pending
             </option>
-            <option value="In progress" <#if repair.status == "In Progress"> selected </#if>>
+            <option value="In progress" <#if borrow.status == "In Progress"> selected </#if>>
                 In Progress
             </option>
-            <option value="Completed" <#if repair.status == "Completed"> selected </#if>>
+            <option value="Completed" <#if borrow.status == "Completed"> selected </#if>>
                 Completed
             </option>
         </select>
@@ -34,13 +34,13 @@
 
     <div class="mb-3">
         <label for="category">Category</label>
-        <@spring.bind "repairForm.category"/>
+        <@spring.bind "borrowForm.category"/>
         <select class="custom-select d-block w-100" name="category" id="category" required="">
            <option value="" selected class="first-select-label">Choose Category</option>
-           <option value="Interior"   <#if repair.category == "Interior"> selected </#if>>
+           <option value="Interior"   <#if borrow.category == "Interior"> selected </#if>>
                Interior
            </option>
-           <option value="Exterior"   <#if repair.category == "Exterior"> selected </#if>>
+           <option value="Exterior"   <#if borrow.category == "Exterior"> selected </#if>>
                Exterior
            </option>
         </select>
@@ -51,46 +51,46 @@
 
     <div class="mb-3">
         <label for="type">Type</label>
-        <@spring.bind "repairForm.type"/>
+        <@spring.bind "borrowForm.type"/>
         <select class="custom-select d-block w-100" name="type" id="type"  required="">
             <option value="" class="first-select-label">Choose Repair Type</option>
-            <#if repair.category == "Interior">
-                <option value="Painting"   <#if repair.type == "Painting"> selected </#if>>
+            <#if borrow.category == "Interior">
+                <option value="Painting"   <#if borrow.type == "Painting"> selected </#if>>
                     Painting
                 </option>
-                <option value="Electrical"   <#if repair.type == "Electrical"> selected </#if>>
+                <option value="Electrical"   <#if borrow.type == "Electrical"> selected </#if>>
                     Electrical
                 </option>
-                <option value="Plumbing"   <#if repair.type == "Plumbing"> selected </#if>>
+                <option value="Plumbing"   <#if borrow.type == "Plumbing"> selected </#if>>
                     Plumbing
                 </option>
-                <option value="Insulation"   <#if repair.type == "Insulation"> selected </#if>>
+                <option value="Insulation"   <#if borrow.type == "Insulation"> selected </#if>>
                     Insulation
                 </option>
-                <option value="Fireplace"   <#if repair.type == "Fireplace"> selected </#if>>
+                <option value="Fireplace"   <#if borrow.type == "Fireplace"> selected </#if>>
                     Fireplace
                 </option>
-                <option value="Frames"   <#if repair.type == "Frames"> selected </#if>>
+                <option value="Frames"   <#if borrow.type == "Frames"> selected </#if>>
                     Frames
                 </option>
-                <option value="Ceramic Flooring"   <#if repair.type == "Ceramic Flooring"> selected </#if>>
+                <option value="Ceramic Flooring"   <#if borrow.type == "Ceramic Flooring"> selected </#if>>
                     Ceramic Flooring
                 </option>
-                <option value="Ceiling"   <#if repair.type == "Ceiling"> selected </#if>>
+                <option value="Ceiling"   <#if borrow.type == "Ceiling"> selected </#if>>
                     Ceiling
                 </option>
 
-            <#elseif repair.category == "Exterior">
-                <option value="Solar Panels"   <#if repair.type == "Solar Panels"> selected </#if>>
+            <#elseif borrow.category == "Exterior">
+                <option value="Solar Panels"   <#if borrow.type == "Solar Panels"> selected </#if>>
                     Solar Panels
                 </option>
-                <option value="Painting"   <#if repair.type == "Painting"> selected </#if>>
+                <option value="Painting"   <#if borrow.type == "Painting"> selected </#if>>
                     Painting
                 </option>
-                <option value="Swimming Pool"   <#if repair.type == "Swimming Pool"> selected </#if>>
+                <option value="Swimming Pool"   <#if borrow.type == "Swimming Pool"> selected </#if>>
                     Swimming Pool
                 </option>
-                <option value="Fences"   <#if repair.type == "Fences"> selected </#if>>
+                <option value="Fences"   <#if borrow.type == "Fences"> selected </#if>>
                     Fences
                 </option>
             </#if>
@@ -103,32 +103,32 @@
     </div>
     <div class="mb-3">
         <label for="cost">Cost</label>
-        <@spring.bind "repairForm.cost"/>
-        <input type="text" class="form-control" name="cost" id="cost" value="${repair.cost}" placeholder="Cost">
+        <@spring.bind "borrowForm.cost"/>
+        <input type="text" class="form-control" name="cost" id="cost" value="${borrow.cost}" placeholder="Cost">
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
         </#list>
     </div>
     <div class="mb-3">
         <label for="owner">Owner</label>
-        <@spring.bind "repairForm.owner"/>
-        <input type="text" class="form-control" name="owner" id="owner" value="${repair.owner}" placeholder="Owner's SSN">
+        <@spring.bind "borrowForm.owner"/>
+        <input type="text" class="form-control" name="owner" id="owner" value="${borrow.owner}" placeholder="Owner's SSN">
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
         </#list>
     </div>
     <div class="mb-3">
         <label for="address">Address</label>
-        <@spring.bind "repairForm.address"/>
-        <input type="text" class="form-control" name="address" id="address" value="${repair.address}" placeholder="Property Address">
+        <@spring.bind "borrowForm.address"/>
+        <input type="text" class="form-control" name="address" id="address" value="${borrow.address}" placeholder="Property Address">
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
         </#list>
     </div>
     <div class="mb-3">
         <label for="description">Description</label>
-        <@spring.bind "repairForm.description"/>
-        <textarea class="form-control" name="description" id="description" placeholder="Description" rows="4" cols="50">${repair.description}</textarea>
+        <@spring.bind "borrowForm.description"/>
+        <textarea class="form-control" name="description" id="description" placeholder="Description" rows="4" cols="50">${borrow.description}</textarea>
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
         </#list>

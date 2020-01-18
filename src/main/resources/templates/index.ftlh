@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">   
    
     <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, customer-scalable=no">
  
      <!-- Site Metas -->
     <title>Code-Struction</title>
@@ -270,9 +270,9 @@
 
             <div class="col-md-4 col-sm-6 gallery-grid gal_b">
 					<div class="gallery-single fix">
-						<img src="https://easyfixnashville.com/wp-content/uploads/2019/11/fence-repair-min.jpg" class="img-fluid" alt="Image">
+						<img src="https://easyfixnashville.com/wp-content/uploads/2019/11/fence-borrow-min.jpg" class="img-fluid" alt="Image">
 						<div class="img-overlay">
-							<a href="https://easyfixnashville.com/wp-content/uploads/2019/11/fence-repair-min.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="fa fa-picture-o"></i></a>
+							<a href="https://easyfixnashville.com/wp-content/uploads/2019/11/fence-borrow-min.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="fa fa-picture-o"></i></a>
 						</div>
 					</div>
 				</div>

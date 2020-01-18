@@ -1,7 +1,7 @@
-package com.library.controller.repair;
+package com.library.controller.borrow;
 
-import com.library.model.RepairModel;
-import com.library.service.RepairService;
+import com.library.model.BorrowModel;
+import com.library.service.BorrowService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,32 +13,32 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Controller
-public class RepairController {
-    private static final String REPAIR_LIST = "repairs";
+public class BorrowController {
+    private static final String BORROW_LIST = "borrows";
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private RepairService repairService;
+    private BorrowService borrowService;
 
     @GetMapping(value = "/admin/repairs")
     public String repairs(Model model) {
-        List<RepairModel> repairs = repairService.findAll();
-        model.addAttribute(REPAIR_LIST, repairs);
+        List<BorrowModel> borrows = borrowService.findAll();
+        model.addAttribute(BORROW_LIST, borrows);
         return "pages/repairs_show";
     }
 
     @GetMapping(value = "/admin")
     public String repairsToday(Model model) {
         LocalDate dateToday = LocalDate.now();
-        List<RepairModel> repairs = repairService.findTop10ByDateOrderByDateAsc(dateToday);
-        model.addAttribute(REPAIR_LIST, repairs);
+        List<BorrowModel> borrows = borrowService.findTop10ByDateOrderByDateAsc(dateToday);
+        model.addAttribute(BORROW_LIST, borrows);
         return "pages/admin";
     }
 
 
 
     public void findAll() {
-        repairService.findAll().forEach(repair -> logger.info(repair.toString()));
+        borrowService.findAll().forEach(borrow -> logger.info(borrow.toString()));
     }
 
 
