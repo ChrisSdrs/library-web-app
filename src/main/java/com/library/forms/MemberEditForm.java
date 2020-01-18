@@ -1,7 +1,7 @@
 package com.library.forms;
 
 
-public class UserEditForm {
+public class MemberEditForm {
 
     private String membNumber;
 
@@ -74,10 +74,10 @@ public class UserEditForm {
         this.role = role;
     }
 
-    public UserEditForm() {
+    public MemberEditForm() {
     }
 
-    public UserEditForm(String membNumber, String firstName, String lastName, String phone, String email, String username, String role) {
+    public MemberEditForm(String membNumber, String firstName, String lastName, String phone, String email, String username, String role) {
         this.membNumber = membNumber;
         this.firstName = firstName;
         this.lastName = lastName;

@@ -1,6 +1,6 @@
 package com.library.forms;
 
-public class UserSearchForm {
+public class MemberSearchForm {
 
     String membNumber;
     String email;
@@ -21,10 +21,10 @@ public class UserSearchForm {
         this.email = email;
     }
 
-    public UserSearchForm() {
+    public MemberSearchForm() {
     }
 
-    public UserSearchForm(String membNumber, String email) {
+    public MemberSearchForm(String membNumber, String email) {
         this.membNumber = membNumber;
         this.email = email;
     }

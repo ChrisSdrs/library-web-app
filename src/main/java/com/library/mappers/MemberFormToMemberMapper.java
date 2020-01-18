@@ -1,23 +1,23 @@
 package com.library.mappers;
 
 import com.library.domain.Member;
-import com.library.forms.UserCreateForm;
+import com.library.forms.MemberCreateForm;
 import org.springframework.stereotype.Component;
 
 
 @Component
 public class MemberFormToMemberMapper {
 
-    public Member toUser(UserCreateForm userCreateForm) {
+    public Member toMember(MemberCreateForm memberCreateForm) {
         Member member = new Member();
-        member.setMembNumber(userCreateForm.getMembNumber());
-        member.setFirstName(userCreateForm.getFirstName());
-        member.setLastName(userCreateForm.getLastName());
-        member.setPhone(userCreateForm.getPhone());
-        member.setEmail(userCreateForm.getEmail());
-        member.setUsername(userCreateForm.getUsername());
-        member.setPassword(userCreateForm.getPassword());
-        member.setRole(userCreateForm.getRole());
+        member.setMembNumber(memberCreateForm.getMembNumber());
+        member.setFirstName(memberCreateForm.getFirstName());
+        member.setLastName(memberCreateForm.getLastName());
+        member.setPhone(memberCreateForm.getPhone());
+        member.setEmail(memberCreateForm.getEmail());
+        member.setUsername(memberCreateForm.getUsername());
+        member.setPassword(memberCreateForm.getPassword());
+        member.setRole(memberCreateForm.getRole());
 
         return member;
     }

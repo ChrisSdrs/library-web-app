@@ -1,7 +1,7 @@
 package com.library.forms;
 
 
-public class UserCreateForm {
+public class MemberCreateForm {
 
     private String membNumber;
 

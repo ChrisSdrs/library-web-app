@@ -1,7 +1,7 @@
-package com.library.controller.user;
+package com.library.controller.member;
 
 import com.library.domain.Member;
-import com.library.forms.UserCreateForm;
+import com.library.forms.MemberCreateForm;
 import com.library.mappers.MemberFormToMemberMapper;
 import com.library.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +22,9 @@ import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
 
 
 @Controller
-    public class UserCreateController {
-        private static final String USERS_FORM = "userCreateForm";
-        private static final String USER_CREATE_ERROR = "userCreateError";
+    public class MemberCreateController {
+        private static final String MEMBERS_FORM = "memberCreateForm";
+        private static final String MEMBER_CREATE_ERROR = "memberCreateError";
 
         @Autowired
         private MemberService memberService;
@@ -35,14 +35,14 @@ import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
         @GetMapping(value = "/admin/users/create")
         public String usersDynamic(Model model) {
 
-            model.addAttribute(USERS_FORM, new UserCreateForm());
+            model.addAttribute(MEMBERS_FORM, new MemberCreateForm());
             return "pages/user_create";
         }
 
         @PostMapping(value = "/admin/users/create")
-        public String createUser(Model model,
-                                 @Valid @ModelAttribute(USERS_FORM)
-                                          UserCreateForm userCreateForm,
+        public String createMember(Model model,
+                                 @Valid @ModelAttribute(MEMBERS_FORM)
+                                          MemberCreateForm memberCreateForm,
                                  BindingResult bindingResult, RedirectAttributes redirectAttrs) {
 
             if (bindingResult.hasErrors()) {
@@ -51,38 +51,38 @@ import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
                 return "pages/user_create";
             }
 
-            Member member = mapper.toUser(userCreateForm);
-            if (isValidUserEmptyFields(member)) {
-                if (isValidUser(member) == "") {
+            Member member = mapper.toMember(memberCreateForm);
+            if (isValidMemberEmptyFields(member)) {
+                if (isValidMember(member) == "") {
                     BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
                     String password = member.getPassword();
                     String encodedPW = encoder.encode(password);
                     member.setPassword(encodedPW);
-                    memberService.createUser(member);
+                    memberService.createMember(member);
                     redirectAttrs.addFlashAttribute(ALERT_TYPE, "success");
                     redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Member Created Successfully!");
                     return "redirect:/admin/users";
                 } else {
-                    model.addAttribute(USERS_FORM, userCreateForm);
-                    model.addAttribute(USER_CREATE_ERROR, isValidUser(member));
+                    model.addAttribute(MEMBERS_FORM, memberCreateForm);
+                    model.addAttribute(MEMBER_CREATE_ERROR, isValidMember(member));
 
                     return "pages/user_create";
                 }
             }else{
-                model.addAttribute(USERS_FORM, userCreateForm);
-                model.addAttribute(USER_CREATE_ERROR, "Please fill all fields!");
+                model.addAttribute(MEMBERS_FORM, memberCreateForm);
+                model.addAttribute(MEMBER_CREATE_ERROR, "Please fill all fields!");
                 return "pages/user_create";
             }
         }
 
-        private String isValidUser(Member member) {
+        private String isValidMember(Member member) {
             String result = "";
-            String ssn = member.getSsn();
+            String membNumber = member.getMembNumber();
             String email = member.getEmail();
             String username = member.getUsername();
             //Member provided is not Valid if any of the ssn,email,username already exists
-            if (!memberService.findBySsn(ssn).isEmpty()) {
-                result += "Ssn Already Exists. ";
+            if (!memberService.findByMembNumber(membNumber).isEmpty()) {
+                result += "Member Number Already Exists. ";
             }
             if (!memberService.findByEmail(email).isEmpty()) {
                 result += "Email Already Exists. ";
@@ -96,9 +96,9 @@ import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
 
         }
 
-        private boolean isValidUserEmptyFields(Member member){
+        private boolean isValidMemberEmptyFields(Member member){
             boolean isValid   = true;
-            String ssn = member.getSsn();
+            String membNumber = member.getMembNumber();
 
             String firstName = member.getFirstName();
             String lastName = member.getLastName();
@@ -107,7 +107,7 @@ import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
             String username = member.getUsername();
             String password = member.getPassword();
             String role = member.getRole();
-            if (ssn.isEmpty() || email.isEmpty() || firstName.isEmpty() || lastName.isEmpty() || phone.isEmpty() || username.isEmpty() || password == null || role.isEmpty()){
+            if (membNumber.isEmpty() || email.isEmpty() || firstName.isEmpty() || lastName.isEmpty() || phone.isEmpty() || username.isEmpty() || password == null || role.isEmpty()){
                 isValid = false;
             }
 

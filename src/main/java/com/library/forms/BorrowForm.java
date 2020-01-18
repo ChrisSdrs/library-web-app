@@ -10,7 +10,7 @@ public class BorrowForm {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     LocalDate date;
     String status;
-    String customerSsn;
+    String member;
     String bookPin;
 
 
@@ -38,12 +38,12 @@ public class BorrowForm {
         this.status = status;
     }
 
-    public String getCustomerSsn() {
-        return customerSsn;
+    public String getMember() {
+        return member;
     }
 
-    public void setCustomerSsn(String customerSsn) {
-        this.customerSsn = customerSsn;
+    public void setMember(String member) {
+        this.member = member;
     }
 
     public String getBookPin() {
@@ -58,11 +58,11 @@ public class BorrowForm {
 
     }
 
-    public BorrowForm(Long id, LocalDate date, String status, String customerSsn, String bookPin) {
+    public BorrowForm(Long id, LocalDate date, String status, String member, String bookPin) {
         this.id = id;
         this.date = date;
         this.status = status;
-        this.customerSsn = customerSsn;
+        this.member = member;
         this.bookPin = bookPin;
     }
 }

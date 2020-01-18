@@ -109,6 +109,6 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public Optional<MemberModel> findByMembNumberOrEmailOrUsername(String membNumber, String email, String username) {
         return memberRepository.findByMembNumberOrEmailOrUsername(membNumber, email, username)
-                .map(member -> mapper.mapToUserModel(member));
+                .map(member -> mapper.mapToMemberModel(member));
     }
 }

@@ -67,9 +67,9 @@ public class BorrowCreateController {
         boolean isValid   = true;
         LocalDate date = borrow.getDate();
         String status = borrow.getStatus();
-        String customerSsn = borrow.getCustomerSsn();
+        String member = borrow.getMember();
         String bookPin = borrow.getBookPin();
-        if (date == null || status.isEmpty() || customerSsn.isEmpty() || bookPin.isEmpty() ){
+        if (date == null || status.isEmpty() || member.isEmpty() || bookPin.isEmpty() ){
             isValid = false;
         }
 

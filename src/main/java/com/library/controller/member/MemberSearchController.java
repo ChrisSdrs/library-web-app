@@ -1,6 +1,6 @@
-package com.library.controller.user;
+package com.library.controller.member;
 
-import com.library.forms.UserSearchForm;
+import com.library.forms.MemberSearchForm;
 import com.library.mappers.MemberFormToMemberMapper;
 import com.library.model.MemberModel;
 import com.library.service.MemberService;
@@ -19,9 +19,9 @@ import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
 
 
 @Controller
-public class UserSearchController {
-    private static final String USER_SEARCH_FORM = "userSearchForm";
-    private static final String USER_LIST = "users";
+public class MemberSearchController {
+    private static final String MEMBER_SEARCH_FORM = "memberSearchForm";
+    private static final String MEMBER_LIST = "members";
 
     @Autowired
     private MemberService memberService;
@@ -30,15 +30,15 @@ public class UserSearchController {
     private MemberFormToMemberMapper mapper;
 
     @GetMapping(value = "/admin/users/search")
-    public String searchUsers(Model model) {
-        model.addAttribute(USER_SEARCH_FORM, new UserSearchForm());
+    public String searchMembers(Model model) {
+        model.addAttribute(MEMBER_SEARCH_FORM, new MemberSearchForm());
         return "pages/users_search";
     }
 
     @PostMapping(value = "/admin/users/search")
-    public String searchUsers(Model model,
-                              @Valid @ModelAttribute(USER_SEARCH_FORM)
-                                      UserSearchForm userSearchForm,
+    public String searchMembers(Model model,
+                              @Valid @ModelAttribute(MEMBER_SEARCH_FORM)
+                                      MemberSearchForm memberSearchForm,
                               BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
@@ -46,30 +46,30 @@ public class UserSearchController {
             model.addAttribute(ERROR_MESSAGE, "an error occurred");
             return "pages/users_search";
         }
-        String ssn = userSearchForm.getSsn();
-        String email = userSearchForm.getEmail();
+        String membNumber = memberSearchForm.getMembNumber();
+        String email = memberSearchForm.getEmail();
 
 
-        List<MemberModel> users = getUsersFromSearch(ssn,email);
-        model.addAttribute(USER_LIST, users);
-        model.addAttribute(USER_SEARCH_FORM, userSearchForm);
+        List<MemberModel> members = getMembersFromSearch(membNumber,email);
+        model.addAttribute(MEMBER_LIST, members);
+        model.addAttribute(MEMBER_SEARCH_FORM, memberSearchForm);
         return "pages/users_search_results";
     }
 
-    private List<MemberModel> getUsersFromSearch(String ssn, String email){
-        if (ssn != "" && email != ""){
+    private List<MemberModel> getMembersFromSearch(String membNumber, String email){
+        if (membNumber != "" && email != ""){
 
-            return memberService.findBySsnAndEmail(ssn, email);
+            return memberService.findByMembNumberAndEmail(membNumber, email);
 
-        }else if (ssn != "" && email == ""){
+        }else if (membNumber != "" && email == ""){
 
-            return memberService.findBySsn(ssn);
+            return memberService.findByMembNumber(membNumber);
 
-        }else if (ssn == "" && email != ""){
+        }else if (membNumber == "" && email != ""){
 
             return memberService.findByEmail(email);
 
-        } else return memberService.findByRole("Owner");
+        } else return memberService.findByRole("Member");
     }
 
 }

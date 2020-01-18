@@ -44,14 +44,6 @@ public class MemberModel {
         this.lastName = lastName;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getPhone() {
         return phone;
     }

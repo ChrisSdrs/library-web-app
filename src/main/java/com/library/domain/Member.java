@@ -3,7 +3,7 @@ package com.library.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Member")
+@Table(name = "Members")
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

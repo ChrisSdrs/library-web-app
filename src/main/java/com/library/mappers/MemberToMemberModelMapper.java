@@ -7,16 +7,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class MemberToMemberModelMapper {
 
-    public MemberModel mapToUserModel(Member users) {
+    public MemberModel mapToMemberModel(Member members) {
         MemberModel memberModel = new MemberModel();
-        memberModel.setId(users.getId());
-        memberModel.setMembNumber(users.getMembNumber());
-        memberModel.setFirstName(users.getFirstName());
-        memberModel.setLastName(users.getLastName());
-        memberModel.setPhone(users.getPhone());
-        memberModel.setEmail(users.getEmail());
-        memberModel.setRole(users.getRole());
-        memberModel.setUsername(users.getUsername());
+        memberModel.setId(members.getId());
+        memberModel.setMembNumber(members.getMembNumber());
+        memberModel.setFirstName(members.getFirstName());
+        memberModel.setLastName(members.getLastName());
+        memberModel.setPhone(members.getPhone());
+        memberModel.setEmail(members.getEmail());
+        memberModel.setRole(members.getRole());
+        memberModel.setUsername(members.getUsername());
         return memberModel;
     }
 }
