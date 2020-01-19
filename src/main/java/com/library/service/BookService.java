@@ -21,11 +21,11 @@ public interface BookService {
 
     void deleteById(Long id);
 
-    List<BookModel> findByPin(String pin);
+    List<BookModel> findByBookPin(String bookPin);
 
-    List<BookModel> findByMember(String member);
+    List<BookModel> findByMembNumber(String membNumber);
 
     List<BookModel> findByCategory(String category);
 
-    List<BookModel> findByPinAndCategory(String pin, String category);
+    List<BookModel> findByBookPinAndCategory(String bookPin, String category);
 }

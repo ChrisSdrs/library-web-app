@@ -3,21 +3,24 @@
 
 <html>
 <head>
-    <title>Repair Search</title>
+    <title>Book Search</title>
     <#include "../partials/head.ftlh">
 </head>
 <body>
 
 <#include "../partials/navbar.ftlh">
 
-<#assign page = "Repairs-Search">
+<#assign page = "Books-Search">
 <#include "../partials/main_content_top.ftlh">
 
-            <h3 class="mb-3">Search Repairs</h3>
-            <div class="table-responsive">
+        <h3 class="mb-3">Search Book</h3>
+        <div class="table-responsive">
 
-                <#include "../forms/borrowSearchForm.ftlh" />
-            </div>
+            <#include "../forms/bookSearchForm.ftlh" />
+        </div>
+
+<!-- Modal -->
+<#include "../partials/delete_confirm_modal.ftlh" />
 
 <#include "../partials/main_content_bottom.ftlh">
 

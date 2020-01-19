@@ -3,29 +3,26 @@
 
 <html>
 <head>
-    <title>Repairs</title>
+    <title>Borrows</title>
     <#include "../partials/head.ftlh">
 </head>
 <body>
 
 <#include "../partials/navbar.ftlh">
 
-<#assign page = "Repairs">
+<#assign page = "Borrows-Create">
 <#include "../partials/main_content_top.ftlh">
 
-    <h3 class="mb-3">Search Repairs</h3>
-    <div class="table-responsive">
-        <#include "../partials/borrows_table.ftlh" />
-    </div>
+            <h3 class="mb-3">Create Borrow</h3>
+            <div class="table-responsive">
 
-
-<!-- Modal -->
-<#include "../partials/delete_confirm_modal.ftlh" />
-
+                <#include "../forms/borrowCreateForm.ftlh" />
+            </div>
 
 <#include "../partials/main_content_bottom.ftlh">
 <#include "../partials/scripts.ftlh">
 <script src="/scripts/main.js"></script>
+<script src="/scripts/repairValidation.js"></script>
 </body>
 </html>
 

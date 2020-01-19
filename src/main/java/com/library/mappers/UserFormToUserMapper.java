@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserFormToUserMapper {
 
-    public User toMember(UserCreateForm userCreateForm) {
+    public User toUser(UserCreateForm userCreateForm) {
         User user = new User();
         user.setMembNumber(userCreateForm.getMembNumber());
         user.setFirstName(userCreateForm.getFirstName());

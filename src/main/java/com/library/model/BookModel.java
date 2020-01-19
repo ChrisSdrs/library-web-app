@@ -4,7 +4,7 @@ package com.library.model;
 public class BookModel {
 
     private Long id;
-    private String pin;
+    private String bookPin;
     private String title;
     private String publicationDate;
     private String category;
@@ -14,9 +14,9 @@ public class BookModel {
     public BookModel() {
     }
 
-    public BookModel(Long id, String pin, String title, String publicationDate, String category) {
+    public BookModel(Long id, String bookPin, String title, String publicationDate, String category) {
         this.id = id;
-        this.pin = pin;
+        this.bookPin = bookPin;
         this.title = title;
         this.publicationDate = publicationDate;
         this.category = category;
@@ -30,12 +30,10 @@ public class BookModel {
         this.id = id;
     }
 
-    public String getPin() {
-        return pin;
-    }
+    public String getBookPin() { return bookPin; }
 
-    public void setPin(String pin) {
-        this.pin = pin;
+    public void setBookPin(String bookPin) {
+        this.bookPin = bookPin;
     }
 
     public String getTitle() {
@@ -66,7 +64,7 @@ public class BookModel {
     public String toString() {
         final StringBuilder sb = new StringBuilder("Book{");
         sb.append("id=").append(id);
-        sb.append(", pin='").append(pin);
+        sb.append(", pin='").append(bookPin);
         sb.append(", title='").append(title);
         sb.append(", category=").append(category);
         sb.append(", publication_date=").append(publicationDate);

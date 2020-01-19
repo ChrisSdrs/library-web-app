@@ -12,7 +12,7 @@ public class BookFormToBookMapper {
 
     public Book toBook(BookForm bookForm){
         Book book = new Book();
-        book.setPin(bookForm.getPin());
+        book.setBookPin(bookForm.getBookPin());
         book.setCategory(bookForm.getCategory());
         LocalDate date = LocalDate.parse(bookForm.getPublicationDate(),
                 DateTimeFormatter.ofPattern("yyyy-MM-dd"));

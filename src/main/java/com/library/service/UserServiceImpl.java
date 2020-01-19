@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
     private UserToUserModelMapper mapper;
 
     @Override
-    public User createMember(User user) {
+    public User createUser(User user) {
         return userRepository.save(user);
     }
 

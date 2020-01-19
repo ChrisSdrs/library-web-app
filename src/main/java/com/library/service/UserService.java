@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface UserService {
 
-    User createMember(User user);
+    User createUser(User user);
 
     User updateUser(UserModel userModel);
 

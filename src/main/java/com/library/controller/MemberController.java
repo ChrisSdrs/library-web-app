@@ -1,9 +1,7 @@
 package com.library.controller;
 
-import com.library.model.BookModel;
 import com.library.model.BorrowModel;
 import com.library.model.UserModel;
-import com.library.service.BookService;
 import com.library.service.BorrowService;
 import com.library.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +30,8 @@ public class MemberController {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
 
         UserModel userDetails = userService.findByUsername(username).get();
-        String member = userDetails.getMembNumber();
-        List<BorrowModel> userBorrows = borrowService.findByMember(member);
+        String membNumber = userDetails.getMembNumber();
+        List<BorrowModel> userBorrows = borrowService.findByMembNumber(membNumber);
 
 
 

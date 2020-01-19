@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <title>Repairs</title>
+    <title>Borrows</title>
     <#include "../partials/head.ftlh">
 </head>
 <body>
@@ -13,7 +13,7 @@
 <#assign page = "Repair-Edit">
 <#include "../partials/main_content_top.ftlh">
 
-<h3 class="mb-3">Edit Repair ${id}</h3>
+<h3 class="mb-3">Edit Borrow ${id}</h3>
 <div class="table-responsive">
 
     <#include "../forms/borrowEditForm.ftlh" />

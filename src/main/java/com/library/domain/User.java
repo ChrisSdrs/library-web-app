@@ -3,7 +3,7 @@ package com.library.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Members")
+@Table(name = "User")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,25 +13,25 @@ public class User {
     @Column(name = "membership_number", unique = true,  nullable = false)
     private String membNumber;
 
-    @Column(name = "member_first_name")
+    @Column(name = "user_first_name")
     private String firstName;
 
-    @Column(name = "member_last_name")
+    @Column(name = "user_last_name")
     private String lastName;
 
-    @Column(name = "member_phone")
+    @Column(name = "user_phone")
     private String phone;
 
-    @Column(name = "member_email")
+    @Column(name = "user_email")
     private String email;
 
-    @Column(name = "member_username")
+    @Column(name = "user_username")
     private String username;
 
-    @Column(name = "member_password")
+    @Column(name = "user_password")
     private String password;
 
-    @Column(name = "member_role")
+    @Column(name = "user_role")
     private String role;
 
     public User(){
@@ -58,13 +58,9 @@ public class User {
         this.id = id;
     }
 
-    public String getMembNumber() {
-        return membNumber;
-    }
+    public String getMembNumber() { return membNumber; }
 
-    public void setMembNumber(String membNumber) {
-        this.membNumber = membNumber;
-    }
+    public void setMembNumber(String membNumber) { this.membNumber = membNumber; }
 
     public String getFirstName() { return firstName; }
 
@@ -126,7 +122,7 @@ public class User {
         final StringBuilder sb = new StringBuilder("User{");
         sb.append("id=").append(id);
         sb.append(", membership_number='").append(membNumber);
-        sb.append(", name='").append(firstName);
+        sb.append(", firstname='").append(firstName);
         sb.append(", lastname=").append(lastName);
         sb.append(", phone=").append(phone);
         sb.append(", email=").append(email);

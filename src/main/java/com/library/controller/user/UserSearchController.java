@@ -36,7 +36,7 @@ public class UserSearchController {
     }
 
     @PostMapping(value = "/admin/users/search")
-    public String searchMembers(Model model,
+    public String searchUsers(Model model,
                               @Valid @ModelAttribute(USER_SEARCH_FORM)
                                       UserSearchForm userSearchForm,
                               BindingResult bindingResult) {

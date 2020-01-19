@@ -15,6 +15,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 
+import java.time.LocalDate;
+
 import static com.library.utils.GlobalAttributes.ALERT_MESSAGE;
 import static com.library.utils.GlobalAttributes.ALERT_TYPE;
 import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
@@ -39,7 +41,7 @@ public class BookCreateController {
     }
 
     @PostMapping(value = "/admin/books/create")
-    public String createProperty(Model model,
+    public String createBook(Model model,
                                  @Valid @ModelAttribute(BOOK_FORM)
                                          BookForm bookForm,
                                  BindingResult bindingResult, RedirectAttributes redirectAttrs) {
@@ -72,9 +74,9 @@ public class BookCreateController {
 
     private String isValidBook(Book book) {
         String result = "";
-        String pin = book.getPin();
+        String bookPin = book.getBookPin();
         //Book provided is not Valid if pin already exists
-        if (!bookService.findByPin(pin).isEmpty()) {
+        if (!bookService.findByBookPin(bookPin).isEmpty()) {
             result += "Pin Already Exists. ";
         }
         return result;
@@ -83,11 +85,12 @@ public class BookCreateController {
 
     private boolean isValidBookEmptyFields(Book book){
         boolean isValid   = true;
-        String pin = book.getPin();
+        String bookPin = book.getBookPin();
+        LocalDate publicationDate = book.getPublicationDate();
         String title = book.getTitle();
         String category = book.getCategory();
 //        String publicationDate = book.getPublicationDate();
-        if (pin.isEmpty() || title.isEmpty() || category.isEmpty()){
+        if (bookPin.isEmpty() || title.isEmpty() || category.isEmpty() || publicationDate == null){
             isValid = false;
         }
         return isValid;

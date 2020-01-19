@@ -34,7 +34,7 @@ public class BookEditController {
     }
 
     @PostMapping(value = "/admin/books/edit")
-    public String editProperty(BookModel bookModel) {
+    public String editBook(BookModel bookModel) {
         bookService.updateBook(bookModel);
         return "redirect:/admin/books";
     }

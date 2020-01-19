@@ -7,12 +7,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class BorrowFormToBorrowMapper {
 
-    public Borrow mapToRepairModel(BorrowForm borrowForm) {
+    public Borrow mapToBorrowModel(BorrowForm borrowForm) {
         Borrow borrow = new Borrow();
         borrow.setId(borrowForm.getId());
         borrow.setDate(borrowForm.getDate());
         borrow.setStatus(borrowForm.getStatus());
-        borrow.setMember(borrowForm.getMember());
+        borrow.setMembNumber(borrowForm.getMembNumber());
         borrow.setBookPin(borrowForm.getBookPin());
         return borrow;
 

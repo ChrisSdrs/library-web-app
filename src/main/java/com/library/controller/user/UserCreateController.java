@@ -40,7 +40,7 @@ import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
         }
 
         @PostMapping(value = "/admin/users/create")
-        public String createMember(Model model,
+        public String createUser(Model model,
                                  @Valid @ModelAttribute(USERS_FORM)
                                          UserCreateForm userCreateForm,
                                  BindingResult bindingResult, RedirectAttributes redirectAttrs) {
@@ -51,14 +51,14 @@ import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
                 return "pages/user_create";
             }
 
-            User user = mapper.toMember(userCreateForm);
+            User user = mapper.toUser(userCreateForm);
             if (isValidUserEmptyFields(user)) {
                 if (isValidUser(user) == "") {
                     BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
                     String password = user.getPassword();
                     String encodedPW = encoder.encode(password);
                     user.setPassword(encodedPW);
-                    userService.createMember(user);
+                    userService.createUser(user);
                     redirectAttrs.addFlashAttribute(ALERT_TYPE, "success");
                     redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "User Created Successfully!");
                     return "redirect:/admin/users";

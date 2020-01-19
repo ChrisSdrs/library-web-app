@@ -16,10 +16,9 @@
         <#list users as user>
             <tr data-id="${user.id}">
                 <td> ${user.id}</td>
-                <td> ${user.ssn}</td>
+                <td> ${user.membNumber}</td>
                 <td> ${user.firstName}</td>
                 <td> ${user.lastName}</td>
-                <td> ${user.address}</td>
                 <td> ${user.email}</td>
                 <td> ${user.phone}</td>
                 <td class="Edit-Delete">

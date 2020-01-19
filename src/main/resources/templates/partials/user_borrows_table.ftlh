@@ -14,7 +14,7 @@
                 <td> ${borrow.date}</td>
                 <td> ${borrow.status}</td>
                 <td> ${borrow.bookPin}</td>
-                <td> ${borrow.user}</td>
+                <td> ${borrow.membNumber}</td>
             </tr>
         </#list>
     </#if>

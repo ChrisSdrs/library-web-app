@@ -30,7 +30,7 @@ public class BookSearchController {
     private BookFormToBookMapper mapper;
 
     @GetMapping(value = "/admin/books/search")
-    public String searchProperties(Model model) {
+    public String searchBooks(Model model) {
         model.addAttribute(BOOK_SEARCH_FORM, new BookSearchForm());
         return "pages/books_search";
     }
@@ -46,7 +46,7 @@ public class BookSearchController {
             model.addAttribute(ERROR_MESSAGE, "an error occurred");
             return "pages/books_search";
         }
-        String pin = bookSearchForm.getPin();
+        String pin = bookSearchForm.getBookPin();
         String category = bookSearchForm.getCategory();
 
 
@@ -56,8 +56,8 @@ public class BookSearchController {
         return "pages/books_search_results";
     }
 
-    private List<BookModel> getBooksFromSearch(String pin, String category){
-        if (pin == ""){
+    private List<BookModel> getBooksFromSearch(String bookPin, String category){
+        if (bookPin == ""){
             if (category == ""){
                 return bookService.findAll();
             }
@@ -67,10 +67,10 @@ public class BookSearchController {
         }
         else{
             if (category == ""){
-                return bookService.findByPin(pin);
+                return bookService.findByBookPin(bookPin);
             }
             else{
-                return bookService.findByPinAndCategory(pin,category);
+                return bookService.findByBookPinAndCategory(bookPin,category);
             }
         }
     }

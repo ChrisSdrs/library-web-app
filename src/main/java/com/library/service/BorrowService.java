@@ -21,7 +21,7 @@ public interface BorrowService {
 
     List<BorrowModel> findAll();
 
-    List<BorrowModel> findByMember(String member);
+    List<BorrowModel> findByMembNumber(String membNumber);
 
     List<BorrowModel> findByBookPin(String bookPin);
 
@@ -29,13 +29,13 @@ public interface BorrowService {
 
     List<BorrowModel> findByDateBefore(LocalDate date);
 
-    List<BorrowModel> findByMemberAndDateAfter(String member, LocalDate dateAfter);
+    List<BorrowModel> findByMembNumberAndDateAfter(String membNumber, LocalDate dateAfter);
 
-    List<BorrowModel> findByMemberAndDateBefore(String member, LocalDate dateBefore);
+    List<BorrowModel> findByMembNumberAndDateBefore(String membNumber, LocalDate dateBefore);
 
     List<BorrowModel> findByDateBetween(LocalDate dateBefore, LocalDate dateAfter);
 
-    List<BorrowModel> findByMemberAndDateBetween(String member, LocalDate dateBefore, LocalDate dateAfter);
+    List<BorrowModel> findByMembNumberAndDateBetween(String membNumber, LocalDate dateBefore, LocalDate dateAfter);
 
     List<BorrowModel> findTop10ByDateOrderByDateAsc(LocalDate dateBefore);
 }

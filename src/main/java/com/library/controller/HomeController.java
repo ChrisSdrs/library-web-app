@@ -22,7 +22,7 @@ public class HomeController {
             return "redirect:/admin";
         }
         else if(role.matches("Member")){
-            return "redirect:/member";
+            return "redirect:/user";
         }
         return "redirect:/login";
     }

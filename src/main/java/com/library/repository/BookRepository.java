@@ -14,10 +14,10 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 
     Optional<Book> findById(Long id);
 
-    List<Book> findByPin(String pin);
+    List<Book> findByBookPin(String bookPin);
 
     List<Book> findByCategory(String category);
 
-    List<Book> findByPinAndCategory(String pin, String category);
+    List<Book> findByBookPinAndCategory(String bookPin, String category);
 }
 

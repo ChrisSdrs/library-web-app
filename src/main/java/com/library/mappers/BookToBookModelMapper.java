@@ -13,7 +13,7 @@ public class BookToBookModelMapper {
     public BookModel mapToBookModel(Book book) {
        BookModel bookModel = new BookModel();
        bookModel.setId(book.getId());
-       bookModel.setPin(book.getPin());
+       bookModel.setBookPin(book.getBookPin());
        bookModel.setCategory(book.getCategory());
        bookModel.setTitle(book.getTitle());
        bookModel.setPublicationDate(book.getPublicationDate().toString());

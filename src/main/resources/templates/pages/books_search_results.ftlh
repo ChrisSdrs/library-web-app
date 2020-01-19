@@ -3,17 +3,17 @@
 
 <html>
 <head>
-    <title>Properties</title>
+    <title>Books</title>
     <#include "../partials/head.ftlh">
 </head>
 <body>
 
 <#include "../partials/navbar.ftlh">
 
-<#assign page = "Properties-Search">
+<#assign page = "Books-Search">
 <#include "../partials/main_content_top.ftlh">
 
-            <h3 class="mb-3">Search Property</h3>
+            <h3 class="mb-3">Search Book</h3>
             <div class="table-responsive">
                 <#include "../forms/bookSearchForm.ftlh" />
                 <div class="Dynamic-Load">
