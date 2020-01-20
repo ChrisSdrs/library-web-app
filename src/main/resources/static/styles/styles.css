@@ -4,7 +4,7 @@
   padding: 6px 20px 3px 20px;
 }
 .sidebar .active .nav-link {
-  color: #007bff;
+    color: #890000;
 }
 .sidebar .active .nav-link .feather {
   color: inherit;
@@ -14,13 +14,11 @@
     padding: 66px 20px 20px 20px;
 }
 .sidebar-sticky{
-    background: lightblue;
     border-radius: 16px;
     padding: 10px 20px 10px 20px;
     height:100%;
-    background-image: linear-gradient(#cfe4ff, #8abeff);
+    background-image: linear-gradient(#bab46f, #6e5c37);
 }
-
 li.navbar-header {
     border-bottom: 2px solid black;
     margin-bottom: 10px;
@@ -97,6 +95,8 @@ thead tr:hover{
   background: white !important;
 }
 
+
+
 /* Dynamic Loading Elements*/
 .Dynamic-Load{
   transition:0.8s ease;
@@ -113,6 +113,82 @@ th, td {
 select{
   color: initial !important;
 }
+
+
+
+/*My code*/
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #820000;
+}
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #820000;
+}
+.btn-link {
+    font-weight: 400;
+    color: #721c24;
+    text-decoration: none;
+}
+.btn-link:hover {
+    color: #856404;
+    text-decoration: underline;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #721c24;
+    background-clip: padding-box;
+    border: 1px solid #343a40;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    background: #ffe7a073;
+}
+.custom-select {
+    display: inline-block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem 1.75rem .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #686868;
+    vertical-align: middle;
+    background-color: #721c248f;
+    border: 1px solid #343a40;
+    border-radius: .25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #856404;
+    border-color: #ffc107;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #721c24;
+    border-color: #ffc107;
+}
+
+
+
+
+
+
 
 
 /* Login Page*/
@@ -135,45 +211,45 @@ select{
     opacity: 1;
     top: 0px;
 }
-/* Alerts */
-[data-notify="progressbar"] {
-    margin-bottom: 0px;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    height: 5px;
-}
+/*!* Alerts *!*/
+/*[data-notify="progressbar"] {*/
+/*    margin-bottom: 0px;*/
+/*    position: absolute;*/
+/*    bottom: 0px;*/
+/*    left: 0px;*/
+/*    width: 100%;*/
+/*    height: 5px;*/
+/*}*/
 
-.alertContainer {
-    display: inline-block;
-    position: fixed;
-    top: 75px;
-    right: 40px;
-    opacity:0;
-    transition: 0.2s linear;
-    z-index: -1;
-}
-.notify-alert{
-    margin:0;
-    transition: 0.2s linear;
-}
-.alert-timer {
-    width: 100%;
-    height: 2px;
-    transition: 4.5s linear;
-    background: lime;
-}
+/*.alertContainer {*/
+/*    display: inline-block;*/
+/*    position: fixed;*/
+/*    top: 75px;*/
+/*    right: 40px;*/
+/*    opacity:0;*/
+/*    transition: 0.2s linear;*/
+/*    z-index: -1;*/
+/*}*/
+/*.notify-alert{*/
+/*    margin:0;*/
+/*    transition: 0.2s linear;*/
+/*}*/
+/*.alert-timer {*/
+/*    width: 100%;*/
+/*    height: 2px;*/
+/*    transition: 4.5s linear;*/
+/*    background: lime;*/
+/*}*/
 /* Styling */
 body, .sidebar {
-    background: #1e1e2f !important;
+    background: #490000 !important;
 }
 .container-fluid{
     padding-right: 30px;
 }
 /* Main Area */
 main {
-    background: #e8e8e8;
+    background: #ffe49469;
     margin: 2px 0px 20px 0;
     border-radius: 14px;
 }
@@ -214,35 +290,34 @@ img.logout-icon {
     float: right;
     filter: invert(1);
 }
-/* SideBar */
 
-/* Report Chart */
-.Report-Ul{
-    display: inline-block;
-    padding: 0;
-    list-style-type: none;
-}
-.Report-Ul li{
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 1px;
-}
-.ReportBox{
-    width: 20px;
-    height: 20px;
-    float: left;
-    margin: 0 10px;
-    border: 3px solid black;
-}
-.PendingBox{
-    background: #a1ee93;
-}
-.InProgressBox{
-    background: #dde9f5;
-}
-.CompletedBox{
-    background: #cfd9e3;
-}
+/*!* Report Chart *!*/
+/*.Report-Ul{*/
+/*    display: inline-block;*/
+/*    padding: 0;*/
+/*    list-style-type: none;*/
+/*}*/
+/*.Report-Ul li{*/
+/*    font-size: 15px;*/
+/*    font-weight: 500;*/
+/*    letter-spacing: 1px;*/
+/*}*/
+/*.ReportBox{*/
+/*    width: 20px;*/
+/*    height: 20px;*/
+/*    float: left;*/
+/*    margin: 0 10px;*/
+/*    border: 3px solid black;*/
+/*}*/
+/*.PendingBox{*/
+/*    background: #a1ee93;*/
+/*}*/
+/*.InProgressBox{*/
+/*    background: #dde9f5;*/
+/*}*/
+/*.CompletedBox{*/
+/*    background: #cfd9e3;*/
+/*}*/
 /* Homepage */
 section#home {
     filter: brightness(0.8);
@@ -279,7 +354,7 @@ body, nav.sidebar{
     opacity:1;
     z-index: 2000;
 }
-.alert-time-run {
-    width: 0 !important;
-    background: #005600;
-}
+/*.alert-time-run {*/
+/*    width: 0 !important;*/
+/*    background: #005600;*/
+/*}*/

@@ -185,6 +185,12 @@
                         <div class="sidebar-link-text">Create Book</div>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/exit-sign.png" class="nav-link-icon">
+                        <div class="sidebar-link-text">Logout</div>
+                    </a>
+                </li>
             </#if>
         </#if>
 <#--        <#if userRole?has_content>-->
