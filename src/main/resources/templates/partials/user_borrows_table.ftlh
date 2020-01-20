@@ -3,8 +3,8 @@
     <tr>
         <th>Date</th>
         <th>Status</th>
-        <th>Category</th>
-        <th>Type</th>
+        <th>Book's PIN</th>
+        <th>Membership Number</th>
     </tr>
     </thead>
     <tbody>

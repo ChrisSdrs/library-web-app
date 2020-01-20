@@ -1,7 +1,7 @@
 jQuery(function ($){
     $('#userVal').validate({
         rules:{
-            ssn:{
+            membNumber:{
                 required: true,
                 digits: true
             },
@@ -9,9 +9,6 @@ jQuery(function ($){
                 required: true
             },
             lastName:{
-                required: true
-            },
-            address:{
                 required: true
             },
             email:{
@@ -33,18 +30,15 @@ jQuery(function ($){
             }
         },
         messages:{
-            ssn:{
-                required: "Enter SSN",
-                digits: "Invalid SSN, SSN type must be number"
+            membNumber:{
+                required: "Enter Membership Number",
+                digits: "Invalid Membership Number, MN type must be number"
             },
             firstName:{
                 required: "Enter first name"
             },
             lastName:{
                 required: "Enter last name"
-            },
-            address:{
-                required: "Enter address"
             },
             email:{
                 required: "Enter e-mail",

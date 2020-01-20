@@ -22,7 +22,7 @@
 <#include "../partials/main_content_bottom.ftlh">
 <#include "../partials/scripts.ftlh">
 <script src="/scripts/main.js"></script>
-<script src="/scripts/repairValidation.js"></script>
+<script src="/scripts/borrowValidation.js"></script>
 </body>
 </html>
 

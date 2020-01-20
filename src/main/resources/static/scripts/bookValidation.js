@@ -1,33 +1,32 @@
 jQuery(function ($){
-    $('#propertyVal').validate({
+    $('#bookVal').validate({
         rules:{
-            pin:{
+            bookPin:{
                 required: true,
                 digits: true
             },
-            year:{
-                required: true,
-                digits: true
-            },
-            address:{
+            title:{
                 required: true
             },
-            owner:{
+            publicationDate:{
+                required: true
+            },
+            category:{
                 required: true
             }
         },
         messages:{
-            pin:{
-                required: "Enter pin"
+            bookPin:{
+                required: "Enter book's PIN"
             },
-            year:{
-                required: "Enter year of construction"
+            title:{
+                required: "Enter title"
             },
-            address:{
-                required: "Enter address"
+            publicationDate:{
+                required: "Enter publication date"
             },
-            owner:{
-                required: "Enter owner's Social Security Number"
+            category:{
+                required: "Enter book category"
             }
         }
     });

@@ -112,9 +112,9 @@
         </#list>
     </div>
     <div class="mb-3">
-        <label for="user">Member's Membership Number</label>
-        <@spring.bind "borrowForm.user"/>
-        <input type="text" class="form-control" name="user" id="user" placeholder="Membership Number" value="<#if borrowForm.user?has_content>${borrowForm.user}</#if>">
+        <label for="membNumber">Membership Number</label>
+        <@spring.bind "borrowForm.membNumber"/>
+        <input type="text" class="form-control" name="membNumber" id="membNumber" placeholder="Membership Number" value="<#if borrowForm.membNumber?has_content>${borrowForm.membNumber}</#if>">
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
         </#list>

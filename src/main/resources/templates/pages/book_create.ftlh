@@ -21,7 +21,7 @@
 
 <#include "../partials/main_content_bottom.ftlh">
 <#include "../partials/scripts.ftlh">
-<script src="/scripts/propertyValidation.js"></script>
+<script src="/scripts/bookValidation.js"></script>
 <script src="/scripts/main.js"></script>
 
 </body>

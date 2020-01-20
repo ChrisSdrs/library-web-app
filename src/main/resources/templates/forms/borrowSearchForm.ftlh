@@ -16,8 +16,8 @@
         </#list>
     </div>
     <div class="mb-3">
-        <@spring.bind "searchBorrowForm.user"/>
-        <input type="text" class="form-control mr-sm-2" name="ssn" id="ssn" placeholder="Membership Number" value="<#if searchBorrowForm.user?has_content>${searchBorrowForm.user}</#if>">
+        <@spring.bind "searchBorrowForm.membNumber"/>
+        <input type="text" class="form-control mr-sm-2" name="membNumber" id="membNumber" placeholder="Membership Number" value="<#if searchBorrowForm.membNumber?has_content>${searchBorrowForm.membNumber}</#if>">
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
         </#list>
