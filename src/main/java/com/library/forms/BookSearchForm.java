@@ -2,30 +2,30 @@ package com.library.forms;
 
 public class BookSearchForm {
 
-    String pin;
-    String category;
+    String bookPin;
+    String membNumber;
 
     public BookSearchForm() {
     }
 
-    public BookSearchForm(String pin, String category) {
-        this.pin = pin;
-        this.category = category;
+    public BookSearchForm(String bookPin, String membNumber) {
+        this.bookPin = bookPin;
+        this.membNumber = membNumber;
     }
 
-    public String getPin() {
-        return pin;
+    public String getBookPin() {
+        return bookPin;
     }
 
-    public void setPin(String pin) {
-        this.pin = pin;
+    public void setBookPin(String bookPin) {
+        this.bookPin = bookPin;
     }
 
-    public String getCategory() {
-        return category;
+    public String getMembNumber() {
+        return membNumber;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setMembNumber(String membNumber) {
+        this.membNumber = membNumber;
     }
 }

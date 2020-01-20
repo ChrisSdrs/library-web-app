@@ -1,7 +1,7 @@
 package com.library.controller;
 
-import com.library.model.MemberModel;
-import com.library.service.MemberService;
+import com.library.model.UserModel;
+import com.library.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.ui.Model;
@@ -17,14 +17,14 @@ import static com.library.utils.GlobalAttributes.USER_ROLE;
 public class GlobalAdviceController {
 
     @Autowired
-    private MemberService memberService;
+    private UserService userService;
 
     @ModelAttribute
     public void globalAttributes(Model model, HttpServletRequest request) {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         model.addAttribute(USERNAME, username);
 
-        MemberModel userDetails = memberService.findByUsername(username).orElse(null);
+        UserModel userDetails = userService.findByUsername(username).orElse(null);
         if(userDetails != null) {
             String userRole = userDetails.getRole();
             model.addAttribute(USER_ROLE, userRole);

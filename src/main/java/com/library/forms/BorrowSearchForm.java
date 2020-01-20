@@ -9,7 +9,7 @@ public class BorrowSearchForm {
     LocalDate dateFrom;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     LocalDate dateTo;
-    String member;
+    String membNumber;
 
     public LocalDate getDateFrom() {
         return dateFrom;
@@ -27,20 +27,20 @@ public class BorrowSearchForm {
         this.dateTo = dateTo;
     }
 
-    public String getMember() {
-        return member;
+    public String getMembNumber() {
+        return membNumber;
     }
 
-    public void setMember(String member) {
-        this.member = member;
+    public void setMembNumber(String membNumber) {
+        this.membNumber = membNumber;
     }
 
     public BorrowSearchForm() {
     }
 
-    public BorrowSearchForm(LocalDate dateFrom, LocalDate dateTo, String member) {
+    public BorrowSearchForm(LocalDate dateFrom, LocalDate dateTo, String membNumber) {
         this.dateFrom = dateFrom;
         this.dateTo = dateTo;
-        this.member = member;
+        this.membNumber = membNumber;
     }
 }

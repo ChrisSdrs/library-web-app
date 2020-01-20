@@ -20,11 +20,11 @@ public class BorrowController {
     @Autowired
     private BorrowService borrowService;
 
-    @GetMapping(value = "/admin/repairs")
+    @GetMapping(value = "/admin/borrows")
     public String borrows(Model model) {
         List<BorrowModel> borrows = borrowService.findAll();
         model.addAttribute(BORROW_LIST, borrows);
-        return "pages/repairs_show";
+        return "pages/borrows_show";
     }
 
     @GetMapping(value = "/admin")

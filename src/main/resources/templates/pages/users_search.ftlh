@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <title>Search member</title>
+    <title>Search user</title>
     <#include "../partials/head.ftlh">
 </head>
 <body>

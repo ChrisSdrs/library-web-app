@@ -15,6 +15,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 
+import java.time.LocalDate;
+
 import static com.library.utils.GlobalAttributes.ALERT_MESSAGE;
 import static com.library.utils.GlobalAttributes.ALERT_TYPE;
 import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
@@ -31,15 +33,15 @@ public class BookCreateController {
     @Autowired
     private BookFormToBookMapper mapper;
 
-    @GetMapping(value = "/admin/properties/create")
+    @GetMapping(value = "/admin/books/create")
     public String createProperty(Model model) {
 
         model.addAttribute(BOOK_FORM, new BookForm());
-        return "pages/property_create";
+        return "pages/book_create";
     }
 
-    @PostMapping(value = "/admin/properties/create")
-    public String createProperty(Model model,
+    @PostMapping(value = "/admin/books/create")
+    public String createBook(Model model,
                                  @Valid @ModelAttribute(BOOK_FORM)
                                          BookForm bookForm,
                                  BindingResult bindingResult, RedirectAttributes redirectAttrs) {
@@ -47,7 +49,7 @@ public class BookCreateController {
         if (bindingResult.hasErrors()) {
             //have some error handling here, perhaps add extra error messages to the model
             model.addAttribute(ERROR_MESSAGE, "an error occurred");
-            return "pages/property_create";
+            return "pages/book_create";
         }
 
         Book book = mapper.toBook(bookForm);
@@ -56,15 +58,15 @@ public class BookCreateController {
                 bookService.createBook(book);
                 redirectAttrs.addFlashAttribute(ALERT_TYPE, "success");
                 redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Book Created Successfully!");
-                return "redirect:/admin/properties";
+                return "redirect:/admin/books";
             }
             else {
                 model.addAttribute(BOOK_CREATE_ERROR, isValidBook(book));
-                return "pages/property_create";
+                return "pages/book_create";
             }
         }else{
             model.addAttribute(BOOK_CREATE_ERROR, "Please fill all fields!");
-            return "pages/property_create";
+            return "pages/book_create";
         }
 
     }
@@ -72,9 +74,9 @@ public class BookCreateController {
 
     private String isValidBook(Book book) {
         String result = "";
-        String pin = book.getPin();
+        String bookPin = book.getBookPin();
         //Book provided is not Valid if pin already exists
-        if (!bookService.findByPin(pin).isEmpty()) {
+        if (!bookService.findByBookPin(bookPin).isEmpty()) {
             result += "Pin Already Exists. ";
         }
         return result;
@@ -83,11 +85,12 @@ public class BookCreateController {
 
     private boolean isValidBookEmptyFields(Book book){
         boolean isValid   = true;
-        String pin = book.getPin();
+        String bookPin = book.getBookPin();
+        LocalDate publicationDate = book.getPublicationDate();
         String title = book.getTitle();
         String category = book.getCategory();
 //        String publicationDate = book.getPublicationDate();
-        if (pin.isEmpty() || title.isEmpty() || category.isEmpty()){
+        if (bookPin.isEmpty() || title.isEmpty() || category.isEmpty() || publicationDate == null){
             isValid = false;
         }
         return isValid;

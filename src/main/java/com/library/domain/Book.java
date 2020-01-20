@@ -16,7 +16,7 @@ public class Book {
     private Long id;
 
     @Column(name = "book_pin")
-    private String pin;
+    private String bookPin;
 
     @Column(name = "book_title")
     private String title;
@@ -40,20 +40,17 @@ public class Book {
     public Book() {
     }
 
-    public Book(String pin, String title, LocalDate publicationDate, String category) {
-        this.pin = pin;
+    public Book(String bookPin, String title, LocalDate publicationDate, String category) {
+        this.bookPin = bookPin;
         this.title = title;
         this.publicationDate = publicationDate;
         this.category = category;
     }
 
-    public String getPin() {
-        return pin;
-    }
 
-    public void setPin(String pin) {
-        this.pin = pin;
-    }
+    public String getBookPin() { return bookPin; }
+
+    public void setBookPin(String bookPin) { this.bookPin = bookPin; }
 
     public String getTitle() {
         return title;

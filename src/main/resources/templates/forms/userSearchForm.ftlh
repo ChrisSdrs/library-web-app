@@ -2,8 +2,8 @@
 <form action="/admin/users/search" name="userSearchForm" method="POST">
 
     <div class="mb-3">
-        <@spring.bind "userSearchForm.ssn"/>
-        <input type="text" class="form-control" name="ssn" id="ssn" placeholder="Social Security Number" value="<#if userSearchForm.ssn?has_content>${userSearchForm.ssn}</#if>">
+        <@spring.bind "userSearchForm.membNumber"/>
+        <input type="text" class="form-control" name="membNumber" id="membNumber" placeholder="Member Number" value="<#if userSearchForm.membNumber?has_content>${userSearchForm.membNumber}</#if>">
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
         </#list>

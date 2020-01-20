@@ -31,15 +31,15 @@ public class BorrowCreateController {
     @Autowired
     private BorrowFormToBorrowMapper mapper;
 
-    @GetMapping(value = "/admin/repairs/create")
-    public String createRepairs(Model model) {
+    @GetMapping(value = "/admin/borrows/create")
+    public String createBorrows(Model model) {
 
         model.addAttribute(BORROWS_FORM, new BorrowForm());
-        return "pages/repairs_create";
+        return "pages/borrows_create";
     }
 
-    @PostMapping(value = "/admin/repairs/create")
-    public String createRepairs(Model model,
+    @PostMapping(value = "/admin/borrows/create")
+    public String createBorrows(Model model,
                                 @Valid @ModelAttribute(BORROWS_FORM)
                                         BorrowForm borrowForm,
                                 BindingResult bindingResult, RedirectAttributes redirectAttrs) {
@@ -47,29 +47,29 @@ public class BorrowCreateController {
         if (bindingResult.hasErrors()) {
             //have some error handling here, perhaps add extra error messages to the model
             model.addAttribute(ERROR_MESSAGE, "an error occurred");
-            return "pages/repairs_create";
+            return "pages/borrows_create";
         }
-        Borrow borrow = mapper.mapToRepairModel(borrowForm);
-        if (isValidRepairEmptyFields(borrow)){
+        Borrow borrow = mapper.mapToBorrowModel(borrowForm);
+        if (isValidBorrowEmptyFields(borrow)){
             borrowService.createBorrow(borrow);
             redirectAttrs.addFlashAttribute(ALERT_TYPE, "success");
             redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Borrow Created Successfully!");
-            return "redirect:/admin/repairs";
+            return "redirect:/admin/borrows";
         }
         else {
             model.addAttribute(BORROWS_FORM, borrowForm);
             model.addAttribute(BORROW_CREATE_ERROR, "Please fill all fields!");
-            return "pages/repairs_create";
+            return "pages/borrows_create";
         }
     }
 
-    private boolean isValidRepairEmptyFields(Borrow borrow){
+    private boolean isValidBorrowEmptyFields(Borrow borrow){
         boolean isValid   = true;
         LocalDate date = borrow.getDate();
         String status = borrow.getStatus();
-        String member = borrow.getMember();
+        String membNumber = borrow.getMembNumber();
         String bookPin = borrow.getBookPin();
-        if (date == null || status.isEmpty() || member.isEmpty() || bookPin.isEmpty() ){
+        if (date == null || status.isEmpty() || membNumber.isEmpty() || bookPin.isEmpty() ){
             isValid = false;
         }
 

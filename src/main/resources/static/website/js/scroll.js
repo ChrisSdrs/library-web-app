@@ -358,7 +358,7 @@
 
 		// Options and overrides
 		var overrides = getDataOptions( toggle ? toggle.getAttribute('data-options') : null );
-		var animateSettings = extend( settings || defaults, options || {}, overrides ); // Merge member options with defaults
+		var animateSettings = extend( settings || defaults, options || {}, overrides ); // Merge user options with defaults
 
 		// Selectors and variables
 		var isNum = Object.prototype.toString.call( anchor ) === '[object Number]' ? true : false;
@@ -574,7 +574,7 @@
 		smoothScroll.destroy();
 
 		// Selectors and variables
-		settings = extend( defaults, options || {} ); // Merge member options with defaults
+		settings = extend( defaults, options || {} ); // Merge user options with defaults
 		fixedHeader = settings.selectorHeader ? document.querySelector( settings.selectorHeader ) : null; // Get the fixed header
 		headerHeight = getHeaderHeight( fixedHeader );
 

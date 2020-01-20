@@ -23,27 +23,27 @@ public class BookEditController {
     @Autowired
     private BookService bookService;
 
-    @PostMapping(value = "/admin/properties/{id}/edit")
+    @PostMapping(value = "/admin/books/{id}/edit")
     public String editProperty(@PathVariable Long id, Model model, RedirectAttributes redirectAttrs) {
         BookModel bookModel = bookService.findById(id).get();
         model.addAttribute(BOOK_FORM, new BookForm());
         model.addAttribute(BOOK, bookModel);
         redirectAttrs.addFlashAttribute(ALERT_TYPE, "success");
         redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Book Edited successfully!");
-        return "pages/property_edit";
+        return "pages/book_edit";
     }
 
-    @PostMapping(value = "/admin/properties/edit")
-    public String editProperty(BookModel bookModel) {
+    @PostMapping(value = "/admin/books/edit")
+    public String editBook(BookModel bookModel) {
         bookService.updateBook(bookModel);
-        return "redirect:/admin/properties";
+        return "redirect:/admin/books";
     }
 
-    @PostMapping(value = "/admin/properties/{id}/delete")
+    @PostMapping(value = "/admin/books/{id}/delete")
     public String deleteProperty(@PathVariable Long id, RedirectAttributes redirectAttrs) {
         bookService.deleteById(id);
         redirectAttrs.addFlashAttribute(ALERT_TYPE, "info");
         redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Book Deleted successfully!");
-        return "redirect:/admin/properties";
+        return "redirect:/admin/books";
     }
 }

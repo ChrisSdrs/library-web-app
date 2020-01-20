@@ -54,7 +54,7 @@ function arrayify(object) {
  * Chooses the actual image size to fetch, (for example 2 or 3) that
  * will be used to create a suffix like "@2x" or "@3x".
  *
- * @param  {String|Number} cap The number the member provided indicating that
+ * @param  {String|Number} cap The number the user provided indicating that
  *                             they have prepared images up to this size.
  *
  * @return {Number} The number we'll be using to create a suffix.
@@ -63,7 +63,7 @@ function chooseCap(cap) {
   var numericCap = parseInt(cap, 10);
 
   /*
-   * If the environment's device pixel ratio is less than what the member
+   * If the environment's device pixel ratio is less than what the user
    * provided, we'll only grab images at that size.
    */
   if (environment < numericCap) {
@@ -71,7 +71,7 @@ function chooseCap(cap) {
 
     /*
      * If the device pixel ratio is greater than or equal to what the
-     * member provided, we'll use what the member provided.
+     * user provided, we'll use what the user provided.
      */
   } else {
       return numericCap;
@@ -115,7 +115,7 @@ function setSourceIfAvailable(image, retinaURL) {
   /*
    * Create a new image element and give it a load listener. When the
    * load listener fires, it means the URL is correct and we will then
-   * attach it to the member's image.
+   * attach it to the user's image.
    */
   var testImage = document.createElement('img');
   testImage.addEventListener('load', function () {
@@ -212,7 +212,7 @@ function cleanBgImg(img) {
 /**
  * Gets all participating images and dynamically swaps out each one for its
  * retina equivalent taking into account the environment capabilities and
- * the densities for which the member has provided images.
+ * the densities for which the user has provided images.
  *
  * @param {Iterable} images  Optional. An Array, jQuery selection, or NodeList
  *                           of elements to affect with retina.js. If not
@@ -230,8 +230,8 @@ function retina(images) {
       var rjsIsNumber = !isNaN(parseInt(rjs, 10));
 
       /*
-       * If the member provided a number, dynamically swap out the image.
-       * If the member provided a url, do it manually.
+       * If the user provided a number, dynamically swap out the image.
+       * If the user provided a url, do it manually.
        */
       if (rjsIsNumber) {
         dynamicSwapImage(img, src, rjs);

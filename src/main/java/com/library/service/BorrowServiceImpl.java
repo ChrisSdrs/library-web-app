@@ -31,7 +31,7 @@ public class BorrowServiceImpl implements BorrowService {
         originalBorrow.setDate(borrowModel.getDate());
         originalBorrow.setStatus(borrowModel.getStatus());
         originalBorrow.setBookPin(borrowModel.getBookPin());
-        originalBorrow.setMember(borrowModel.getMember());
+        originalBorrow.setMembNumber(borrowModel.getMembNumber());
 
         return borrowRepository.save(originalBorrow);
     }
@@ -56,8 +56,8 @@ public class BorrowServiceImpl implements BorrowService {
     }
 
     @Override
-    public List<BorrowModel> findByMember(String member) {
-        return borrowRepository.findByMember(member)
+    public List<BorrowModel> findByMembNumber(String membNumber) {
+        return borrowRepository.findByMembNumber(membNumber)
                 .stream()
                 .map(borrow -> mapper.mapToBorrowModel(borrow))
                 .collect(Collectors.toList());
@@ -88,16 +88,16 @@ public class BorrowServiceImpl implements BorrowService {
     }
 
     @Override
-    public List<BorrowModel> findByMemberAndDateAfter(String member, LocalDate dateAfter) {
-        return borrowRepository.findByMemberAndDateAfter(member, dateAfter)
+    public List<BorrowModel> findByMembNumberAndDateAfter(String membNumber, LocalDate dateAfter) {
+        return borrowRepository.findByMembNumberAndDateAfter(membNumber, dateAfter)
                 .stream()
                 .map(borrow -> mapper.mapToBorrowModel(borrow))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public List<BorrowModel> findByMemberAndDateBefore(String member, LocalDate dateBefore) {
-        return borrowRepository.findByMemberAndDateBefore(member, dateBefore)
+    public List<BorrowModel> findByMembNumberAndDateBefore(String membNumber, LocalDate dateBefore) {
+        return borrowRepository.findByMembNumberAndDateBefore(membNumber, dateBefore)
                 .stream()
                 .map(borrow -> mapper.mapToBorrowModel(borrow))
                 .collect(Collectors.toList());
@@ -112,8 +112,8 @@ public class BorrowServiceImpl implements BorrowService {
     }
 
     @Override
-    public List<BorrowModel> findByMemberAndDateBetween(String member, LocalDate dateBefore, LocalDate dateAfter) {
-        return borrowRepository.findByMemberAndDateBetween(member, dateBefore, dateAfter)
+    public List<BorrowModel> findByMembNumberAndDateBetween(String membNumber, LocalDate dateBefore, LocalDate dateAfter) {
+        return borrowRepository.findByMembNumberAndDateBetween(membNumber, dateBefore, dateAfter)
                 .stream()
                 .map(borrow -> mapper.mapToBorrowModel(borrow))
                 .collect(Collectors.toList());

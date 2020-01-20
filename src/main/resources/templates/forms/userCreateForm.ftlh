@@ -3,9 +3,9 @@
 
 
     <div class="mb-3">
-        <label for="Ssn">Social Security Number</label>
-        <@spring.bind "userCreateForm.ssn"/>
-        <input type="text" class="form-control" name="ssn" id="ssn" placeholder="SSN" value="<#if userCreateForm.ssn?has_content>${userCreateForm.ssn}</#if>">
+        <label for="membNumber">Membership Number</label>
+        <@spring.bind "userCreateForm.membNumber"/>
+        <input type="text" class="form-control" name="membNumber" id="membNumber" placeholder="Membership Number" value="<#if userCreateForm.membNumber?has_content>${userCreateForm.membNumber}</#if>">
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
         </#list>
@@ -28,14 +28,6 @@
             <span>${error}</span>
         </#list>
 
-    </div>
-    <div class="mb-3">
-        <label for="address">Address</label>
-        <@spring.bind "userCreateForm.address"/>
-        <input type="text" class="form-control" name="address" id="address" placeholder="Address" value="<#if userCreateForm.address?has_content>${userCreateForm.address}</#if>">
-        <#list spring.status.errorMessages as error>
-            <span>${error}</span>
-        </#list>
     </div>
     <div class="mb-3">
         <label for="email">E-mail</label>
@@ -74,8 +66,8 @@
         <@spring.bind "userCreateForm.role"/>
         <select class="custom-select d-block w-100" name="role" id="role" required="">
             <option value="" selected class="first-select-label">Choose Role</option>
-            <option value="Owner"   <#if userCreateForm.role?has_content && userCreateForm.role == "Owner"> selected </#if>>
-                Owner
+            <option value="Member"   <#if userCreateForm.role?has_content && userCreateForm.role == "Member"> selected </#if>>
+                Member
             </option>
             <option value="Admin"   <#if userCreateForm.role?has_content && userCreateForm.role == "Admin"> selected </#if>>
                 Admin
@@ -86,9 +78,9 @@
         </#list>
     </div>
 
-    <#if userCreateError?has_content>
+    <#if memberCreateError?has_content>
         <div><p class="error">
-                ${userCreateError}
+                ${memberCreateError}
             </p>
         </div>
     </#if>

@@ -22,6 +22,6 @@ public class BookController {
     public String books(Model model) {
         List<BookModel> books = bookService.findAll();
         model.addAttribute(BOOK_LIST, books);
-        return "pages/properties_show";
+        return "pages/books_show";
     }
 }

@@ -1,7 +1,7 @@
 package com.library.controller;
 
 import com.library.forms.LoginForm;
-import com.library.service.MemberService;
+import com.library.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +24,12 @@ public class LoginController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private MemberService memberService;
+    private UserService userService;
 
 
     @GetMapping(value = "/login")
     public String login() {
-        return "login";
+        return "index";
     }
 
     @GetMapping(value = "/login-error")
@@ -41,7 +41,7 @@ public class LoginController {
         if (bindingResult.hasErrors()) {
             //have some error handling here, perhaps add extra error messages to the model
             model.addAttribute(ERROR_MESSAGE, "an error occurred");
-            return "login";
+            return "index";
         }
         String username = loginForm.getUsername();
         String password = loginForm.getPassword();
@@ -50,12 +50,12 @@ public class LoginController {
         }
         else {
             model.addAttribute(LOGIN_AUTHENTICATION, "fail");
-            return "login";
+            return "index";
         }
     }
 
     private boolean tryLoginAuthentication(String username, String password){
-        return memberService.findByUsernameAndPassword(username,password).isPresent();
+        return userService.findByUsernameAndPassword(username,password).isPresent();
 
     }
 

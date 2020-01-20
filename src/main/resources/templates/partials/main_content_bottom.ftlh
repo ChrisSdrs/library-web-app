@@ -3,4 +3,4 @@
     </div>
 </div>
 <!-- Alerts -->
-<#include "../partials/alerts.ftlh" />
+<#--<#include "../partials/alerts.ftlh" />-->

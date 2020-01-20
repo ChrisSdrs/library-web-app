@@ -76,7 +76,7 @@
 
 		/**
 		 * Coordinates of all items in pixel.
-		 * @todo The name of this member is missleading.
+		 * @todo The name of this user is missleading.
 		 * @protected
 		 */
 		this._coordinates = [];
@@ -2713,7 +2713,7 @@
 		this._pages = [];
 
 		/**
-		 * All DOM elements of the member interface.
+		 * All DOM elements of the user interface.
 		 * @protected
 		 * @type {Object}
 		 */
@@ -2931,7 +2931,7 @@
 	};
 
 	/**
-	 * Draws the member interface.
+	 * Draws the user interface.
 	 * @todo The option `dotsData` wont work.
 	 * @protected
 	 */

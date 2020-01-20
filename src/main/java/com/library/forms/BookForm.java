@@ -3,7 +3,7 @@ package com.library.forms;
 public class BookForm {
 
     private Long id;
-    private String pin;
+    private String bookPin;
     private String category;
     private String title;
     private String publicationDate;
@@ -11,9 +11,9 @@ public class BookForm {
     public BookForm() {
     }
 
-    public BookForm(Long id, String pin, String category, String title, String publicationDate) {
+    public BookForm(Long id, String bookPin, String category, String title, String publicationDate) {
         this.id = id;
-        this.pin = pin;
+        this.bookPin = bookPin;
         this.category = category;
         this.title = title;
         this.publicationDate = publicationDate;
@@ -27,12 +27,12 @@ public class BookForm {
         this.id = id;
     }
 
-    public String getPin() {
-        return pin;
+    public String getBookPin() {
+        return bookPin;
     }
 
-    public void setPin(String pin) {
-        this.pin = pin;
+    public void setBookPin(String bookPin) {
+        this.bookPin = bookPin;
     }
 
     public String getCategory() {

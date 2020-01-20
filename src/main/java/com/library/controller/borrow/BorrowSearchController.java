@@ -29,13 +29,13 @@ public class BorrowSearchController {
     @Autowired
     private BorrowFormToBorrowMapper mapper;
 
-    @GetMapping(value = "/admin/repairs/search")
+    @GetMapping(value = "/admin/borrows/search")
     public String searchBorrows(Model model) {
         model.addAttribute(SEARCH_BORROWS_FORM, new BorrowSearchForm());
-        return "pages/repairs_search";
+        return "pages/borrows_search";
     }
 
-    @PostMapping(value = "/admin/repairs/search")
+    @PostMapping(value = "/admin/borrows/search")
     public String searchBorrows(Model model,
                                 @Valid @ModelAttribute(SEARCH_BORROWS_FORM)
                                         BorrowSearchForm borrowSearchForm,
@@ -44,20 +44,20 @@ public class BorrowSearchController {
         if (bindingResult.hasErrors()) {
             //have some error handling here, perhaps add extra error messages to the model
             model.addAttribute(ERROR_MESSAGE, "an error occurred");
-            return "pages/repairs_search";
+            return "pages/borrows_search";
         }
-        String customerSsn = borrowSearchForm.getMember();
+        String membNumber = borrowSearchForm.getMembNumber();
         LocalDate dateFrom = borrowSearchForm.getDateFrom();
         LocalDate dateTo = borrowSearchForm.getDateTo();
 
-        List<BorrowModel> borrows = getBorrowsFromSearch(customerSsn,dateFrom,dateTo);
+        List<BorrowModel> borrows = getBorrowsFromSearch(membNumber,dateFrom,dateTo);
         model.addAttribute(BORROW_LIST, borrows);
         model.addAttribute(SEARCH_BORROWS_FORM, borrowSearchForm);
-        return "pages/repairs_search_results";
+        return "pages/borrows_search_results";
     }
 
-    private List<BorrowModel> getBorrowsFromSearch(String member, LocalDate dateFrom, LocalDate dateTo){
-        if (member == ""){
+    private List<BorrowModel> getBorrowsFromSearch(String membNumber, LocalDate dateFrom, LocalDate dateTo){
+        if (membNumber == ""){
             if (dateFrom == null){
                 if (dateTo == null){
                     return borrowService.findAll();
@@ -78,18 +78,18 @@ public class BorrowSearchController {
         else{
             if (dateFrom == null){
                 if (dateTo == null){
-                    return borrowService.findByMember(member);
+                    return borrowService.findByMembNumber(membNumber);
                 }
                 else{
-                    return borrowService.findByMemberAndDateBefore(member, dateTo);
+                    return borrowService.findByMembNumberAndDateBefore(membNumber, dateTo);
                 }
             }
             else{
                 if (dateTo == null){
-                    return borrowService.findByMemberAndDateAfter(member, dateFrom);
+                    return borrowService.findByMembNumberAndDateAfter(membNumber, dateFrom);
                 }
                 else{
-                    return borrowService.findByMemberAndDateBetween(member, dateFrom, dateTo);
+                    return borrowService.findByMembNumberAndDateBetween(membNumber, dateFrom, dateTo);
                 }
             }
         }

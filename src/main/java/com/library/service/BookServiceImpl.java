@@ -44,7 +44,7 @@ public class BookServiceImpl implements BookService {
     @Override
     public Book updateBook(BookModel bookModel){
         Book originalBook = bookRepository.findById(bookModel.getId()).get();
-        originalBook.setPin(bookModel.getPin());
+        originalBook.setBookPin(bookModel.getBookPin());
         originalBook.setTitle(bookModel.getTitle());
         originalBook.setCategory(bookModel.getCategory());
         return bookRepository.save(originalBook);
@@ -56,8 +56,8 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<BookModel> findByPin(String pin) {
-        return bookRepository.findByPin(pin)
+    public List<BookModel> findByBookPin(String bookPin) {
+        return bookRepository.findByBookPin(bookPin)
                 .stream()
                 .map(book -> mapper.mapToBookModel(book))
                 .collect(Collectors.toList());
@@ -72,16 +72,16 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<BookModel> findByMember(String member) {
-        return bookRepository.findByCategory(member)
+    public List<BookModel> findByMembNumber(String membNumber) {
+        return bookRepository.findByCategory(membNumber)
                 .stream()
                 .map(book -> mapper.mapToBookModel(book))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public List<BookModel> findByPinAndCategory(String pin, String category) {
-        return bookRepository.findByPinAndCategory(pin, category)
+    public List<BookModel> findByBookPinAndMembNumber(String bookPin, String membNumber) {
+        return bookRepository.findByBookPinAndCategory(bookPin, membNumber)
                 .stream()
                 .map(book -> mapper.mapToBookModel(book))
                 .collect(Collectors.toList());
