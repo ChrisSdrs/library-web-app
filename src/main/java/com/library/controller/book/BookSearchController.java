@@ -47,30 +47,30 @@ public class BookSearchController {
             return "pages/books_search";
         }
         String pin = bookSearchForm.getBookPin();
-        String category = bookSearchForm.getCategory();
+        String membNumber = bookSearchForm.getMembNumber();
 
 
-        List<BookModel> books = getBooksFromSearch(pin, category);
+        List<BookModel> books = getBooksFromSearch(pin, membNumber);
         model.addAttribute(BOOKS, books);
         model.addAttribute(BOOK_SEARCH_FORM, bookSearchForm);
         return "pages/books_search_results";
     }
 
-    private List<BookModel> getBooksFromSearch(String bookPin, String category){
+    private List<BookModel> getBooksFromSearch(String bookPin, String membNumber){
         if (bookPin == ""){
-            if (category == ""){
+            if (membNumber == ""){
                 return bookService.findAll();
             }
             else{
-                return bookService.findByCategory(category);
+                return bookService.findByCategory(membNumber);
             }
         }
         else{
-            if (category == ""){
+            if (membNumber == ""){
                 return bookService.findByBookPin(bookPin);
             }
             else{
-                return bookService.findByBookPinAndCategory(bookPin,category);
+                return bookService.findByBookPinAndMembNumber(bookPin,membNumber);
             }
         }
     }

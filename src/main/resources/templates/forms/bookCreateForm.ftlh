@@ -3,9 +3,9 @@
 <form action="/admin/books/create" id="bookVal" name="bookForm" method="POST">
 
     <div class="mb-3">
-        <label for="pin">Book's PIN</label>
-        <@spring.bind "bookForm.pin"/>
-        <input type="text" class="form-control" name="pin" id="pin" placeholder="Pin">
+        <label for="bookPin">Book's PIN</label>
+        <@spring.bind "bookForm.bookPin"/>
+        <input type="text" class="form-control" name="bookPin" id="bookPin" placeholder="PIN">
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
         </#list>
@@ -23,7 +23,7 @@
     <div class="mb-3">
         <label for="publicationDate">Publication date</label>
         <@spring.bind "bookForm.publicationDate"/>
-        <input type="text" class="form-control" name="publicationDate" id="publicationDate" placeholder="Publication date">
+        <input type="date" class="form-control" name="publicationDate" id="publicationDate" placeholder="Publication date">
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
         </#list>

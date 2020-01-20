@@ -14,11 +14,16 @@
 <#assign page = "Home">
 <#include "../partials/main_content_top.ftlh">
 
-<h3 class="mb-3">User Account</h3>
+<h3 class="mb-3">
+    <#if userDetails?has_content>
+        ${userDetails.firstName}
+        ${userDetails.lastName}
+    </#if>
+</h3>
 <div class="table-responsive">
 
-    <h4>My Details</h4>
-    <#include "../partials/user_details_table.ftlh" />
+<#--    <h4>My Details</h4>-->
+<#--    <#include "../partials/user_details_table.ftlh" />-->
 <#--    <h4>My Properties</h4>-->
 <#--    <#include "../partials/user_books_table.ftlh" />-->
     <h4>My Borrows</h4>

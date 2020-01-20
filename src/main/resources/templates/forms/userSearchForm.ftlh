@@ -1,5 +1,5 @@
 
-<form action="/admin/members/search" name="userSearchForm" method="POST">
+<form action="/admin/users/search" name="userSearchForm" method="POST">
 
     <div class="mb-3">
         <@spring.bind "userSearchForm.membNumber"/>

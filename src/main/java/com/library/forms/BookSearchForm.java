@@ -3,14 +3,14 @@ package com.library.forms;
 public class BookSearchForm {
 
     String bookPin;
-    String category;
+    String membNumber;
 
     public BookSearchForm() {
     }
 
-    public BookSearchForm(String bookPin, String category) {
+    public BookSearchForm(String bookPin, String membNumber) {
         this.bookPin = bookPin;
-        this.category = category;
+        this.membNumber = membNumber;
     }
 
     public String getBookPin() {
@@ -21,11 +21,11 @@ public class BookSearchForm {
         this.bookPin = bookPin;
     }
 
-    public String getCategory() {
-        return category;
+    public String getMembNumber() {
+        return membNumber;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setMembNumber(String membNumber) {
+        this.membNumber = membNumber;
     }
 }

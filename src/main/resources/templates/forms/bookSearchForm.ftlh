@@ -1,8 +1,8 @@
 <form action="/admin/books/search" name="bookSearchForm" method="POST">
 
     <div class="mb-3">
-        <@spring.bind "bookSearchForm.pin"/>
-        <input type="text" class="form-control" name="pin" id="pin" placeholder="Book's PIN" value="<#if bookSearchForm.pin?has_content>${bookSearchForm.pin}</#if>">
+        <@spring.bind "bookSearchForm.bookPin"/>
+        <input type="text" class="form-control" name="bookPin" id="bookPin" placeholder="Book's PIN" value="<#if bookSearchForm.bookPin?has_content>${bookSearchForm.bookPin}</#if>">
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
         </#list>

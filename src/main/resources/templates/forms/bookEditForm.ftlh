@@ -4,9 +4,9 @@
     <input type="hidden" name="id" value="${book.id}">
 
     <div class="mb-3">
-        <label for="pin">Book's PIN</label>
-        <@spring.bind "bookForm.pin"/>
-        <input type="text" class="form-control" name="pin" id="pin" placeholder="Pin" value="${book.pin}">
+        <label for="bookPin">Book's PIN</label>
+        <@spring.bind "bookForm.bookPin"/>
+        <input type="text" class="form-control" name="bookPin" id="bookPin" placeholder="Pin" value="${book.bookPin}">
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
         </#list>
@@ -24,7 +24,7 @@
     <div class="mb-3">
         <label for="publicationDate">Publication date</label>
         <@spring.bind "bookForm.publicationDate"/>
-        <input type="text" class="form-control" name="publicationDate" id="publicationDate" placeholder="Publication date" value="${book.publicationDate}">
+        <input type="date" class="form-control" name="publicationDate" id="publicationDate" placeholder="Publication date" value="${book.publicationDate}">
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
         </#list>

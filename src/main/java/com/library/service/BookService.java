@@ -27,5 +27,5 @@ public interface BookService {
 
     List<BookModel> findByCategory(String category);
 
-    List<BookModel> findByBookPinAndCategory(String bookPin, String category);
+    List<BookModel> findByBookPinAndMembNumber(String bookPin, String membNumber);
 }
