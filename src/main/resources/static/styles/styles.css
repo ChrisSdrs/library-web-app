@@ -37,6 +37,7 @@ img.coming-soon {
     margin: 4px 0 0 19px;
 }
 .sidebar-title {
+    font-family: "Goudy Old Style", Garamond, "Big Caslon";
     font-size: 27px;
     font-weight: 700;
     line-height: 36px;
@@ -63,6 +64,8 @@ li.nav-item:hover {
     float: left;
 }
 .sidebar-link-text {
+    font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype",
+    Palatino, "URW Palladio L", "Nimbus Roman No9 L", serif;
     margin-top: 4px;
     margin-left: 10px;
     font-size: 18px;
@@ -151,6 +154,8 @@ select{
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 .table {
+    font-family: "Goudy Old Style", Garamond, "Big Caslon";
+    font-size: 20px;
     width: 100%;
     margin-bottom: 1rem;
     color: #212529;
@@ -182,6 +187,12 @@ select{
     color: #fff;
     background-color: #721c24;
     border-color: #ffc107;
+}
+.mb-3, .my-3 {
+    font-family: "Goudy Old Style", Garamond, "Big Caslon";
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 1rem!important;
 }
 
 
