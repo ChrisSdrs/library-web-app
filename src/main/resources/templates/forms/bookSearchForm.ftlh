@@ -9,8 +9,8 @@
 
     </div>
     <div class="mb-3">
-        <@spring.bind "bookSearchForm.membNumber"/>
-        <input type="text" class="form-control" name="membNumber" id="membNumber" placeholder="Member's Membership Number" value="<#if bookSearchForm.membNumber?has_content>${bookSearchForm.membNumber}</#if>">
+        <@spring.bind "bookSearchForm.category"/>
+        <input type="text" class="form-control" name="category" id="category" placeholder="Book Category" value="<#if bookSearchForm.category?has_content>${bookSearchForm.category}</#if>">
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
         </#list>
