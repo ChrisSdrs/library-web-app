@@ -4,7 +4,7 @@
         <th >Date</th>
         <th>Status</th>
         <th>PIN</th>
-        <th>User</th>
+        <th>Membership Number</th>
         <th>Edit</th>
         <th>Delete</th>
     </tr>
