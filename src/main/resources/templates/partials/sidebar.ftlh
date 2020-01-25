@@ -177,9 +177,6 @@
                     <div class="sidebar-link-text">Logout</div>
                 </a>
             </li>
-
         </ul>
-
-
     </div>
 </nav>

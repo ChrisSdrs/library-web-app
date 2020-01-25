@@ -8,7 +8,6 @@
 </head>
 <body>
 
-<#include "../partials/navbar.ftlh">
 
 <#assign page = "Repair-Edit">
 <#include "../partials/main_content_top.ftlh">

@@ -16,22 +16,12 @@
 .sidebar-sticky{
     margin-top: -36px;
     border-radius: 16px;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 55px 10px 20px;
     height:100%;
     background-image: linear-gradient(#bab46f, #6e5c37);
 }
-/*li.navbar-header {*/
-/*    border-bottom: 2px solid black;*/
-/*    margin-bottom: 10px;*/
-/*}*/
 
-img.sidebar-logo {
-    width: 60px;
-}
-img.coming-soon {
-    width: 100%;
-    filter: hue-rotate(34deg);
-}
+
 .dashboard-username {
     float: left;
     font-size: 28px;
@@ -48,22 +38,7 @@ img.coming-soon {
     display: inline-block;
     border-bottom: 1px solid black;
 }
-/*li.nav-item {*/
-/*    margin-top: 2px;*/
-/*    border-radius: 11px;*/
-/*    transition:0.3s ease;*/
-/*}*/
-/*li.nav-item.active {*/
-/*    background: #ffffff94;*/
-/*}*/
-/*li.nav-item:hover {*/
-/*    background: #ffffffbf !important;*/
-/*}*/
-/*.nav-link-icon{*/
-/*    width: 30px;*/
-/*    height: 30px;*/
-/*    float: left;*/
-/*}*/
+
 .sidebar-link-text {
     font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype",
     Palatino, "URW Palladio L", "Nimbus Roman No9 L", serif;

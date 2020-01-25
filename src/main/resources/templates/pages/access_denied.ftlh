@@ -11,7 +11,6 @@
 </head>
 <body>
 
-<#include "../partials/navbar.ftlh">
 
 <#assign page = "Home">
 <#include "../partials/main_content_top.ftlh">

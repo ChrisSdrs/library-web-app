@@ -5,7 +5,6 @@
 </head>
 <body>
 
-<#include "../partials/navbar.ftlh">
 
 <#assign page = "Users">
 <#include "../partials/main_content_top.ftlh">

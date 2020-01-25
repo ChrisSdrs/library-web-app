@@ -8,7 +8,6 @@
 </head>
 <body>
 
-<#include "../partials/navbar.ftlh">
 
 <#assign page = "Borrows-Search">
 <#include "../partials/main_content_top.ftlh">

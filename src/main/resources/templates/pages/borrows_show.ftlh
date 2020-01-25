@@ -8,12 +8,11 @@
 </head>
 <body>
 
-<#include "../partials/navbar.ftlh">
 
 <#assign page = "Borrows">
 <#include "../partials/main_content_top.ftlh">
 
-    <h3 class="mb-3">Search Borrows</h3>
+    <h3 class="mb-3">Borrows</h3>
     <div class="table-responsive">
         <#include "../partials/borrows_table.ftlh" />
     </div>
