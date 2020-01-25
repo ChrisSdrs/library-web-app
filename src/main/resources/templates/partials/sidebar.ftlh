@@ -170,13 +170,13 @@
                         <div class="sidebar-link-text">Create Book</div>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/logout" id="logout-item">
-                        <div class="sidebar-link-text">Logout</div>
-                    </a>
-                </li>
             </#if>
         </#if>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout" id="logout-item">
+                    <div class="sidebar-link-text">Logout</div>
+                </a>
+            </li>
 
         </ul>
 

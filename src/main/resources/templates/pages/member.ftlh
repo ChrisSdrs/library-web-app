@@ -22,13 +22,9 @@
 </h3>
 <div class="table-responsive">
 
-<#--    <h4>My Details</h4>-->
-<#--    <#include "../partials/user_details_table.ftlh" />-->
-<#--    <h4>My Properties</h4>-->
-<#--    <#include "../partials/user_books_table.ftlh" />-->
+
     <h4>My Borrows</h4>
     <#include "../partials/user_borrows_table.ftlh" />
-<#--    <#include "../partials/report_chart.ftlh" />-->
 
 </div>
 

@@ -8,7 +8,7 @@
         <th>E-mail</th>
         <th>Phone</th>
         <th>Edit</th>
-        <th class="text-center">Remove</th>
+        <th class="text-center">Delete</th>
     </tr>
     </thead><tbody>
     <#if users?has_content>

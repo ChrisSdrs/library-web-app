@@ -11,19 +11,19 @@
 }
 .sidebar{
     box-shadow: initial !important;
-    padding: 66px 20px 20px 20px;
+    padding: 29px 20px 20px 20px;
 }
 .sidebar-sticky{
-    margin-top: -6px;
+    margin-top: -36px;
     border-radius: 16px;
     padding: 10px 20px 10px 20px;
     height:100%;
     background-image: linear-gradient(#bab46f, #6e5c37);
 }
-li.navbar-header {
-    border-bottom: 2px solid black;
-    margin-bottom: 10px;
-}
+/*li.navbar-header {*/
+/*    border-bottom: 2px solid black;*/
+/*    margin-bottom: 10px;*/
+/*}*/
 
 img.sidebar-logo {
     width: 60px;
@@ -48,22 +48,22 @@ img.coming-soon {
     display: inline-block;
     border-bottom: 1px solid black;
 }
-li.nav-item {
-    margin-top: 2px;
-    border-radius: 11px;
-    transition:0.3s ease;
-}
-li.nav-item.active {
-    background: #ffffff94;
-}
-li.nav-item:hover {
-    background: #ffffffbf !important;
-}
-.nav-link-icon{
-    width: 30px;
-    height: 30px;
-    float: left;
-}
+/*li.nav-item {*/
+/*    margin-top: 2px;*/
+/*    border-radius: 11px;*/
+/*    transition:0.3s ease;*/
+/*}*/
+/*li.nav-item.active {*/
+/*    background: #ffffff94;*/
+/*}*/
+/*li.nav-item:hover {*/
+/*    background: #ffffffbf !important;*/
+/*}*/
+/*.nav-link-icon{*/
+/*    width: 30px;*/
+/*    height: 30px;*/
+/*    float: left;*/
+/*}*/
 .sidebar-link-text {
     font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype",
     Palatino, "URW Palladio L", "Nimbus Roman No9 L", serif;
@@ -78,10 +78,7 @@ li.nav-item:hover {
     float: left;
     position: relative;
 }
-.coming-soon-holder {
-    margin: 15px 0px;
-    width: 200px;
-}
+
 /* Borrow-User view tables*/
 .Edit-Delete{
   text-align: center;
@@ -176,7 +173,7 @@ select{
     line-height: 1.5;
     color: #686868;
     vertical-align: middle;
-    background-color: #721c248f;
+    background-color: #ffffff85;
     border: 1px solid #343a40;
     border-radius: .25rem;
     -webkit-appearance: none;
@@ -209,7 +206,21 @@ label {
 
 
 
-
+/* Delete Modal*/
+.modal-content {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #e9fcff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 2.3rem;
+    outline: 0;
+}
 
 
 /* Login Page*/
@@ -243,7 +254,7 @@ body, .sidebar {
 /* Main Area */
 main {
     background: #ffe49469;
-    margin: 2px 0px 20px 0;
+    margin: 29px 0px 20px 0;
     border-radius: 14px;
 }
 

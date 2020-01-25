@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="/styles/login.css">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Library-app</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
 
@@ -17,7 +17,6 @@
     <link href="signin.css" rel="stylesheet">
     <style data-styled-components=""></style></head>
 
-<body class="text-center" onload="AnimateLogo();">
 
 <#include "forms/loginForm.ftlh" />
 
@@ -38,5 +37,4 @@ $( document ).ready(function() {
 
 });
 </script>
-</body>
 </html>
