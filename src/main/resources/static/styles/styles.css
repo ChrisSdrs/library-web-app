@@ -11,32 +11,24 @@
 }
 .sidebar{
     box-shadow: initial !important;
-    padding: 66px 20px 20px 20px;
+    padding: 29px 20px 20px 20px;
 }
 .sidebar-sticky{
+    margin-top: -36px;
     border-radius: 16px;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 55px 10px 20px;
     height:100%;
     background-image: linear-gradient(#bab46f, #6e5c37);
 }
-li.navbar-header {
-    border-bottom: 2px solid black;
-    margin-bottom: 10px;
-}
 
-img.sidebar-logo {
-    width: 60px;
-}
-img.coming-soon {
-    width: 100%;
-    filter: hue-rotate(34deg);
-}
+
 .dashboard-username {
     float: left;
     font-size: 28px;
     margin: 4px 0 0 19px;
 }
 .sidebar-title {
+    font-family: "Goudy Old Style", Garamond, "Big Caslon";
     font-size: 27px;
     font-weight: 700;
     line-height: 36px;
@@ -46,23 +38,10 @@ img.coming-soon {
     display: inline-block;
     border-bottom: 1px solid black;
 }
-li.nav-item {
-    margin-top: 2px;
-    border-radius: 11px;
-    transition:0.3s ease;
-}
-li.nav-item.active {
-    background: #ffffff94;
-}
-li.nav-item:hover {
-    background: #ffffffbf !important;
-}
-.nav-link-icon{
-    width: 30px;
-    height: 30px;
-    float: left;
-}
+
 .sidebar-link-text {
+    font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype",
+    Palatino, "URW Palladio L", "Nimbus Roman No9 L", serif;
     margin-top: 4px;
     margin-left: 10px;
     font-size: 18px;
@@ -74,10 +53,7 @@ li.nav-item:hover {
     float: left;
     position: relative;
 }
-.coming-soon-holder {
-    margin: 15px 0px;
-    width: 200px;
-}
+
 /* Borrow-User view tables*/
 .Edit-Delete{
   text-align: center;
@@ -93,6 +69,10 @@ tr:hover {
 }
 thead tr:hover{
   background: white !important;
+}
+
+#logout-item {
+    color: #860000;
 }
 
 
@@ -144,13 +124,15 @@ select{
     font-weight: 400;
     line-height: 1.5;
     color: #495057;
-    background-color: #721c24;
+    background-color: #ffffff8c;
     background-clip: padding-box;
     border: 1px solid #343a40;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 .table {
+    font-family: "Goudy Old Style", Garamond, "Big Caslon";
+    font-size: 20px;
     width: 100%;
     margin-bottom: 1rem;
     color: #212529;
@@ -166,7 +148,7 @@ select{
     line-height: 1.5;
     color: #686868;
     vertical-align: middle;
-    background-color: #721c248f;
+    background-color: #ffffff85;
     border: 1px solid #343a40;
     border-radius: .25rem;
     -webkit-appearance: none;
@@ -183,12 +165,37 @@ select{
     background-color: #721c24;
     border-color: #ffc107;
 }
+.mb-3, .my-3 {
+    font-family: "Goudy Old Style", Garamond, "Big Caslon";
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 1rem!important;
+}
+label {
+    font-size: 25px;
+    display: inline-block;
+    margin-bottom: .5rem;
+}
 
 
 
 
 
-
+/* Delete Modal*/
+.modal-content {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #e9fcff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 2.3rem;
+    outline: 0;
+}
 
 
 /* Login Page*/
@@ -211,35 +218,7 @@ select{
     opacity: 1;
     top: 0px;
 }
-/*!* Alerts *!*/
-/*[data-notify="progressbar"] {*/
-/*    margin-bottom: 0px;*/
-/*    position: absolute;*/
-/*    bottom: 0px;*/
-/*    left: 0px;*/
-/*    width: 100%;*/
-/*    height: 5px;*/
-/*}*/
 
-/*.alertContainer {*/
-/*    display: inline-block;*/
-/*    position: fixed;*/
-/*    top: 75px;*/
-/*    right: 40px;*/
-/*    opacity:0;*/
-/*    transition: 0.2s linear;*/
-/*    z-index: -1;*/
-/*}*/
-/*.notify-alert{*/
-/*    margin:0;*/
-/*    transition: 0.2s linear;*/
-/*}*/
-/*.alert-timer {*/
-/*    width: 100%;*/
-/*    height: 2px;*/
-/*    transition: 4.5s linear;*/
-/*    background: lime;*/
-/*}*/
 /* Styling */
 body, .sidebar {
     background: #490000 !important;
@@ -250,7 +229,7 @@ body, .sidebar {
 /* Main Area */
 main {
     background: #ffe49469;
-    margin: 2px 0px 20px 0;
+    margin: 29px 0px 20px 0;
     border-radius: 14px;
 }
 
@@ -291,33 +270,7 @@ img.logout-icon {
     filter: invert(1);
 }
 
-/*!* Report Chart *!*/
-/*.Report-Ul{*/
-/*    display: inline-block;*/
-/*    padding: 0;*/
-/*    list-style-type: none;*/
-/*}*/
-/*.Report-Ul li{*/
-/*    font-size: 15px;*/
-/*    font-weight: 500;*/
-/*    letter-spacing: 1px;*/
-/*}*/
-/*.ReportBox{*/
-/*    width: 20px;*/
-/*    height: 20px;*/
-/*    float: left;*/
-/*    margin: 0 10px;*/
-/*    border: 3px solid black;*/
-/*}*/
-/*.PendingBox{*/
-/*    background: #a1ee93;*/
-/*}*/
-/*.InProgressBox{*/
-/*    background: #dde9f5;*/
-/*}*/
-/*.CompletedBox{*/
-/*    background: #cfd9e3;*/
-/*}*/
+
 /* Homepage */
 section#home {
     filter: brightness(0.8);
@@ -354,7 +307,3 @@ body, nav.sidebar{
     opacity:1;
     z-index: 2000;
 }
-/*.alert-time-run {*/
-/*    width: 0 !important;*/
-/*    background: #005600;*/
-/*}*/

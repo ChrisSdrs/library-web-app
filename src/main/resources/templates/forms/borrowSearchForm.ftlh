@@ -17,7 +17,9 @@
     </div>
     <div class="mb-3">
         <@spring.bind "searchBorrowForm.membNumber"/>
-        <input type="text" class="form-control mr-sm-2" name="membNumber" id="membNumber" placeholder="Membership Number" value="<#if searchBorrowForm.membNumber?has_content>${searchBorrowForm.membNumber}</#if>">
+        <input type="text" class="form-control mr-sm-2" name="membNumber" id="membNumber" placeholder="Membership Number"
+               value="<#if searchBorrowForm.membNumber?has_content>${searchBorrowForm.membNumber}</#if>" style="
+        margin-top: 55px;">
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
         </#list>

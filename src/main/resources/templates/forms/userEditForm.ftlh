@@ -1,6 +1,6 @@
 <#import "/spring.ftl" as spring />
 
-<form action="/admin/members/edit" id="memberVal" name="memberEditForm" method="POST">
+<form action="/admin/users/edit" id="memberVal" name="memberEditForm" method="POST">
 
 
     <input type="hidden" name="id" value="${user.id}">
