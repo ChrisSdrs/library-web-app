@@ -29,6 +29,7 @@ public class BorrowServiceImpl implements BorrowService {
     public Borrow updateBorrow(BorrowModel borrowModel) {
         Borrow originalBorrow = borrowRepository.findById(borrowModel.getId()).get();
         originalBorrow.setDate(borrowModel.getDate());
+        originalBorrow.setReturnDate(borrowModel.getReturnDate());
         originalBorrow.setStatus(borrowModel.getStatus());
         originalBorrow.setBookPin(borrowModel.getBookPin());
         originalBorrow.setMembNumber(borrowModel.getMembNumber());
@@ -82,6 +83,14 @@ public class BorrowServiceImpl implements BorrowService {
     @Override
     public List<BorrowModel> findByDateBefore(LocalDate dateBefore) {
         return borrowRepository.findByDateBefore(dateBefore)
+                .stream()
+                .map(borrow -> mapper.mapToBorrowModel(borrow))
+                .collect(Collectors.toList());
+    }
+
+     @Override
+    public List<BorrowModel> findByReturnDate(LocalDate returnDate) {
+        return borrowRepository.findByReturnDate(returnDate)
                 .stream()
                 .map(borrow -> mapper.mapToBorrowModel(borrow))
                 .collect(Collectors.toList());

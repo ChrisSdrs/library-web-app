@@ -16,6 +16,9 @@ public class Borrow {
     @Column(name = "borrow_date")
     private LocalDate date;
 
+    @Column(name = "return_date")
+    private LocalDate returnDate;
+
     @Column(name = "borrow_status")
     private String status;
 
@@ -40,6 +43,14 @@ public class Borrow {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public LocalDate getReturnDate() {
+        return returnDate;
+    }
+
+    public void setReturnDate(LocalDate returnDate) {
+        this.returnDate = returnDate;
     }
 
     public String getStatus() {
@@ -71,8 +82,9 @@ public class Borrow {
     }
 
 
-    public Borrow(LocalDate date, String status, String bookPin, String membNumber) {
+    public Borrow(LocalDate date, LocalDate returnDate, String status, String bookPin, String membNumber) {
         this.date = date;
+        this.returnDate = returnDate;
         this.status = status;
         this.bookPin = bookPin;
         this.membNumber = membNumber;
@@ -82,6 +94,7 @@ public class Borrow {
         final StringBuilder sb = new StringBuilder("Borrow{");
         sb.append("id=").append(id);
         sb.append(", borrow_date='").append(date);
+        sb.append(", return_date='").append(returnDate);
         sb.append(", borrow_status='").append(status);
         sb.append(", book_pin=").append(bookPin);
         sb.append(", membership_number=").append(membNumber);

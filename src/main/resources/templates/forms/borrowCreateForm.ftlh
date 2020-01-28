@@ -2,9 +2,17 @@
 
 <form action="/admin/borrows/create" id="borrowVal" name="borrowForm" method="POST">
     <div class="mb-3">
-        <label for="date">Date</label>
+        <label for="date">Borrow Date</label>
         <@spring.bind "borrowForm.date"/>
         <input type="date" class="form-control" name="date" id="date" required value="<#if borrowForm.date?has_content>${borrowForm.date}</#if>">
+        <#list spring.status.errorMessages as error>
+            <span>${error}</span>
+        </#list>
+    </div>
+    <div class="mb-3">
+        <label for="returnDate">Return Date</label>
+        <@spring.bind "borrowForm.returnDate"/>
+        <input type="date" class="form-control" name="returnDate" id="returnDate" required value="<#if borrowForm.returnDate?has_content>${borrowForm.returnDate}</#if>">
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
         </#list>

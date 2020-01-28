@@ -66,10 +66,11 @@ public class BorrowCreateController {
     private boolean isValidBorrowEmptyFields(Borrow borrow){
         boolean isValid   = true;
         LocalDate date = borrow.getDate();
+        LocalDate returnDate = borrow.getReturnDate();
         String status = borrow.getStatus();
         String membNumber = borrow.getMembNumber();
         String bookPin = borrow.getBookPin();
-        if (date == null || status.isEmpty() || membNumber.isEmpty() || bookPin.isEmpty() ){
+        if (date == null || status.isEmpty() || membNumber.isEmpty() || returnDate == null || bookPin.isEmpty() ){
             isValid = false;
         }
 

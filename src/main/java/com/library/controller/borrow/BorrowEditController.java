@@ -24,10 +24,8 @@ public class BorrowEditController {
 
 
     @PostMapping(value = "/admin/borrows/{id}/delete")
-    public String deleteBorrow(@PathVariable Long id, RedirectAttributes redirectAttrs) {
+    public String deleteBorrow(@PathVariable Long id) {
         borrowService.deleteById(id);
-        redirectAttrs.addFlashAttribute(ALERT_TYPE, "info");
-        redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Borrow Deleted Successfully!");
         return "redirect:/admin/borrows";
     }
 
@@ -40,10 +38,8 @@ public class BorrowEditController {
     }
 
     @PostMapping(value = "/admin/borrows/edit")
-    public String editBorrow(BorrowModel borrowModel, RedirectAttributes redirectAttrs) {
+    public String editBorrow(BorrowModel borrowModel) {
         borrowService.updateBorrow(borrowModel);
-        redirectAttrs.addFlashAttribute(ALERT_TYPE, "success");
-        redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Borrow Edited successfully!");
         return "redirect:/admin/borrows";
     }
 }
