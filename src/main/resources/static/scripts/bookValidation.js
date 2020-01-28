@@ -17,7 +17,8 @@ jQuery(function ($){
         },
         messages:{
             bookPin:{
-                required: "Enter book's PIN"
+                required: "Enter book's PIN",
+                digits: "Book's PIN must be number, please enter only digits"
             },
             title:{
                 required: "Enter title"
@@ -30,17 +31,4 @@ jQuery(function ($){
             }
         }
     });
-    $( document ).ready(function() {
-            RemoveCommaFromCost();
-        });
-
-        $('#year').change(function(){
-            RemoveCommaFromCost();
-        });
-
-        function RemoveCommaFromCost(){
-            var costValue = $('#year').val();
-            costValue = costValue.replace(",","");
-            $('#year').val(costValue);
-        };
 });

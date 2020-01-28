@@ -8,10 +8,12 @@ jQuery(function ($){
                 required: true
             },
             bookPin:{
-                required: true
+                required: true,
+                digits: true
             },
             membNumber:{
-                required: true
+                required: true,
+                digits: true
             }
         },
         messages:{
@@ -22,24 +24,13 @@ jQuery(function ($){
                 required: "Enter status of borrow"
             },
             bookPin:{
-                required: "Enter book's PIN"
+                required: "Enter book's PIN",
+                digits: "Book's PIN must be number, please enter only digits"
             },
             membNumber:{
-                required: "Enter member's Membership Number"
+                required: "Enter member's Membership Number",
+                digits: "Membership Number must be number, please enter only digits"
             }
         }
     });
-    // $( document ).ready(function() {
-    //     RemoveCommaFromCost();
-    // });
-    //
-    // $('#cost').change(function(){
-    //     RemoveCommaFromCost();
-    // });
-    //
-    // function RemoveCommaFromCost(){
-    //     var costValue = $('#cost').val();
-    //     costValue = costValue.replace(",","");
-    //     $('#cost').val(costValue);
-    // };
 });
