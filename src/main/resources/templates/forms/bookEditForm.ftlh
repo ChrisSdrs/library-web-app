@@ -41,21 +41,13 @@
             <option value="Drama"   <#if book.category == "Drama"> selected </#if>>
                 Drama
             </option>
+            <option value="Comedy"   <#if book.category == "Comedy"> selected </#if>>
+                Comedy
+            </option>
         </select>
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
         </#list>
     </div>
-
-<#--    <div class="mb-3">-->
-<#--        <label for="owner">Owner</label>-->
-<#--        <@spring.bind "bookForm.owner"/>-->
-<#--        <input type="text" class="form-control" name="owner" id="owner" placeholder="Owner's Social Security Number" value="${book.owner}">-->
-<#--        <#list spring.status.errorMessages as error>-->
-<#--            <span>${error}</span>-->
-<#--        </#list>-->
-<#--    </div>-->
-
-
     <button class="btn btn-primary btn-lg mt-4" type="submit">Update</button>
 </form>

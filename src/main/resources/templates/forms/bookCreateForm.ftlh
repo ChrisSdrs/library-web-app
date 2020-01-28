@@ -36,20 +36,14 @@
             <option value="" class="first-select-label" selected>Choose book category</option>
             <option>Literary realism</option>
             <option>Drama</option>
+            <option>Comedy</option>
         </select>
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
         </#list>
     </div>
 
-<#--    <div class="mb-3">-->
-<#--        <label for="owner">Owner's SSN</label>-->
-<#--        <@spring.bind "bookForm.owner"/>-->
-<#--        <input type="text" class="form-control" name="owner" id="owner" placeholder="Owner's Social Security Number">-->
-<#--        <#list spring.status.errorMessages as error>-->
-<#--            <span>${error}</span>-->
-<#--        </#list>-->
-<#--    </div>-->
+
 
     <#if bookCreateError?has_content>
         <div><p class="error">

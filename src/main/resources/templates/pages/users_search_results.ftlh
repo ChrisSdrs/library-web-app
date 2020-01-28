@@ -13,7 +13,7 @@
 <#include "../partials/main_content_top.ftlh">
 
 <div class="table-responsive">
-    <h3 class="">Search Owners</h3>
+    <h3 class="">Search Members</h3>
     <#include "../forms/userSearchForm.ftlh" />
     <#include "../partials/users_table.ftlh" />
 </div>

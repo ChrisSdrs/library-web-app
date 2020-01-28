@@ -32,7 +32,7 @@ jQuery(function ($){
         messages:{
             membNumber:{
                 required: "Enter Membership Number",
-                digits: "Invalid Membership Number, MN type must be number"
+                digits: "Invalid Membership Number, M.N. type must be number"
             },
             firstName:{
                 required: "Enter first name"
