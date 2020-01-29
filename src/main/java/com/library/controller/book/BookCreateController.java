@@ -34,7 +34,7 @@ public class BookCreateController {
     private BookFormToBookMapper mapper;
 
     @GetMapping(value = "/admin/books/create")
-    public String createProperty(Model model) {
+    public String createBook(Model model) {
 
         model.addAttribute(BOOK_FORM, new BookForm());
         return "pages/book_create";

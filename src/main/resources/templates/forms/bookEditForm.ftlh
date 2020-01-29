@@ -44,6 +44,15 @@
             <option value="Comedy"   <#if book.category == "Comedy"> selected </#if>>
                 Comedy
             </option>
+        <option value="Novel"   <#if book.category == "Novel"> selected </#if>>
+                Novel
+            </option>
+        <option value="Science Fiction"   <#if book.category == "Science Fiction"> selected </#if>>
+                Science Fiction
+            </option>
+        <option value="Detective Novel"   <#if book.category == "Detective Novel"> selected </#if>>
+                Detective Novel
+            </option>
         </select>
         <#list spring.status.errorMessages as error>
             <span>${error}</span>

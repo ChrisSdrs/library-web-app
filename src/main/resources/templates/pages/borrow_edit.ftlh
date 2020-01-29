@@ -9,7 +9,7 @@
 <body>
 
 
-<#assign page = "Repair-Edit">
+<#assign page = "Borrow-Edit">
 <#include "../partials/main_content_top.ftlh">
 
 <h3 class="mb-3">Edit Borrow ${id}</h3>
