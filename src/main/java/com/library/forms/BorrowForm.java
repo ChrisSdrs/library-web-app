@@ -6,10 +6,17 @@ import java.time.LocalDate;
 
 public class BorrowForm {
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+
+
     Long id;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     LocalDate date;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     LocalDate returnDate;
+
     String status;
     String membNumber;
     String bookPin;
