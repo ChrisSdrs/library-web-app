@@ -40,7 +40,7 @@ public class BookEditController {
     }
 
     @PostMapping(value = "/admin/books/{id}/delete")
-    public String deleteProperty(@PathVariable Long id, RedirectAttributes redirectAttrs) {
+    public String deleteBook(@PathVariable Long id, RedirectAttributes redirectAttrs) {
         bookService.deleteById(id);
         redirectAttrs.addFlashAttribute(ALERT_TYPE, "info");
         redirectAttrs.addFlashAttribute(ALERT_MESSAGE, "Book Deleted successfully!");

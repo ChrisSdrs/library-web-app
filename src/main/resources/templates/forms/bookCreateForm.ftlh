@@ -37,6 +37,9 @@
             <option>Literary realism</option>
             <option>Drama</option>
             <option>Comedy</option>
+            <option>Novel</option>
+            <option>Science Fiction</option>
+            <option>Detective Novel</option>
         </select>
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
