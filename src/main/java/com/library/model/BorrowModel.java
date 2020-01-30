@@ -8,6 +8,7 @@ public class BorrowModel {
     long id;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     LocalDate date;
+    LocalDate returnDate;
     String status;
     String bookPin;
     String membNumber;
@@ -27,6 +28,10 @@ public class BorrowModel {
     public void setDate(LocalDate date) {
         this.date = date;
     }
+
+    public LocalDate getReturnDate() { return returnDate; }
+
+    public void setReturnDate(LocalDate returnDate) { this.returnDate = returnDate; }
 
     public String getStatus() {
         return status;
@@ -55,9 +60,10 @@ public class BorrowModel {
     public BorrowModel() {
     }
 
-    public BorrowModel(long id, LocalDate date, String status, String bookPin, String membNumber) {
+    public BorrowModel(long id, LocalDate date, LocalDate returnDate, String status, String bookPin, String membNumber) {
         this.id = id;
         this.date = date;
+        this.returnDate = returnDate;
         this.status = status;
         this.bookPin = bookPin;
         this.membNumber = membNumber;
@@ -67,6 +73,7 @@ public class BorrowModel {
         final StringBuilder sb = new StringBuilder("Borrow{");
         sb.append("id=").append(id);
         sb.append(", borrowDate=").append(date);
+        sb.append(", returnDate=").append(returnDate);
         sb.append(", status=").append(status);
         sb.append(", bookPin=").append(bookPin);
         sb.append(", membership_number=").append(membNumber);

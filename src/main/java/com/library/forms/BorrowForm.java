@@ -6,9 +6,17 @@ import java.time.LocalDate;
 
 public class BorrowForm {
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+
+
     Long id;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     LocalDate date;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    LocalDate returnDate;
+
     String status;
     String membNumber;
     String bookPin;
@@ -29,6 +37,10 @@ public class BorrowForm {
     public void setDate(LocalDate date) {
         this.date = date;
     }
+
+    public LocalDate getReturnDate() { return returnDate; }
+
+    public void setReturnDate(LocalDate returnDate) { this.returnDate = returnDate; }
 
     public String getStatus() {
         return status;
@@ -58,9 +70,10 @@ public class BorrowForm {
 
     }
 
-    public BorrowForm(Long id, LocalDate date, String status, String membNumber, String bookPin) {
+    public BorrowForm(Long id, LocalDate date, LocalDate returnDate, String status, String membNumber, String bookPin) {
         this.id = id;
         this.date = date;
+        this.returnDate = returnDate;
         this.status = status;
         this.membNumber = membNumber;
         this.bookPin = bookPin;

@@ -27,6 +27,8 @@ public interface BorrowService {
 
     List<BorrowModel> findByDateAfter(LocalDate date);
 
+    List<BorrowModel> findByReturnDate(LocalDate returnDate);
+
     List<BorrowModel> findByDateBefore(LocalDate date);
 
     List<BorrowModel> findByMembNumberAndDateAfter(String membNumber, LocalDate dateAfter);

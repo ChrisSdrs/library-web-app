@@ -30,7 +30,7 @@ public class BorrowController {
     @GetMapping(value = "/admin")
     public String borrowsToday(Model model) {
         LocalDate dateToday = LocalDate.now();
-        List<BorrowModel> borrows = borrowService.findTop10ByDateOrderByDateAsc(dateToday);
+        List<BorrowModel> borrows = borrowService.findByReturnDate(dateToday);
         model.addAttribute(BORROW_LIST, borrows);
         return "pages/admin";
     }

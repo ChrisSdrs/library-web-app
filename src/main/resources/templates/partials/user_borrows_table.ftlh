@@ -1,7 +1,8 @@
 <table class="table table-striped table-sm">
     <thead>
     <tr>
-        <th>Date</th>
+        <th>Borrow Date</th>
+        <th>Return Date</th>
         <th>Status</th>
         <th>Book's PIN</th>
         <th>Membership Number</th>
@@ -12,6 +13,7 @@
         <#list userBorrows as borrow>
             <tr>
                 <td> ${borrow.date}</td>
+                <td> ${borrow.returnDate}</td>
                 <td> ${borrow.status}</td>
                 <td> ${borrow.bookPin}</td>
                 <td> ${borrow.membNumber}</td>

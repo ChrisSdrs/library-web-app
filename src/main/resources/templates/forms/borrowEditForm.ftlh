@@ -4,9 +4,17 @@
     <input type="hidden" name="id" value="${borrow.id}">
 
     <div class="mb-3">
-        <label for="date">Date</label>
+        <label for="date">Borrow Date</label>
         <@spring.bind "borrowForm.date"/>
         <input type="date" class="form-control" name="date" id="date" value="${borrow.date}" required>
+        <#list spring.status.errorMessages as error>
+            <span>${error}</span>
+        </#list>
+    </div>
+    <div class="mb-3">
+        <label for="returnDate">Return Date</label>
+        <@spring.bind "borrowForm.returnDate"/>
+        <input type="date" class="form-control" name="returnDate" id="returnDate" value="${borrow.returnDate}" required>
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
         </#list>

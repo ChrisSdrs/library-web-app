@@ -23,6 +23,8 @@ public interface BorrowRepository extends JpaRepository<Borrow, Long> {
 
     List<Borrow> findByDateAfter(LocalDate dateAfter);
 
+    List<Borrow> findByReturnDate(LocalDate returnDate);
+
     List<Borrow> findByDateBefore(LocalDate dateBefore);
 
     List<Borrow> findByMembNumberAndDateAfter(String membNumber, LocalDate dateAfter);
