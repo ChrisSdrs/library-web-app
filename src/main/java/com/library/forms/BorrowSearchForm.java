@@ -4,7 +4,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
-public class BorrowSearchForm {
+public class  BorrowSearchForm {
+
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     LocalDate dateFrom;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
