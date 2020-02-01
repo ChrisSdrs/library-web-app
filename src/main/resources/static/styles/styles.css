@@ -12,6 +12,7 @@
 .sidebar{
     box-shadow: initial !important;
     padding: 29px 20px 20px 20px;
+    width: 20% !important;
 }
 .sidebar-sticky{
     margin-top: -36px;
@@ -310,5 +311,5 @@ body, nav.sidebar{
 }
 
 .ml-sm-auto, .mx-sm-auto {
-    margin-left: 320px !important;
+    margin-left: 20% !important;
 }
