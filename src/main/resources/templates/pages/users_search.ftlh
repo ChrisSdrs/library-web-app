@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <title>Search user</title>
+    <title>Members</title>
     <#include "../partials/head.ftlh">
 </head>
 <body>
@@ -12,7 +12,7 @@
 <#assign page = "Users-Search">
 <#include "../partials/main_content_top.ftlh">
 
-    <h3 class="">Search Owners</h3>
+    <h3 class="">Search Members</h3>
     <div class="table-responsive">
         <#include "../forms/userSearchForm.ftlh" />
     </div>

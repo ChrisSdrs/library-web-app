@@ -82,13 +82,13 @@ import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
             String username = user.getUsername();
             //User provided is not Valid if any of the ssn,email,username already exists
             if (!userService.findByMembNumber(membNumber).isEmpty()) {
-                result += "Membership Number Already Exists. ";
+                result += "Please enter new Membership Number. ";
             }
             if (!userService.findByEmail(email).isEmpty()) {
-                result += "Email Already Exists. ";
+                result += "Please enter new e-mail. ";
             }
             if (!userService.findByUsername(username).isEmpty()) {
-                result += "Username Already Exists. ";
+                result += "Please enter new username. ";
             }
 
             return result;

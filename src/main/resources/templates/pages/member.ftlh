@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>User Details</title>
+    <title>Member Details</title>
     <link rel="stylesheet" href="/styles/member.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js">
     <link rel="stylesheet" href="https://www.jsdelivr.com/package/npm/chart.js">
