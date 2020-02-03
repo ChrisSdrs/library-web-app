@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <title>Borrow Search</title>
+    <title>Borrows</title>
     <#include "../partials/head.ftlh">
 </head>
 <body>
