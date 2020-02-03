@@ -8,7 +8,7 @@
             <!-- Login Form -->
             <form>
                 <input type="text" id="username" class="fadeIn second" name="username" placeholder="username" autofocus>
-                <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+                <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
 
                 <div class="checkbox mb-3">
                     <#if loginAuthentication?has_content>
