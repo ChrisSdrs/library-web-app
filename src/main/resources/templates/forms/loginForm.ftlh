@@ -9,6 +9,16 @@
             <form>
                 <input type="text" id="username" class="fadeIn second" name="username" placeholder="username" autofocus>
                 <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+
+                <div class="checkbox mb-3">
+                    <#if loginAuthentication?has_content>
+                        <#if
+                        loginAuthentication == "fail">
+                        </#if>
+                        <div><p class="error"> Invalid username or password.</p></div>
+                    </#if>
+                </div>
+
                 <input type="submit" class="fadeIn fourth">
             </form>
         </div>
