@@ -45,6 +45,14 @@
         </#list>
     </div>
     <div class="mb-3">
+        <label for="bookTitle">Book's Title</label>
+        <@spring.bind "borrowForm.bookTitle"/>
+        <input type="text" class="form-control" name="bookTitle" id="bookTitle" value="${borrow.bookTitle}" placeholder="Book's Title">
+        <#list spring.status.errorMessages as error>
+            <span>${error}</span>
+        </#list>
+    </div>
+    <div class="mb-3">
         <label for="membNumber">Member's Membership Number</label>
         <@spring.bind "borrowForm.membNumber"/>
         <input type="text" class="form-control" name="membNumber" id="membNumber" value="${borrow.membNumber}" placeholder="Membership Number">

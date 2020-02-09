@@ -25,6 +25,8 @@ public interface BorrowService {
 
     List<BorrowModel> findByBookPin(String bookPin);
 
+    List<BorrowModel> findByBookTitle(String bookTitle);
+
     List<BorrowModel> findByDateAfter(LocalDate date);
 
     List<BorrowModel> findByReturnDate(LocalDate returnDate);

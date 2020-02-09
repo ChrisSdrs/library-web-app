@@ -4,7 +4,8 @@
         <th >Borrow Date</th>
         <th >Return Date</th>
         <th>Status</th>
-        <th>PIN</th>
+        <th>Books's Title</th>
+        <th>Books's PIN</th>
         <th>Membership Number</th>
         <th>Edit</th>
         <th>Delete</th>
@@ -17,6 +18,7 @@
                 <td> ${borrow.date}</td>
                 <td> ${borrow.returnDate}</td>
                 <td> ${borrow.status}</td>
+                <td> ${borrow.bookTitle}</td>
                 <td> ${borrow.bookPin}</td>
                 <td> ${borrow.membNumber}</td>
                 <td class="Edit-Delete">

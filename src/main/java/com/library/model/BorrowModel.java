@@ -11,6 +11,7 @@ public class BorrowModel {
     LocalDate returnDate;
     String status;
     String bookPin;
+    String bookTitle;
     String membNumber;
 
     public long getId() {
@@ -49,6 +50,10 @@ public class BorrowModel {
         this.bookPin = bookPin;
     }
 
+    public String getBookTitle() { return bookTitle; }
+
+    public void setBookTitle(String bookTitle) { this.bookTitle = bookTitle; }
+
     public String getMembNumber() {
         return membNumber;
     }
@@ -60,12 +65,13 @@ public class BorrowModel {
     public BorrowModel() {
     }
 
-    public BorrowModel(long id, LocalDate date, LocalDate returnDate, String status, String bookPin, String membNumber) {
+    public BorrowModel(long id, LocalDate date, LocalDate returnDate, String status, String bookPin, String bookTitle, String membNumber) {
         this.id = id;
         this.date = date;
         this.returnDate = returnDate;
         this.status = status;
         this.bookPin = bookPin;
+        this.bookPin = bookTitle;
         this.membNumber = membNumber;
     }
 
@@ -76,6 +82,7 @@ public class BorrowModel {
         sb.append(", returnDate=").append(returnDate);
         sb.append(", status=").append(status);
         sb.append(", bookPin=").append(bookPin);
+        sb.append(", bookTitle=").append(bookTitle);
         sb.append(", membership_number=").append(membNumber);
         sb.append('}');
         return sb.toString();

@@ -25,6 +25,9 @@ public class Borrow {
     @Column(name = "book_pin")
     private String bookPin;
 
+    @Column(name = "book_title")
+    private String bookTitle;
+
     @Column(name = "membership_number")
     private String membNumber;
 
@@ -69,6 +72,10 @@ public class Borrow {
         this.bookPin = bookPin;
     }
 
+    public String getBookTitle() { return bookTitle; }
+
+    public void setBookTitle(String bookTitle) { this.bookTitle = bookTitle; }
+
     public String getMembNumber() {
         return membNumber;
     }
@@ -82,11 +89,12 @@ public class Borrow {
     }
 
 
-    public Borrow(LocalDate date, LocalDate returnDate, String status, String bookPin, String membNumber) {
+    public Borrow(LocalDate date, LocalDate returnDate, String status, String bookPin, String bookTitle, String membNumber) {
         this.date = date;
         this.returnDate = returnDate;
         this.status = status;
         this.bookPin = bookPin;
+        this.bookTitle = bookTitle;
         this.membNumber = membNumber;
     }
 
@@ -97,6 +105,7 @@ public class Borrow {
         sb.append(", return_date='").append(returnDate);
         sb.append(", borrow_status='").append(status);
         sb.append(", book_pin=").append(bookPin);
+        sb.append(", book_title=").append(bookTitle);
         sb.append(", membership_number=").append(membNumber);
         sb.append('}');
         return sb.toString();

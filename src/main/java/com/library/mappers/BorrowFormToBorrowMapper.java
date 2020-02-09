@@ -14,6 +14,7 @@ public class BorrowFormToBorrowMapper {
         borrow.setReturnDate(borrowForm.getReturnDate());
         borrow.setStatus(borrowForm.getStatus());
         borrow.setMembNumber(borrowForm.getMembNumber());
+        borrow.setBookTitle(borrowForm.getBookTitle());
         borrow.setBookPin(borrowForm.getBookPin());
         return borrow;
 
