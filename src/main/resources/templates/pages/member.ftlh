@@ -23,7 +23,7 @@
 <div class="table-responsive">
 
 
-    <h4>My Borrows</h4>
+    <h4 class="mb-3">My Borrows</h4>
     <#include "../partials/user_borrows_table.ftlh" />
 
 </div>
