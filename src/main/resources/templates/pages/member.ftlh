@@ -16,7 +16,8 @@
 <h3 class="mb-3">
     <#if userDetails?has_content>
         ${userDetails.firstName}
-        ${userDetails.lastName}
+        ${userDetails.lastName},
+        ${userDetails.membNumber}
     </#if>
 </h3>
 <div class="table-responsive">

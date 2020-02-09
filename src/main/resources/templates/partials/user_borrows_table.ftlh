@@ -5,7 +5,7 @@
         <th>Return Date</th>
         <th>Status</th>
         <th>Book's PIN</th>
-        <th>Membership Number</th>
+        <th>Book's Title</th>
     </tr>
     </thead>
     <tbody>
@@ -16,7 +16,7 @@
                 <td> ${borrow.returnDate}</td>
                 <td> ${borrow.status}</td>
                 <td> ${borrow.bookPin}</td>
-                <td> ${borrow.membNumber}</td>
+                <td> ${borrow.bookTitle}</td>
             </tr>
         </#list>
     </#if>

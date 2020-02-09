@@ -21,6 +21,8 @@ public interface BorrowRepository extends JpaRepository<Borrow, Long> {
 
     List<Borrow> findByBookPin(String bookPin);
 
+    List<Borrow> findByBookTitle(String bookTitle);
+
     List<Borrow> findByDateAfter(LocalDate dateAfter);
 
     List<Borrow> findByReturnDate(LocalDate returnDate);

@@ -73,6 +73,14 @@ public class BorrowServiceImpl implements BorrowService {
     }
 
     @Override
+    public List<BorrowModel> findByBookTitle(String bookTitle) {
+        return borrowRepository.findByBookPin(bookTitle)
+                .stream()
+                .map(borrow -> mapper.mapToBorrowModel(borrow))
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public List<BorrowModel> findByDateAfter(LocalDate dateAfter) {
         return borrowRepository.findByDateAfter(dateAfter)
                 .stream()

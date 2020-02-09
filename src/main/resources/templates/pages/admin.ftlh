@@ -15,7 +15,7 @@
 <#include "../partials/main_content_top.ftlh">
 
 
-    <h3 class="mb-3">Borrows<small class="text-muted">(return today)</small></h3>
+    <h3 class="mb-3">Borrows <small class="text-muted"> (return today)</small></h3>
     <div class="table-responsive">
 
         <#include "../partials/borrows_table.ftlh" />

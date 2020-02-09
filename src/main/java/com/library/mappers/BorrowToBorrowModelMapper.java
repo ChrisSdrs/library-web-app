@@ -15,6 +15,7 @@ public class BorrowToBorrowModelMapper {
         borrowModel.setStatus(borrow.getStatus());
         borrowModel.setMembNumber(borrow.getMembNumber());
         borrowModel.setBookPin(borrow.getBookPin());
+        borrowModel.setBookTitle(borrow.getBookTitle());
         return borrowModel;
     }
 }

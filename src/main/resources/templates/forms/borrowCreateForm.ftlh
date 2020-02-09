@@ -35,9 +35,17 @@
 
     </div>
     <div class="mb-3">
-        <label for="bookPin">Book's PIN</label>
+        <label for="bookPin">PIN</label>
         <@spring.bind "borrowForm.bookPin"/>
         <input type="text" class="form-control" name="bookPin" id="bookPin" placeholder="Book's PIN" value="<#if borrowForm.bookPin?has_content>${borrowForm.bookPin}</#if>">
+        <#list spring.status.errorMessages as error>
+            <span>${error}</span>
+        </#list>
+    </div>
+    <div class="mb-3">
+        <label for="bookTitle">Title</label>
+        <@spring.bind "borrowForm.bookTitle"/>
+        <input type="text" class="form-control" name="bookTitle" id="bookTitle" placeholder="Book's Title" value="<#if borrowForm.bookTitle?has_content>${borrowForm.bookTitle}</#if>">
         <#list spring.status.errorMessages as error>
             <span>${error}</span>
         </#list>
